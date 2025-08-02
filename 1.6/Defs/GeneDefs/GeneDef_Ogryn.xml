@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!-- Ogryn: Brute Build -->
+    <GeneDef>
+        <defName>BEWH_OgrynBruteBuild</defName>
+        <label>brute build</label>
+        <description>???</description>
+        <iconPath>UI/Genes/HugeStature</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>21</displayOrderInCategory>
+    </GeneDef>
+
+    <!-- Ogryn: Slow Witted -->
+    <GeneDef>
+        <defName>BEWH_OgrynSlowWitted</defName>
+        <label>slow witted</label>
+        <description>???</description>
+        <iconPath>UI/Genes/HugeStature</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>22</displayOrderInCategory>
+    </GeneDef>
+
+    <!-- Ogryn: Thick Flesh -->
+    <GeneDef>
+        <defName>BEWH_OgrynThickFlesh</defName>
+        <label>thick flesh</label>
+        <description>???</description>
+        <iconPath>UI/Genes/HugeStature</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>23</displayOrderInCategory>
+    </GeneDef>
+
+    <!-- Ogryn: Toddler Logic -->
+    <GeneDef>
+        <defName>BEWH_OgrynToddlerLogic</defName>
+        <label>toddler logic</label>
+        <description>???</description>
+        <iconPath>UI/Genes/HugeStature</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>24</displayOrderInCategory>
+    </GeneDef>
+
+    <!-- Ogryn: Bone 'Ead -->
+    <GeneDef>
+        <defName>BEWH_OgrynBoneEad</defName>
+        <label>bone 'ead</label>
+        <description>???</description>
+        <iconPath>UI/Genes/HugeStature</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>25</displayOrderInCategory>
+    </GeneDef>
+    
+
+</Defs>

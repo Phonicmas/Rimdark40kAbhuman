@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <!-- Beastman Horn Attack -->
+    <HediffDef>
+        <defName>BEWH_BeastmanHornAttack</defName>
+        <label>beastman horns</label>
+        <description>These horns are not only for show, they can be used as a deadly weapon should the beastman need it.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <scenarioCanAdd>false</scenarioCanAdd>
+        <maxSeverity>1.0</maxSeverity>
+        <isBad>false</isBad>
+        <comps>
+            <li Class="HediffCompProperties_VerbGiver">
+                <tools>
+                    <li>
+                        <label>beastman horns</label>
+                        <capacities>
+                            <li>Stab</li>
+                        </capacities>
+                        <power>11</power>
+                        <cooldownTime>1.2</cooldownTime>
+                    </li>
+                </tools>
+            </li>
+        </comps>
+    </HediffDef>
+    <!-- Beastman Horn Stump Attack -->
+    <HediffDef>
+        <defName>BEWH_BeastmanHornStumpAttack</defName>
+        <label>beastman hornless head</label>
+        <description>This sturdy head can be used as a weapon should the beastman need it.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <scenarioCanAdd>false</scenarioCanAdd>
+        <maxSeverity>1.0</maxSeverity>
+        <isBad>false</isBad>
+        <comps>
+            <li Class="HediffCompProperties_VerbGiver">
+                <tools>
+                    <li>
+                        <label>beastman head</label>
+                        <capacities>
+                            <li>Blunt</li>
+                        </capacities>
+                        <power>7</power>
+                        <cooldownTime>1.2</cooldownTime>
+                    </li>
+                </tools>
+            </li>
+        </comps>
+    </HediffDef>
+
+</Defs>

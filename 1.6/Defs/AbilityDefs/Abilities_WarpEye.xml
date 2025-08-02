@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <AbilityCategoryDef>
+    <defName>BEWH_Navigator</defName>
+    <displayOrder>1000</displayOrder>
+  </AbilityCategoryDef>
+
+  <!-- Gaze Kill -->
+  <AbilityDef>
+    <defName>BEWH_WarpEyeGaze</defName>
+    <label>warp eye gaze</label>
+    <description>Anyone meeting the gaze of the third eye will be agonisingly killed.</description>
+    <iconPath>UI/Abilities/WarpEyeGaze</iconPath>
+    <cooldownTicksRange>900000</cooldownTicksRange>
+    <aiCanUse>true</aiCanUse>
+    <category>BEWH_Navigator</category>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>10</range>
+      <warmupTime>0.5</warmupTime>
+      <targetParams>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetMechs>false</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="Abhumans40k.CompProperties_AbilityWarpEyeGaze"/>
+    </comps>
+  </AbilityDef>
+
+  <!-- Warp Travel -->
+  <VFECore.Abilities.AbilityDef>
+    <defName>BEWH_WarpEyeWarpTravel</defName>
+    <label>warp travel</label>
+    <description>The navigator is able to traverse the warp along, however as any warp travel the time it takes may wary wildly</description>
+    <iconPath>UI/Abilities/WarpEyeTravel</iconPath>
+    <abilityClass>Abhumans40k.Ability_WarpEyeWarpTravel</abilityClass>
+    <cooldownTime>60000</cooldownTime>
+    <castTime>625</castTime>
+    <range>10.9</range>
+    <rangeStatFactors>
+      <PsychicSensitivity>1.5</PsychicSensitivity>
+    </rangeStatFactors>
+    <radius>3.9</radius>    <!-- Pawns within this radius of the caster is teleported with him -->
+    <targetMode>Tile</targetMode>
+    <worldTargeting>true</worldTargeting>
+    <needsTicking>true</needsTicking>
+    <showGizmoOnWorldView>true</showGizmoOnWorldView>
+  </VFECore.Abilities.AbilityDef>
+
+</Defs>

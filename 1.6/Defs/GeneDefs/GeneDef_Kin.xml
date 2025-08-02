@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!-- Kin: Cloneskein -->
+    <GeneDef >
+        <defName>BEWH_KinCloneskein</defName>
+        <label>cloneskein</label>
+        <description>???</description>
+        <iconPath>UI/Genes/DwarvenStature</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>41</displayOrderInCategory>
+    </GeneDef>
+
+    <!-- Kin: Grudgy -->
+    <GeneDef >
+        <defName>BEWH_KinGrudgy</defName>
+        <label>grudgy</label>
+        <description>???</description>
+        <iconPath>UI/Genes/DwarvenStature</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>41</displayOrderInCategory>
+    </GeneDef>
+
+    <!-- Kin: Technical Affinity -->
+    <GeneDef >
+        <defName>BEWH_KinTechnicalAffinity</defName>
+        <label>technical affinity</label>
+        <description>???</description>
+        <iconPath>UI/Genes/DwarvenStature</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>41</displayOrderInCategory>
+    </GeneDef>
+
+    <!-- Kin: Clan Loyalty -->
+    <GeneDef >
+        <defName>BEWH_KinClanLoyalty</defName>
+        <label>clan loyalty</label>
+        <description>???</description>
+        <iconPath>UI/Genes/DwarvenStature</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>41</displayOrderInCategory>
+    </GeneDef>
+
+    <!-- Kin: Dense Physiology -->
+    <GeneDef >
+        <defName>BEWH_KinDensePhysiology</defName>
+        <label>dense physiology</label>
+        <description>???</description>
+        <iconPath>UI/Genes/DwarvenStature</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>41</displayOrderInCategory>
+    </GeneDef>
+
+    <!-- Kin: Cloneskein Template: Subdermal Layer -->
+    <GeneDef >
+        <defName>BEWH_KinCloneskeinTemplateSubdermalLayer</defName>
+        <label>cloneskein template: subdermal layer</label>
+        <description>???</description>
+        <iconPath>UI/Genes/DwarvenStature</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>41</displayOrderInCategory>
+    </GeneDef>
+
+    <!-- Kin: Cloneskein Template: Tunnel Eyes -->
+    <GeneDef >
+        <defName>BEWH_KinCloneskeinTemplateTunnelEyes</defName>
+        <label>cloneskein template: tunnel eyes</label>
+        <description>???</description>
+        <iconPath>UI/Genes/DwarvenStature</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>41</displayOrderInCategory>
+    </GeneDef>
+
+    <!-- Kin: Cloneskein Template: Gravborn Sinews -->
+    <GeneDef >
+        <defName>BEWH_KinCloneskeinTemplateGravbornSinews</defName>
+        <label>cloneskein template: subdermal layer</label>
+        <description>???</description>
+        <iconPath>UI/Genes/DwarvenStature</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>41</displayOrderInCategory>
+    </GeneDef>
+
+    <!-- Kin: Cloneskein Template: Stoneheart -->
+    <GeneDef >
+        <defName>BEWH_KinCloneskeinTemplateStoneheart</defName>
+        <label>cloneskein template: stoneheart</label>
+        <description>???</description>
+        <iconPath>UI/Genes/DwarvenStature</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>41</displayOrderInCategory>
+    </GeneDef>
+
+    <!-- Kin: Cloneskein Template: Radvein -->
+    <GeneDef >
+        <defName>BEWH_KinCloneskeinTemplateRadvein</defName>
+        <label>cloneskein template: radvein</label>
+        <description>???</description>
+        <iconPath>UI/Genes/DwarvenStature</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>41</displayOrderInCategory>
+    </GeneDef>
+
+</Defs>

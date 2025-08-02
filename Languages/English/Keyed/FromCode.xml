@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+    <WarpTravelLetter>Warp Travel Concluded</WarpTravelLetter>
+    <WarpTravelMessage>After spending {1} travelling in the warp, navigator {0} has succesfully teleported {2} to their desired location.</WarpTravelMessage>
+
+    <WarpEyeCovered>Cannot use ability, warp eye is covered by {0}</WarpEyeCovered>
+
+    <JumpTo>Jump To</JumpTo>
+
+</LanguageData>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!-- Navigator: Warp Eye -->
+    <GeneDef>
+        <defName>BEWH_NavigtorWarpEye</defName>
+        <label>warp eye</label>
+        <description>???</description>
+        <iconPath>UI/Genes/WarpEye</iconPath>
+        <geneClass>Core40k.Gene_GiveVFECoreAbility</geneClass>
+        <biostatCpx>0</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>61</displayOrderInCategory>
+    </GeneDef>
+
+    <!-- Navigator: Warp Navigation -->
+    <GeneDef>
+        <defName>BEWH_NavigtorWarpNavigation</defName>
+        <label>warp navigation</label>
+        <description>???</description>
+        <iconPath>UI/Genes/WarpEye</iconPath>
+        <geneClass>Core40k.Gene_GiveVFECoreAbility</geneClass>
+        <biostatCpx>0</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>61</displayOrderInCategory>
+    </GeneDef>
+
+    <!-- Navigator: Unsettling Presence -->
+    <GeneDef>
+        <defName>BEWH_NavigtorUnsettlingPresence</defName>
+        <label>unsettling presence</label>
+        <description>???</description>
+        <iconPath>UI/Genes/WarpEye</iconPath>
+        <geneClass>Core40k.Gene_GiveVFECoreAbility</geneClass>
+        <biostatCpx>0</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>61</displayOrderInCategory>
+    </GeneDef>
+
+    <!-- Navigator: Long Lived -->
+    <GeneDef>
+        <defName>BEWH_NavigtorLongLived</defName>
+        <label>long lived</label>
+        <description>???</description>
+        <iconPath>UI/Genes/WarpEye</iconPath>
+        <geneClass>Core40k.Gene_GiveVFECoreAbility</geneClass>
+        <biostatCpx>0</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>61</displayOrderInCategory>
+    </GeneDef>
+
+    <!-- Navigator: Navis Nobilite -->
+    <GeneDef>
+        <defName>BEWH_NavigtorNavisNobilite</defName>
+        <label>navis nobilite</label>
+        <description>???</description>
+        <iconPath>UI/Genes/WarpEye</iconPath>
+        <geneClass>Core40k.Gene_GiveVFECoreAbility</geneClass>
+        <biostatCpx>0</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>61</displayOrderInCategory>
+    </GeneDef>
+
+    <!-- Navigator: House Achelieux -->
+    <GeneDef>
+        <defName>BEWH_NavigtorHouseAchelieux</defName>
+        <label>house achelieux</label>
+        <description>???</description>
+        <iconPath>UI/Genes/WarpEye</iconPath>
+        <geneClass>Core40k.Gene_GiveVFECoreAbility</geneClass>
+        <biostatCpx>0</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>61</displayOrderInCategory>
+    </GeneDef>
+
+    <!-- Navigator: House Belisarius -->
+    <GeneDef>
+        <defName>BEWH_NavigtorHouse Belisarius</defName>
+        <label>house belisarius</label>
+        <description>???</description>
+        <iconPath>UI/Genes/WarpEye</iconPath>
+        <geneClass>Core40k.Gene_GiveVFECoreAbility</geneClass>
+        <biostatCpx>0</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>61</displayOrderInCategory>
+    </GeneDef>
+
+    <!-- Navigator: House Brobantis -->
+    <GeneDef>
+        <defName>BEWH_NavigtorHouseBrobantis</defName>
+        <label>house brobantis</label>
+        <description>???</description>
+        <iconPath>UI/Genes/WarpEye</iconPath>
+        <geneClass>Core40k.Gene_GiveVFECoreAbility</geneClass>
+        <biostatCpx>0</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>61</displayOrderInCategory>
+    </GeneDef>
+
+    <!-- Navigator: House Castana -->
+    <GeneDef>
+        <defName>BEWH_NavigtorHouseBrobantis</defName>
+        <label>house brobantis</label>
+        <description>???</description>
+        <iconPath>UI/Genes/WarpEye</iconPath>
+        <geneClass>Core40k.Gene_GiveVFECoreAbility</geneClass>
+        <biostatCpx>0</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>61</displayOrderInCategory>
+    </GeneDef>
+
+</Defs>

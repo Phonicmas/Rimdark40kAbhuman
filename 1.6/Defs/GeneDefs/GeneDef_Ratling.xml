@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!-- Ratling: Nimble Build -->
+    <GeneDef>
+        <defName>BEWH_RatlingNimbleBuild</defName>
+        <label>nimble build</label>
+        <description>???</description>
+        <iconPath>UI/Genes/SmallStature</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>1</displayOrderInCategory>
+    </GeneDef>
+
+    <!-- Ratling: Culinary Instinct -->
+    <GeneDef>
+        <defName>BEWH_RatlingCulinaryInstinct</defName>
+        <label>culinary instinct</label>
+        <description>???</description>
+        <iconPath>UI/Genes/SmallStature</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>2</displayOrderInCategory>
+    </GeneDef>
+
+    <!-- Ratling: Indolent Disposition -->
+    <GeneDef>
+        <defName>BEWH_RatlingIndolentDisposition</defName>
+        <label>indolent disposition</label>
+        <description>???</description>
+        <iconPath>UI/Genes/SmallStature</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>3</displayOrderInCategory>
+    </GeneDef>
+
+    <!-- Ratling: Gregarious -->
+    <GeneDef>
+        <defName>BEWH_RatlingGregarious</defName>
+        <label>gregarious</label>
+        <description>???</description>
+        <iconPath>UI/Genes/SmallStature</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>4</displayOrderInCategory>
+    </GeneDef>
+
+    <!-- Ratling: Keen Eyed -->
+    <GeneDef>
+        <defName>BEWH_RatlingKeenEyed</defName>
+        <label>keen eyed</label>
+        <description>???</description>
+        <iconPath>UI/Genes/SmallStature</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>5</displayOrderInCategory>
+    </GeneDef>
+
+    <!-- Ratling: Scavenger Instinct -->
+    <GeneDef>
+        <defName>BEWH_RatlingScavengerInstinct</defName>
+        <label>scavenger instinct</label>
+        <description>???</description>
+        <iconPath>UI/Genes/SmallStature</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>6</displayOrderInCategory>
+    </GeneDef>
+
+    <!-- Ratling: Fecund -->
+    <GeneDef>
+        <defName>BEWH_RatlingFecund</defName>
+        <label>fecund</label>
+        <description>???</description>
+        <iconPath>UI/Genes/SmallStature</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>7</displayOrderInCategory>
+    </GeneDef>
+
+</Defs>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <HeadTypeDef ParentName="AverageBase">
+        <defName>BEWH_BeastmanHead</defName>
+        <graphicPath>Things/Pawn/Humanlike/Beastman/Heads/BeastmanHead</graphicPath>
+        <randomChosen>false</randomChosen>
+        <requiredGenes>
+            <li>BEWH_BeastmanGoatHead</li>
+        </requiredGenes>
+        <selectionWeight>1000</selectionWeight>
+    </HeadTypeDef>
+
+</Defs>

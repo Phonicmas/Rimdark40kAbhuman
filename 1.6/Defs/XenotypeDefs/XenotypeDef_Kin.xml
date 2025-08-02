@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <XenotypeDef>
+        <defName>BEWH_Kin</defName>
+        <label>kin</label>
+        <description>Kin (Homo sapiens rotundus) are short, stocky and physically hardy Abhumans.</description>
+        <iconPath>UI/Xenotypes/SquatXenoIcon</iconPath>
+        <inheritable>true</inheritable>
+        <canGenerateAsCombatant>true</canGenerateAsCombatant>
+        <factionlessGenerationWeight>0.5</factionlessGenerationWeight>
+        <genes>
+            <li>BEWH_KinCloneskein</li>
+            <li>BEWH_KinGrudgy</li>
+            <li>BEWH_KinTechnicalAffinity</li>
+            <li>BEWH_KinClanLoyalty</li>
+            <li>BEWH_KinDensePhysiology</li>
+            <li>AptitudeStrong_Mining</li>
+            <li>AptitudePoor_Animals</li>
+            <li>AptitudeTerrible_Plants</li>
+            <li>Mood_Pessimist</li>
+            <li>Beard_Always</li>
+            <li>Sterile</li>
+        </genes>
+    </XenotypeDef>
+
+</Defs>

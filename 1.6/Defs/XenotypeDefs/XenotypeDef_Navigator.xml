@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <XenotypeDef>
+        <defName>BEWH_Navigator</defName>
+        <label>navigator</label>
+        <description>Navigators (Homo navigo) is a very particular form of Imperially-sanctioned Human mutant. All Navigators possess a third eye, commonly called the "Warp Eye," on their foreheads which gives them the unique ability to see into the Empyrean without losing their sanity.</description>
+        <iconPath>UI/Xenotypes/NavigatorXenoIcon</iconPath>
+        <inheritable>true</inheritable>
+        <canGenerateAsCombatant>false</canGenerateAsCombatant>
+        <factionlessGenerationWeight>0.01</factionlessGenerationWeight>
+        <genes>
+            <li>BEWH_NavigtorWarpEye</li>
+            <li>BEWH_NavigtorWarpNavigation</li>
+            <li>BEWH_NavigtorUnsettlingPresence</li>
+            <li>BEWH_NavigtorLongLived</li>
+            <li>BEWH_NavigtorNavisNobilite</li>
+            <li>Sterile</li>
+            <li>Delicate</li>
+        </genes>
+    </XenotypeDef>
+
+</Defs>

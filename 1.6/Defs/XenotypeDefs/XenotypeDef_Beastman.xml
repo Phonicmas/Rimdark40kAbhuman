@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <XenotypeDef Name="BEWH_BeastmanXenotype">
+        <defName>BEWH_Beastman</defName>
+        <label>beastman</label>
+        <description>Beastmen (Homo sapiens variatus) are bestial abhumans combining the forms of animal and human. They are valued mainly for their bloodlust.</description>
+        <iconPath>UI/Xenotypes/BeastmanXenoIcon</iconPath>
+        <inheritable>true</inheritable>
+        <canGenerateAsCombatant>false</canGenerateAsCombatant>
+        <factionlessGenerationWeight>0.2</factionlessGenerationWeight>
+        <genes>
+            <li>BEWH_BeastmanGoatHead</li>
+            <li>BEWH_BeastmanHooved</li>
+            <li>BEWH_BeastmanHorned</li>
+            <li>BEWH_BeastmanInnateBloodlust</li>
+            <li>BEWH_BeastmanRowdy</li>
+            <li>BEWH_BeastmanHerdstoneBorn</li>
+            <li>Furskin</li>
+            <li>Sterile</li>
+            <li>VoiceRoar</li>
+            <li>Body_Standard</li>
+            <li>Hair_BaldOnly</li>
+            <li>Beard_NoBeardOnly</li>
+        </genes>
+    </XenotypeDef>
+
+    <XenotypeDef ParentName="BEWH_BeastmanXenotype">
+        <defName>BEWH_Minotaur</defName>
+        <label>minotaur</label>
+        <description></description>
+        <iconPath>UI/Xenotypes/BeastmanXenoIcon</iconPath>
+        <factionlessGenerationWeight>0.05</factionlessGenerationWeight>
+        <genes>
+            <li>BEWH_MinotaurAdrenalSurgeNode</li>
+        </genes>
+    </XenotypeDef>
+
+</Defs>

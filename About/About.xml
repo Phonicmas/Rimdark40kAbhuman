@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>RimDark 40k - Abhuman</name>
+	<author>Phonicmas</author>
+	<supportedVersions>
+		<li>1.6</li>
+	</supportedVersions>
+	<packageId>Phonicmas.RimDark.Abhuman</packageId>
+	<description> RimDark 40k - Abhuman</description>
+	<modDependencies>
+		<li>
+			<packageId>Ludeon.RimWorld.Biotech</packageId>
+			<displayName>Biotech</displayName>
+		</li>
+		<li>
+			<packageId>Phonicmas.RimDark.Framework</packageId>
+			<displayName>RimDark 40k - Framework</displayName>
+			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3267464767</steamWorkshopUrl>
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>Ludeon.RimWorld</li>
+		<li>Ludeon.RimWorld.Biotech</li>
+		<li>brrainz.harmony</li>
+		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
+		<li>RedMattis.BetterPrerequisites</li>
+		<li>Phonicmas.RimDark.Framework</li>
+		<li>Phonicmas.RimDark.MankindsFinest</li>
+	</loadAfter>
+</ModMetaData>

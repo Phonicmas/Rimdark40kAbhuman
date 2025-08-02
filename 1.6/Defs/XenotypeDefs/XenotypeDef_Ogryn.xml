@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <XenotypeDef>
+        <defName>BEWH_Ogryn</defName>
+        <label>ogryn</label>
+        <description>Ogryns (Homo sapiens gigantus) are a huge and physically powerful Abhuman. They are brutally strong and completely loyal, although extremely limited intellectually, which restricts their battlefield role to simple and direct assaults.</description>
+        <iconPath>UI/Xenotypes/OgrynXenoIcon</iconPath>
+        <inheritable>true</inheritable>
+        <canGenerateAsCombatant>true</canGenerateAsCombatant>
+        <factionlessGenerationWeight>0.4</factionlessGenerationWeight>
+        <genes>
+            <li>BEWH_OgrynBruteBuild</li>
+            <li>BEWH_OgrynSlowWitted</li>
+            <li>BEWH_OgrynThickFlesh</li>
+            <li>BEWH_OgrynToddlerLogic</li>
+            <!--<li>BEWH_OgrynBoneEad</li> given by medical procedure-->
+            <li>Body_Fat</li>
+            <li>Body_Hulk</li>
+            <li>Jaw_Heavy</li>
+            <li>Brow_Heavy</li>
+            <li>AptitudePoor_Shooting</li>
+            <li>Hair_BaldOnly</li>
+            <li>Hair_ShortOnly</li>
+        </genes>
+    </XenotypeDef>
+
+</Defs>
