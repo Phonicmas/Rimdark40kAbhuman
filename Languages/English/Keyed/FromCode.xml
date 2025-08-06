@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-    <WarpTravelLetter>Warp Travel Concluded</WarpTravelLetter>
-    <WarpTravelMessage>After spending {1} travelling in the warp, navigator {0} has succesfully teleported {2} to their desired location.</WarpTravelMessage>
+    <BEWH.Abhuman.Ogryn.MissingSlowWitted>{0} does not have gene {1}</BEWH.Abhuman.Ogryn.MissingSlowWitted>
 
-    <WarpEyeCovered>Cannot use ability, warp eye is covered by {0}</WarpEyeCovered>
+    <BEWH.Abhuman.Navigator.WarpEyeCovered>Cannot use ability, warp eye is covered by {0}</BEWH.Abhuman.Navigator.WarpEyeCovered>
+    <BEWH.Abhuman.Navigator.WillBeStunned>Will stun</BEWH.Abhuman.Navigator.WillBeStunned>
+    <BEWH.Abhuman.Navigator.WillBeKilled>Will kill</BEWH.Abhuman.Navigator.WillBeKilled>
 
-    <JumpTo>Jump To</JumpTo>
+    <BEWH.Abhuman.Navigator.WarpTravelLetter>Warp Travel Concluded</BEWH.Abhuman.Navigator.WarpTravelLetter>
+    <BEWH.Abhuman.Navigator.WarpTravelMessage>After spending {1} travelling in the warp, navigator {0} has succesfully teleported {2} to their desired location.</BEWH.Abhuman.Navigator.WarpTravelMessage>
+    <BEWH.Abhuman.Navigator.TravelTimeRemaining>Time remaining between {0}~{1}</BEWH.Abhuman.Navigator.TravelTimeRemaining>
 
 </LanguageData>

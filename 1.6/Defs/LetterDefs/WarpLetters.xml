@@ -3,7 +3,7 @@
 
   <LetterDef>
     <defName>BEWH_WarpTravel</defName>
-    <letterClass>Core40k.Letter_JumpTo</letterClass>
+    <letterClass>StandardLetter</letterClass>
     <color>(148, 0, 211)</color>
     <flashColor>(138, 43, 226)</flashColor>
     <flashInterval>90</flashInterval>

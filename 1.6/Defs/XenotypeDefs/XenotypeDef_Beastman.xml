@@ -5,7 +5,7 @@
         <defName>BEWH_Beastman</defName>
         <label>beastman</label>
         <description>Beastmen (Homo sapiens variatus) are bestial abhumans combining the forms of animal and human. They are valued mainly for their bloodlust.</description>
-        <iconPath>UI/Xenotypes/BeastmanXenoIcon</iconPath>
+        <iconPath>UI/Genes/Placeholder</iconPath>
         <inheritable>true</inheritable>
         <canGenerateAsCombatant>false</canGenerateAsCombatant>
         <factionlessGenerationWeight>0.2</factionlessGenerationWeight>
@@ -28,8 +28,8 @@
     <XenotypeDef ParentName="BEWH_BeastmanXenotype">
         <defName>BEWH_Minotaur</defName>
         <label>minotaur</label>
-        <description></description>
-        <iconPath>UI/Xenotypes/BeastmanXenoIcon</iconPath>
+        <description>??</description>
+        <iconPath>UI/Genes/Placeholder</iconPath>
         <factionlessGenerationWeight>0.05</factionlessGenerationWeight>
         <genes>
             <li>BEWH_MinotaurAdrenalSurgeNode</li>

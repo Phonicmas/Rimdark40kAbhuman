@@ -7,11 +7,24 @@ namespace Abhuman40k;
 [DefOf]
 public static class Abhuman40kDefOf
 {
+    public static WorldObjectDef BEWH_NavigatorWarpTravel;
+    
+    public static MentalBreakDef Tantrum;
+    
     public static GeneDef BEWH_KinGrudgy;
+    
+    public static GeneDef BEWH_NavigtorUnsettlingPresence;
+    public static GeneDef BEWH_NavigtorHouseCastana;
+    public static GeneDef BEWH_NavigtorWarpNavigation;
+    
+    public static GeneDef BEWH_OgrynSlowWitted;
+    public static GeneDef BEWH_OgrynToddlerLogic;
+    public static GeneDef BEWH_OgrynBoneEad;
+    
+    public static GeneDef BEWH_RatlingGregarious;
+    public static GeneDef BEWH_RatlingScavengerInstinct;
 
     public static DamageDef BEWH_WarpGaze;
-
-    public static VEF.Abilities.AbilityDef BEWH_WarpEyeWarpTravel;
 
     public static LetterDef BEWH_WarpTravel;
 

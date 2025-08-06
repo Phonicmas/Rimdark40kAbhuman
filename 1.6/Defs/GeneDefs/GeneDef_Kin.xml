@@ -6,7 +6,7 @@
         <defName>BEWH_KinCloneskein</defName>
         <label>cloneskein</label>
         <description>???</description>
-        <iconPath>UI/Genes/DwarvenStature</iconPath>
+        <iconPath>UI/Genes/Placeholder</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
         <displayOrderInCategory>41</displayOrderInCategory>
@@ -17,7 +17,7 @@
         <defName>BEWH_KinGrudgy</defName>
         <label>grudgy</label>
         <description>???</description>
-        <iconPath>UI/Genes/DwarvenStature</iconPath>
+        <iconPath>UI/Genes/Placeholder</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
         <displayOrderInCategory>41</displayOrderInCategory>
@@ -28,7 +28,7 @@
         <defName>BEWH_KinTechnicalAffinity</defName>
         <label>technical affinity</label>
         <description>???</description>
-        <iconPath>UI/Genes/DwarvenStature</iconPath>
+        <iconPath>UI/Genes/Placeholder</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
         <displayOrderInCategory>41</displayOrderInCategory>
@@ -39,7 +39,7 @@
         <defName>BEWH_KinClanLoyalty</defName>
         <label>clan loyalty</label>
         <description>???</description>
-        <iconPath>UI/Genes/DwarvenStature</iconPath>
+        <iconPath>UI/Genes/Placeholder</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
         <displayOrderInCategory>41</displayOrderInCategory>
@@ -50,7 +50,7 @@
         <defName>BEWH_KinDensePhysiology</defName>
         <label>dense physiology</label>
         <description>???</description>
-        <iconPath>UI/Genes/DwarvenStature</iconPath>
+        <iconPath>UI/Genes/Placeholder</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
         <displayOrderInCategory>41</displayOrderInCategory>
@@ -61,7 +61,7 @@
         <defName>BEWH_KinCloneskeinTemplateSubdermalLayer</defName>
         <label>cloneskein template: subdermal layer</label>
         <description>???</description>
-        <iconPath>UI/Genes/DwarvenStature</iconPath>
+        <iconPath>UI/Genes/Placeholder</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
         <displayOrderInCategory>41</displayOrderInCategory>
@@ -72,7 +72,7 @@
         <defName>BEWH_KinCloneskeinTemplateTunnelEyes</defName>
         <label>cloneskein template: tunnel eyes</label>
         <description>???</description>
-        <iconPath>UI/Genes/DwarvenStature</iconPath>
+        <iconPath>UI/Genes/Placeholder</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
         <displayOrderInCategory>41</displayOrderInCategory>
@@ -83,7 +83,7 @@
         <defName>BEWH_KinCloneskeinTemplateGravbornSinews</defName>
         <label>cloneskein template: subdermal layer</label>
         <description>???</description>
-        <iconPath>UI/Genes/DwarvenStature</iconPath>
+        <iconPath>UI/Genes/Placeholder</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
         <displayOrderInCategory>41</displayOrderInCategory>
@@ -94,7 +94,7 @@
         <defName>BEWH_KinCloneskeinTemplateStoneheart</defName>
         <label>cloneskein template: stoneheart</label>
         <description>???</description>
-        <iconPath>UI/Genes/DwarvenStature</iconPath>
+        <iconPath>UI/Genes/Placeholder</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
         <displayOrderInCategory>41</displayOrderInCategory>
@@ -105,7 +105,7 @@
         <defName>BEWH_KinCloneskeinTemplateRadvein</defName>
         <label>cloneskein template: radvein</label>
         <description>???</description>
-        <iconPath>UI/Genes/DwarvenStature</iconPath>
+        <iconPath>UI/Genes/Placeholder</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
         <displayOrderInCategory>41</displayOrderInCategory>

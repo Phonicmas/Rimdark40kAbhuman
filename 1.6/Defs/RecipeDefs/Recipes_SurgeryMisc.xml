@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Biochemical Ogryn Neural Enhancment Reprogramming - B.O.N.E.R -->
+    <RecipeDef ParentName="SurgeryFlesh">
+        <defName>BEWH_OgrynBONER</defName>
+        <label>Biochemical Ogryn Neural Enhancment Reprogramming</label>
+        <description>Biochemical Ogryn Neural Enhancment Reprogramming a.k.a B.O.N.E.R is a medical procedure that aims to expand the ogryns base intellect.</description>
+        <jobString>Giving {0} a B.O.N.E.R.</jobString>
+        <workerClass>Abhuman40k.Recipe_Boner</workerClass>
+        <successfullyRemovedHediffMessage>{0} has successfully been given a B.O.N.E.R.</successfullyRemovedHediffMessage>
+        <workAmount>2200</workAmount>
+        <hideBodyPartNames>true</hideBodyPartNames>
+        <targetsBodyPart>false</targetsBodyPart>
+        <surgerySuccessChanceFactor>1</surgerySuccessChanceFactor>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>MedicineUltratech</li>
+                    </thingDefs>
+                </filter>
+                <count>3</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>MedicineUltratech</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <skillRequirements>
+            <Medicine>11</Medicine>
+        </skillRequirements>
+        <recipeUsers>
+            <li>Human</li>
+        </recipeUsers>
+    </RecipeDef>
+
+</Defs>

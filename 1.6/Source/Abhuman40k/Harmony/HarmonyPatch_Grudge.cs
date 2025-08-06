@@ -20,7 +20,7 @@ public class GrudgePatch
         {
             return;
         }
-        if (__instance.pawn.genes.HasGene(Abhuman40kDefOf.BEWH_KinGrudgy))
+        if (__instance.pawn.genes.HasActiveGene(Abhuman40kDefOf.BEWH_KinGrudgy))
         {
             if (__instance.age <= (__instance.DurationTicks * 2))
             {

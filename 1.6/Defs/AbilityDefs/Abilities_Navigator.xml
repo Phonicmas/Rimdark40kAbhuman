@@ -6,14 +6,14 @@
     <displayOrder>1000</displayOrder>
   </AbilityCategoryDef>
 
-  <!-- Gaze Kill -->
+  <!-- Expose Warp Eye -->
   <AbilityDef>
-    <defName>BEWH_WarpEyeGaze</defName>
-    <label>warp eye gaze</label>
-    <description>Anyone meeting the gaze of the third eye will be agonisingly killed.</description>
-    <iconPath>UI/Abilities/WarpEyeGaze</iconPath>
+    <defName>BEWH_ExposeWarpEye</defName>
+    <label>expose warp eye</label>
+    <description>The navigator can open their third eye and gaze upon a victim, all but the strongest will die from looking into the third eye.</description>
+    <iconPath>UI/Genes/Placeholder</iconPath>
     <cooldownTicksRange>900000</cooldownTicksRange>
-    <aiCanUse>true</aiCanUse>
+    <aiCanUse>false</aiCanUse>
     <category>BEWH_Navigator</category>
     <verbProperties>
       <verbClass>Verb_CastAbility</verbClass>
@@ -24,31 +24,37 @@
         <canTargetPawns>true</canTargetPawns>
         <canTargetBuildings>false</canTargetBuildings>
         <canTargetMechs>false</canTargetMechs>
+        <canTargetAnimals>false</canTargetAnimals>
       </targetParams>
     </verbProperties>
     <comps>
-      <li Class="Abhumans40k.CompProperties_AbilityWarpEyeGaze"/>
+      <li Class="Abhuman40k.CompProperties_AbilityWarpEyeGaze">
+        <stunnedNotKilledGeneDef>
+          <li>BEWH_NavigtorWarpEye</li>
+        </stunnedNotKilledGeneDef>
+        <stunnedNotKilledPawnKindDef />
+      </li>
     </comps>
   </AbilityDef>
 
   <!-- Warp Travel -->
-  <VFECore.Abilities.AbilityDef>
+  <VEF.Abilities.AbilityDef>
     <defName>BEWH_WarpEyeWarpTravel</defName>
     <label>warp travel</label>
     <description>The navigator is able to traverse the warp along, however as any warp travel the time it takes may wary wildly</description>
-    <iconPath>UI/Abilities/WarpEyeTravel</iconPath>
-    <abilityClass>Abhumans40k.Ability_WarpEyeWarpTravel</abilityClass>
+    <iconPath>UI/Genes/Placeholder</iconPath>
+    <abilityClass>Abhuman40k.Ability_WarpEyeWarpTravel</abilityClass>
     <cooldownTime>60000</cooldownTime>
     <castTime>625</castTime>
     <range>10.9</range>
     <rangeStatFactors>
       <PsychicSensitivity>1.5</PsychicSensitivity>
     </rangeStatFactors>
-    <radius>3.9</radius>    <!-- Pawns within this radius of the caster is teleported with him -->
+    <radius>3.9</radius>
     <targetMode>Tile</targetMode>
     <worldTargeting>true</worldTargeting>
     <needsTicking>true</needsTicking>
     <showGizmoOnWorldView>true</showGizmoOnWorldView>
-  </VFECore.Abilities.AbilityDef>
+  </VEF.Abilities.AbilityDef>
 
 </Defs>

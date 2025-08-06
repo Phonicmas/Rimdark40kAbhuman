@@ -6,10 +6,30 @@
         <defName>BEWH_OgrynBruteBuild</defName>
         <label>brute build</label>
         <description>???</description>
-        <iconPath>UI/Genes/HugeStature</iconPath>
+        <iconPath>UI/Genes/Placeholder</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
         <displayOrderInCategory>21</displayOrderInCategory>
+        <statFactors>
+            <MeleeDamageFactor>1.95</MeleeDamageFactor>
+        </statFactors>
+        <statOffsets>
+            <VEF_CosmeticBodySize_Multiplier>0.35</VEF_CosmeticBodySize_Multiplier>
+            <LeatherAmount>0.35</LeatherAmount>
+            <MeatAmount>0.35</MeatAmount>
+            <Mass>0.35</Mass>
+            <SuppressionPower MayRequire="Ludeon.RimWorld.Ideology">0.1</SuppressionPower>
+            <StaggerDurationFactor>-0.2</StaggerDurationFactor>
+            <CarryingCapacity>100</CarryingCapacity>
+        </statOffsets>
+        <customEffectDescriptions>
+            <li>Increased Size</li>
+        </customEffectDescriptions>
+        <modExtensions>
+            <li Class="Core40k.DefModExtension_GeneExtension">
+                <addedWorldCarryCapacity>500</addedWorldCarryCapacity>
+            </li>
+        </modExtensions>
     </GeneDef>
 
     <!-- Ogryn: Slow Witted -->
@@ -17,10 +37,35 @@
         <defName>BEWH_OgrynSlowWitted</defName>
         <label>slow witted</label>
         <description>???</description>
-        <iconPath>UI/Genes/HugeStature</iconPath>
+        <iconPath>UI/Genes/Placeholder</iconPath>
+        <geneClass>Core40k.Gene_DisabledBy</geneClass>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
         <displayOrderInCategory>22</displayOrderInCategory>
+        <statFactors>
+            <GlobalLearningFactor>0.3</GlobalLearningFactor>
+        </statFactors>
+        <aptitudes>
+            <Intellectual>-3</Intellectual>
+        </aptitudes>
+        <disabledWorkTags>
+            <li>Intellectual</li>
+            <li>Animals</li>
+            <li>Artistic</li>
+            <li>Crafting</li>
+            <li>Cooking</li>
+            <li>Caring</li>
+            <li>Constructing</li>
+            <li>PlantWork</li>
+            <li>Social</li>
+        </disabledWorkTags>
+        <modExtensions>
+            <li Class="Core40k.DefModExtension_GeneDisabledBy">
+                <geneDisabledBy>
+                    <li>BEWH_OgrynBoneEad</li>
+                </geneDisabledBy>
+            </li>
+        </modExtensions>
     </GeneDef>
 
     <!-- Ogryn: Thick Flesh -->
@@ -28,10 +73,17 @@
         <defName>BEWH_OgrynThickFlesh</defName>
         <label>thick flesh</label>
         <description>???</description>
-        <iconPath>UI/Genes/HugeStature</iconPath>
+        <iconPath>UI/Genes/Placeholder</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
         <displayOrderInCategory>23</displayOrderInCategory>
+        <statFactors>
+            <IncomingDamageFactor>0.85</IncomingDamageFactor>
+        </statFactors>
+        <statOffsets>
+            <ArmorRating_Blunt>0.20</ArmorRating_Blunt>
+            <ArmorRating_Sharp>0.05</ArmorRating_Sharp>
+        </statOffsets>
     </GeneDef>
 
     <!-- Ogryn: Toddler Logic -->
@@ -39,10 +91,21 @@
         <defName>BEWH_OgrynToddlerLogic</defName>
         <label>toddler logic</label>
         <description>???</description>
-        <iconPath>UI/Genes/HugeStature</iconPath>
+        <iconPath>UI/Genes/Placeholder</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
         <displayOrderInCategory>24</displayOrderInCategory>
+        <statOffsets>
+            <TradePriceImprovement>-0.85</TradePriceImprovement>
+            <DrugSellPriceImprovement>-0.85</DrugSellPriceImprovement>
+            <NegotiationAbility>-0.85</NegotiationAbility>
+        </statOffsets>
+        <socialFightChanceFactor>0.5</socialFightChanceFactor>
+        <forcedTraits>
+            <li>
+                <def>Kind</def>
+            </li>
+        </forcedTraits>
     </GeneDef>
 
     <!-- Ogryn: Bone 'Ead -->
@@ -50,11 +113,17 @@
         <defName>BEWH_OgrynBoneEad</defName>
         <label>bone 'ead</label>
         <description>???</description>
-        <iconPath>UI/Genes/HugeStature</iconPath>
+        <iconPath>UI/Genes/Placeholder</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
         <displayOrderInCategory>25</displayOrderInCategory>
+        <statFactors>
+            <GlobalLearningFactor>0.95</GlobalLearningFactor>
+        </statFactors>
+        <aptitudes>
+            <Intellectual>1</Intellectual>
+        </aptitudes>
     </GeneDef>
-    
+
 
 </Defs>

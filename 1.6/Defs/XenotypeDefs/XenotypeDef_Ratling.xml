@@ -5,7 +5,7 @@
         <defName>BEWH_Ratling</defName>
         <label>ratling</label>
         <description>A Ratling (Homo sapiens minimus) is a member of a small, loud, hungry and lecherous Abhuman species. Though less resilient than their baseliner comrades, Ratlings are naturally excellent shots, coupled with their knack for staying out of harm's way, this makes Ratlings formidable snipers who can exact a withering toll upon superior enemy forces.</description>
-        <iconPath>UI/Xenotypes/RatlingXenoIcon</iconPath>
+        <iconPath>UI/Genes/Placeholder</iconPath>
         <inheritable>true</inheritable>
         <canGenerateAsCombatant>true</canGenerateAsCombatant>
         <factionlessGenerationWeight>0.4</factionlessGenerationWeight>

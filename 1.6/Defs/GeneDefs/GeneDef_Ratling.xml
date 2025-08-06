@@ -6,10 +6,25 @@
         <defName>BEWH_RatlingNimbleBuild</defName>
         <label>nimble build</label>
         <description>???</description>
-        <iconPath>UI/Genes/SmallStature</iconPath>
+        <iconPath>UI/Genes/Placeholder</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
         <displayOrderInCategory>1</displayOrderInCategory>
+        <statFactors>
+            <IncomingDamageFactor>1.15</IncomingDamageFactor>
+            <MoveSpeed>1.15</MoveSpeed>
+        </statFactors>
+        <statOffsets>
+            <HuntingStealth>0.35</HuntingStealth>
+            <MeleeDodgeChance>3</MeleeDodgeChance>
+            <VEF_CosmeticBodySize_Multiplier>-0.25</VEF_CosmeticBodySize_Multiplier>
+            <LeatherAmount>-0.25</LeatherAmount>
+            <MeatAmount>-0.25</MeatAmount>
+            <Mass>-0.25</Mass>
+        </statOffsets>
+        <customEffectDescriptions>
+            <li>Decreased Size</li>
+        </customEffectDescriptions>
     </GeneDef>
 
     <!-- Ratling: Culinary Instinct -->
@@ -17,10 +32,17 @@
         <defName>BEWH_RatlingCulinaryInstinct</defName>
         <label>culinary instinct</label>
         <description>???</description>
-        <iconPath>UI/Genes/SmallStature</iconPath>
+        <iconPath>UI/Genes/Placeholder</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
         <displayOrderInCategory>2</displayOrderInCategory>
+        <statOffsets>
+            <CookSpeed>0.15</CookSpeed>
+            <FoodPoisonChance>-0.75</FoodPoisonChance>
+        </statOffsets>
+        <aptitudes>
+            <Cooking>3</Cooking>
+        </aptitudes>
     </GeneDef>
 
     <!-- Ratling: Indolent Disposition -->
@@ -28,10 +50,20 @@
         <defName>BEWH_RatlingIndolentDisposition</defName>
         <label>indolent disposition</label>
         <description>???</description>
-        <iconPath>UI/Genes/SmallStature</iconPath>
+        <iconPath>UI/Genes/Placeholder</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
         <displayOrderInCategory>3</displayOrderInCategory>
+        <forcedTraits>
+            <li>
+                <def>Industriousness</def>
+                <degree>-1</degree>
+            </li>
+        </forcedTraits>
+        <statOffsets>
+            <MentalBreakThreshold>-0.05</MentalBreakThreshold>
+            <RestFallRateFactor>0.15</RestFallRateFactor>
+        </statOffsets>
     </GeneDef>
 
     <!-- Ratling: Gregarious -->
@@ -39,10 +71,26 @@
         <defName>BEWH_RatlingGregarious</defName>
         <label>gregarious</label>
         <description>???</description>
-        <iconPath>UI/Genes/SmallStature</iconPath>
+        <iconPath>UI/Genes/Placeholder</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
         <displayOrderInCategory>4</displayOrderInCategory>
+        <aptitudes>
+            <Social>2</Social>
+        </aptitudes>
+        <customEffectDescriptions>
+            <li>Doubled mood buff from parties, weddings and concerts</li>
+            <li>Mood bonus or penalty depending on amount of pawns in colony</li>
+        </customEffectDescriptions>
+        <modExtensions>
+            <li Class="Abhuman40k.DefModExtension_Gregarious">
+                <thoughtEffectsDoubled>
+                    <li>AttendedParty</li>
+                    <li>AttendedWedding</li>
+                    <li>AttendedConcert</li>
+                </thoughtEffectsDoubled>
+            </li>
+        </modExtensions>
     </GeneDef>
 
     <!-- Ratling: Keen Eyed -->
@@ -50,10 +98,25 @@
         <defName>BEWH_RatlingKeenEyed</defName>
         <label>keen eyed</label>
         <description>???</description>
-        <iconPath>UI/Genes/SmallStature</iconPath>
+        <iconPath>UI/Genes/Placeholder</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
         <displayOrderInCategory>5</displayOrderInCategory>
+        <capMods>
+            <li>
+                <capacity>Sight</capacity>
+                <postFactor>1.15</postFactor>
+            </li>
+        </capMods>
+        <statFactors>
+            <AimingDelayFactor>0.90</AimingDelayFactor>
+        </statFactors>
+        <statOffsets>
+            <ShootingAccuracyFactor_Long>0.35</ShootingAccuracyFactor_Long>
+        </statOffsets>
+        <aptitudes>
+            <Shooting>4</Shooting>
+        </aptitudes>
     </GeneDef>
 
     <!-- Ratling: Scavenger Instinct -->
@@ -61,10 +124,20 @@
         <defName>BEWH_RatlingScavengerInstinct</defName>
         <label>scavenger instinct</label>
         <description>???</description>
-        <iconPath>UI/Genes/SmallStature</iconPath>
+        <iconPath>UI/Genes/Placeholder</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
         <displayOrderInCategory>6</displayOrderInCategory>
+        <statFactors>
+            <ForagedNutritionPerDay>1.65</ForagedNutritionPerDay>
+        </statFactors>
+        <statOffsets>
+            <ButcheryFleshEfficiency>0.10</ButcheryFleshEfficiency>
+            <ButcheryMechanoidEfficiency>0.20</ButcheryMechanoidEfficiency>
+        </statOffsets>
+        <customEffectDescriptions>
+            <li>Immune to tainted apparel</li>
+        </customEffectDescriptions>
     </GeneDef>
 
     <!-- Ratling: Fecund -->
@@ -72,10 +145,20 @@
         <defName>BEWH_RatlingFecund</defName>
         <label>fecund</label>
         <description>???</description>
-        <iconPath>UI/Genes/SmallStature</iconPath>
+        <iconPath>UI/Genes/Placeholder</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
         <displayOrderInCategory>7</displayOrderInCategory>
+        <lovinMTBFactor>0.4</lovinMTBFactor>
+        <statOffsets>
+            <Fertility>0.5</Fertility>
+        </statOffsets>
+        <customEffectDescriptions>
+            <li>Increases the chance of lovin'.</li>
+        </customEffectDescriptions>
+        <exclusionTags>
+            <li>Libido</li>
+        </exclusionTags>
     </GeneDef>
 
 </Defs>

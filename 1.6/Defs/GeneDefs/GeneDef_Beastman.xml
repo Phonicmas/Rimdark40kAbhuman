@@ -6,7 +6,7 @@
         <defName>BEWH_BeastmanGoatHead</defName>
         <label>goat head</label>
         <description>???</description>
-        <iconPath>UI/Genes/LargeStature</iconPath>
+        <iconPath>UI/Genes/Placeholder</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
         <displayOrderInCategory>81</displayOrderInCategory>
@@ -17,7 +17,7 @@
         <defName>BEWH_BeastmanHooved</defName>
         <label>hooved</label>
         <description>???</description>
-        <iconPath>UI/Genes/LargeStature</iconPath>
+        <iconPath>UI/Genes/Placeholder</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
         <displayOrderInCategory>81</displayOrderInCategory>
@@ -28,7 +28,7 @@
         <defName>BEWH_BeastmanHorned</defName>
         <label>horned</label>
         <description>???</description>
-        <iconPath>UI/Genes/LargeStature</iconPath>
+        <iconPath>UI/Genes/Placeholder</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
         <displayOrderInCategory>81</displayOrderInCategory>
@@ -39,7 +39,7 @@
         <defName>BEWH_BeastmanInnateBloodlust</defName>
         <label>innate bloodlust</label>
         <description>???</description>
-        <iconPath>UI/Genes/LargeStature</iconPath>
+        <iconPath>UI/Genes/Placeholder</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
         <displayOrderInCategory>81</displayOrderInCategory>
@@ -50,7 +50,7 @@
         <defName>BEWH_BeastmanRowdy</defName>
         <label>rowdy</label>
         <description>???</description>
-        <iconPath>UI/Genes/LargeStature</iconPath>
+        <iconPath>UI/Genes/Placeholder</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
         <displayOrderInCategory>81</displayOrderInCategory>
@@ -61,7 +61,7 @@
         <defName>BEWH_BeastmanHerdstoneBorn</defName>
         <label>herdstone born</label>
         <description>???</description>
-        <iconPath>UI/Genes/LargeStature</iconPath>
+        <iconPath>UI/Genes/Placeholder</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
         <displayOrderInCategory>81</displayOrderInCategory>
@@ -72,7 +72,7 @@
         <defName>BEWH_MinotaurAdrenalSurgeNode</defName>
         <label>adrenal surge node</label>
         <description>???</description>
-        <iconPath>UI/Genes/LargeStature</iconPath>
+        <iconPath>UI/Genes/Placeholder</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
         <displayOrderInCategory>81</displayOrderInCategory>

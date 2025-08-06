@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThoughtDef>
+    <defName>BEWH_RatlingGregariousThought</defName>
+    <workerClass>Abhuman40k.ThoughtWorker_Gregarious</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <requiredGenes>
+      <li>BEWH_RatlingGregarious</li>
+    </requiredGenes>
+    <stages>
+      <li>
+        <label>All alone</label>
+        <description>I'm all alone and have no one to share anything with..</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+      <li>
+        <label>Few friends</label>
+        <description>At least i have someone to share stuff with</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+      <li>
+        <label>Some friends</label>
+        <description>I have some people to share things with, but more could do!</description>
+        <baseMoodEffect>0</baseMoodEffect>
+      </li>
+      <li>
+        <label>Bunch of friends</label>
+        <description>A whole lot to share different things with, i like it!</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+      <li>
+        <label>Lots of friends</label>
+        <description>I have a lot of people to share things and have fun with, weee</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

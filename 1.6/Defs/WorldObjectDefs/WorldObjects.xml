@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <WorldObjectDef>
+    <defName>BEWH_NavigatorWarpTravel</defName>
+    <label>warp travel</label>
+    <description>A group of warp traveling people.</description>
+    <worldObjectClass>Abhuman40k.WarpTravelWorldObject</worldObjectClass>
+    <texture>NoTex</texture>
+    <useDynamicDrawer>false</useDynamicDrawer>
+  </WorldObjectDef>
+
+</Defs>

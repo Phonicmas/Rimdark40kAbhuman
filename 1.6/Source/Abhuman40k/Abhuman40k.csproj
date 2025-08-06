@@ -71,13 +71,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abhuman40kMod.cs" />
-    <Compile Include="WarpTravelGameComponent.cs" />
+    <Compile Include="Abhuman40kSecondDefOf.cs" />
+    <Compile Include="Abhuman40kUtils.cs" />
+    <Compile Include="Abilities\Ability_WarpEyeWarpTravel.cs" />
+    <Compile Include="Abilities\WarpTravelWorldObject.cs" />
+    <Compile Include="Comps\CompAbilityEffect_WarpEyeGaze.cs" />
+    <Compile Include="Comps\CompProperties_AbilityWarpEyeGaze.cs" />
+    <Compile Include="Debug\DebugActions.cs" />
+    <Compile Include="Harmony\DefModExtension_Gregarious.cs" />
+    <Compile Include="Harmony\HarmonyPatch_Gregarious.cs" />
+    <Compile Include="Harmony\HarmonyPatch_Grudge.cs" />
     <Compile Include="Abhuman40kDefOf.cs" />
-    <Compile Include="CompAbilityEffect_WarpEyeGaze.cs" />
-    <Compile Include="Ability_WarpEyeWarpTravel.cs" />
-    <Compile Include="CompProperties_AbilityWarpEyeGaze.cs" />
-    <Compile Include="HarmonyPatch_Grudge.cs" />
+    <Compile Include="Harmony\HarmonyPatch_ScavengerInstinct.cs" />
+    <Compile Include="Harmony\HarmonyPatch_ToddlerLogicMentalBreakWorker.cs" />
+    <Compile Include="Harmony\HarmonyPatch_ToddlerLogicMentalStateHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Workers\Recipe_Boner.cs" />
+    <Compile Include="Workers\ThoughtWorker_Gregarious.cs" />
+    <Compile Include="Workers\ThoughtWorker_UnsettlingPresence.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DefMods\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -5,7 +5,7 @@
         <defName>BEWH_Kin</defName>
         <label>kin</label>
         <description>Kin (Homo sapiens rotundus) are short, stocky and physically hardy Abhumans.</description>
-        <iconPath>UI/Xenotypes/SquatXenoIcon</iconPath>
+        <iconPath>UI/Genes/Placeholder</iconPath>
         <inheritable>true</inheritable>
         <canGenerateAsCombatant>true</canGenerateAsCombatant>
         <factionlessGenerationWeight>0.5</factionlessGenerationWeight>
