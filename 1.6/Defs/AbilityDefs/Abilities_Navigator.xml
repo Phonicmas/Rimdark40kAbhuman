@@ -8,7 +8,7 @@
 
   <!-- Expose Warp Eye -->
   <AbilityDef>
-    <defName>BEWH_ExposeWarpEye</defName>
+    <defName>BEWH_NavigatorExposeWarpEye</defName>
     <label>expose warp eye</label>
     <description>The navigator can open their third eye and gaze upon a victim, all but the strongest will die from looking into the third eye.</description>
     <iconPath>UI/Genes/Placeholder</iconPath>
@@ -39,7 +39,7 @@
 
   <!-- Warp Travel -->
   <VEF.Abilities.AbilityDef>
-    <defName>BEWH_WarpEyeWarpTravel</defName>
+    <defName>BEWH_NavigatorWarpTravel</defName>
     <label>warp travel</label>
     <description>The navigator is able to traverse the warp along, however as any warp travel the time it takes may wary wildly</description>
     <iconPath>UI/Genes/Placeholder</iconPath>
@@ -56,5 +56,43 @@
     <needsTicking>true</needsTicking>
     <showGizmoOnWorldView>true</showGizmoOnWorldView>
   </VEF.Abilities.AbilityDef>
+
+  <!-- Assign Bodyguard -->
+  <AbilityDef>
+    <defName>BEWH_NavigatorAssignBodyguard</defName>
+    <label>assign bodyguard</label>
+    <description>???</description>
+    <iconPath>UI/Genes/Placeholder</iconPath>
+    <cooldownTicksRange>1</cooldownTicksRange>
+    <jobDef>CastAbilityOnThingMelee</jobDef>
+    <stunTargetWhileCasting>True</stunTargetWhileCasting>
+    <showPsycastEffects>False</showPsycastEffects>
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+    <showWhenDrafted>true</showWhenDrafted>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <statBases>
+      <Ability_Duration>1000</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <range>-1</range>
+      <warmupTime>1</warmupTime>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>false</canTargetAnimals>
+        <canTargetMechs>false</canTargetMechs>
+        <canTargetBloodfeeders>true</canTargetBloodfeeders>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="Abhuman40k.CompProperties_AbilityGiveBodyguardHediff">
+        <hediffDef>BEWH_NavigtorHouseBelisariusBuff</hediffDef>
+      </li>
+    </comps>
+  </AbilityDef>
 
 </Defs>

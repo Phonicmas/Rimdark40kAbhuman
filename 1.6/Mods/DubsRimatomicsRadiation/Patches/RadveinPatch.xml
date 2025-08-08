@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <!-- ===== Dubs Rimatomics Radiation ===== -->
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/GeneDef[defName="BEWH_KinCloneskeinTemplateRadvein"]/statFactors</xpath>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/GeneDef[defName="BEWH_KinCloneskeinTemplateRadvein"]</xpath>
+            <value>
+                <statFactors />
+            </value>
+        </nomatch>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/GeneDef[defName = "BEWH_KinCloneskeinTemplateRadvein"]/statFactors</xpath>
+        <value>
+            <Radiation>0</Radiation>
+        </value>
+    </Operation>
+
+</Patch>

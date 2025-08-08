@@ -26,10 +26,10 @@
             </li>
         </capMods>
         <abilities>
-            <li>BEWH_ExposeWarpEye</li>
+            <li>BEWH_NavigatorExposeWarpEye</li>
         </abilities>
         <descriptionHyperlinks>
-            <AbilityDef>BEWH_ExposeWarpEye</AbilityDef>
+            <AbilityDef>BEWH_NavigatorExposeWarpEye</AbilityDef>
         </descriptionHyperlinks>
         <!--<renderNodeProperties>
             <li>
@@ -69,12 +69,12 @@
             <li>Gives ability: Warp travel</li>
         </customEffectDescriptions>
         <descriptionHyperlinks>
-            <VEF.Abilities.AbilityDef>BEWH_WarpEyeWarpTravel</VEF.Abilities.AbilityDef>
+            <VEF.Abilities.AbilityDef>BEWH_NavigatorWarpTravel</VEF.Abilities.AbilityDef>
         </descriptionHyperlinks>
         <modExtensions>
             <li Class="Core40k.DefModExtension_GivesVEFAbility">
                 <abilityDefs>
-                    <li>BEWH_WarpEyeWarpTravel</li>
+                    <li>BEWH_NavigatorWarpTravel</li>
                 </abilityDefs>
             </li>
         </modExtensions>
@@ -167,9 +167,13 @@
         <biostatCpx>0</biostatCpx>
         <biostatMet>0</biostatMet>
         <displayOrderInCategory>61</displayOrderInCategory>
-        <customEffectDescriptions>
-            <li></li>
-        </customEffectDescriptions>
+        <geneClass>Abhuman40k.Gene_Belisarius</geneClass>
+        <abilities>
+            <li>BEWH_NavigatorAssignBodyguard</li>
+        </abilities>
+        <descriptionHyperlinks>
+            <AbilityDef>BEWH_NavigatorAssignBodyguard</AbilityDef>
+        </descriptionHyperlinks>
     </GeneDef>
 
     <!-- Navigator: House Brobantis -->
@@ -196,6 +200,12 @@
         <biostatCpx>0</biostatCpx>
         <biostatMet>0</biostatMet>
         <displayOrderInCategory>61</displayOrderInCategory>
+        <capMods>
+            <li>
+                <capacity>Consciousness</capacity>
+                <offset>0.05</offset>
+            </li>
+        </capMods>
         <customEffectDescriptions>
             <li>Removes the opinion penalty from the Unsettling Presence gene</li>
         </customEffectDescriptions>

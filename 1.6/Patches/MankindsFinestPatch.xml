@@ -17,7 +17,7 @@
                 </li>
 
                 <li Class="PatchOperationAdd">
-                    <xpath>Defs/AbilityDef[defName="BEWH_ExposeWarpEye"]/comps/li[@Class="Abhuman40k.CompProperties_AbilityWarpEyeGaze"]/stunnedNotKilledGeneDef</xpath>
+                    <xpath>Defs/AbilityDef[defName="BEWH_NavigatorExposeWarpEye"]/comps/li[@Class="Abhuman40k.CompProperties_AbilityWarpEyeGaze"]/stunnedNotKilledGeneDef</xpath>
                     <value>
                         <li>BEWH_TempestusOcularium</li>
                         <li>BEWH_MnemosyneMindshield</li>
@@ -28,7 +28,7 @@
                 </li>
 
                 <li Class="PatchOperationAdd">
-                    <xpath>Defs/AbilityDef[defName="BEWH_ExposeWarpEye"]/comps/li[@Class="Abhuman40k.CompProperties_AbilityWarpEyeGaze"]/stunnedNotKilledPawnKindDef</xpath>
+                    <xpath>Defs/AbilityDef[defName="BEWH_NavigatorExposeWarpEye"]/comps/li[@Class="Abhuman40k.CompProperties_AbilityWarpEyeGaze"]/stunnedNotKilledPawnKindDef</xpath>
                     <value>
                         <li>BEWH_CustodesPawn</li>
                         <li>BEWH_LordCommanderPawn</li>

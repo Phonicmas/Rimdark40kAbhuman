@@ -12,9 +12,11 @@ public static class Abhuman40kDefOf
     public static MentalBreakDef Tantrum;
     
     public static GeneDef BEWH_KinGrudgy;
+    public static GeneDef BEWH_KinClanLoyalty;
     
     public static GeneDef BEWH_NavigtorUnsettlingPresence;
     public static GeneDef BEWH_NavigtorHouseCastana;
+    public static GeneDef BEWH_NavigtorHouseAchelieux;
     public static GeneDef BEWH_NavigtorWarpNavigation;
     
     public static GeneDef BEWH_OgrynSlowWitted;

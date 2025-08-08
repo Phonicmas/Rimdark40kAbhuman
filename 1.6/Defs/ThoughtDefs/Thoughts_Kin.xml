@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThoughtDef>
+        <defName>BEWH_KinClanLoyalty</defName>
+        <thoughtClass>Thought_SituationalSocial</thoughtClass>
+        <workerClass>Abhuman40k.ThoughtWorker_ClanLoyalty</workerClass>
+        <validWhileDespawned>true</validWhileDespawned>
+        <stages>
+            <li>
+                <label>Clan member</label>
+                <baseOpinionOffset>20</baseOpinionOffset>
+            </li>
+            <li>
+                <label>Clan family</label>
+                <baseOpinionOffset>40</baseOpinionOffset>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+</Defs>

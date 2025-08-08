@@ -64,6 +64,10 @@ public class Ability_WarpEyeWarpTravel : VEF.Abilities.Ability
         }
         
         var arrivalTicks = Find.TickManager.TicksGame + travelDurationRange.RandomInRange;
+        if (CasterPawn.genes.HasActiveGene(Abhuman40kDefOf.BEWH_NavigtorHouseAchelieux))
+        {
+            arrivalTicks /= 2;
+        }
         Abhuman40kUtils.MakeWarpTravelObject(travelingPawns, targets[0].Tile, arrivalTicks, false, otherThingOwner);
         foreach (var travelingPawn in travelingPawns)
         {

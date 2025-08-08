@@ -74,10 +74,14 @@
     <Compile Include="Abhuman40kSecondDefOf.cs" />
     <Compile Include="Abhuman40kUtils.cs" />
     <Compile Include="Abilities\Ability_WarpEyeWarpTravel.cs" />
+    <Compile Include="Abilities\CompAbilityEffect_GiveBodyguardHediff.cs" />
+    <Compile Include="Abilities\CompProperties_AbilityGiveBodyguardHediff.cs" />
     <Compile Include="Abilities\WarpTravelWorldObject.cs" />
     <Compile Include="Comps\CompAbilityEffect_WarpEyeGaze.cs" />
     <Compile Include="Comps\CompProperties_AbilityWarpEyeGaze.cs" />
     <Compile Include="Debug\DebugActions.cs" />
+    <Compile Include="DefMods\DefModExtension_ClanLoyalty.cs" />
+    <Compile Include="Gene\Gene_Belisarius.cs" />
     <Compile Include="Harmony\DefModExtension_Gregarious.cs" />
     <Compile Include="Harmony\HarmonyPatch_Gregarious.cs" />
     <Compile Include="Harmony\HarmonyPatch_Grudge.cs" />
@@ -87,11 +91,9 @@
     <Compile Include="Harmony\HarmonyPatch_ToddlerLogicMentalStateHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Workers\Recipe_Boner.cs" />
+    <Compile Include="Workers\ThoughtWorker_ClanLoyalty.cs" />
     <Compile Include="Workers\ThoughtWorker_Gregarious.cs" />
     <Compile Include="Workers\ThoughtWorker_UnsettlingPresence.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DefMods\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
