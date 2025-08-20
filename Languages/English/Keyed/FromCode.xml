@@ -11,4 +11,8 @@
     <BEWH.Abhuman.Navigator.WarpTravelMessage>After spending {1} travelling in the warp, navigator {0} has succesfully teleported {2} to their desired location.</BEWH.Abhuman.Navigator.WarpTravelMessage>
     <BEWH.Abhuman.Navigator.TravelTimeRemaining>Time remaining between {0}~{1}</BEWH.Abhuman.Navigator.TravelTimeRemaining>
 
+    <BEWH.Abhuman.Kin.AncestorCore>Ancestor Core</BEWH.Abhuman.Kin.AncestorCore>
+    <BEWH.Abhuman.Kin.CrucibleGrow>Grow Kin</BEWH.Abhuman.Kin.CrucibleGrow>
+    <BEWH.Abhuman.Kin.CrucibleGrowDesc>Start the process to grow a new Kin</BEWH.Abhuman.Kin.CrucibleGrowDesc>
+
 </LanguageData>

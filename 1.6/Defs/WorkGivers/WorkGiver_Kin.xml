@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <WorkGiverDef>
+        <defName>BEWH_HaulToCrucible</defName>
+        <label>carry to growth vat</label>
+        <giverClass>Abhuman40k.WorkGiver_HaulToCrucible</giverClass>
+        <workType>Hauling</workType>
+        <verb>fill</verb>
+        <gerund>filling</gerund>
+        <priorityInType>109</priorityInType>
+        <requiredCapacities>
+            <li>Manipulation</li>
+        </requiredCapacities>
+    </WorkGiverDef>
+
+</Defs>

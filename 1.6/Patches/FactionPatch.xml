@@ -6,7 +6,7 @@
         <value>
             <BEWH_Ratling>0.3</BEWH_Ratling>
             <BEWH_Ogryn>0.3</BEWH_Ogryn>
-            <BEWH_Beastman>0.05</BEWH_Beastman>
+            <!-- <BEWH_Beastman>0.05</BEWH_Beastman> -->
         </value>
     </Operation>
 
@@ -15,17 +15,17 @@
         <value>
             <BEWH_Ratling>0.15</BEWH_Ratling>
             <BEWH_Ogryn>0.15</BEWH_Ogryn>
-            <BEWH_Beastman>0.3</BEWH_Beastman>
-            <BEWH_Minotaur>0.1</BEWH_Minotaur>
+            <!-- <BEWH_Beastman>0.3</BEWH_Beastman>
+            <BEWH_Minotaur>0.1</BEWH_Minotaur> -->
         </value>
     </Operation>
 
-    <Operation Class="PatchOperationAdd">
+    <!-- <Operation Class="PatchOperationAdd">
         <xpath>Defs/FactionDef[defName="PirateWaster"]/xenotypeSet/xenotypeChances</xpath>
         <value>
             <BEWH_Beastman>0.3</BEWH_Beastman>
             <BEWH_Minotaur>0.1</BEWH_Minotaur>
         </value>
-    </Operation>
+    </Operation> -->
 
 </Patch>

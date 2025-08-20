@@ -29,6 +29,11 @@ public static class Abhuman40kDefOf
     public static DamageDef BEWH_WarpGaze;
 
     public static LetterDef BEWH_WarpTravel;
+    
+    public static ThingDef BEWH_AncestorCore;
+    public static ThingDef BEWH_KinCrucible;
+    
+    public static XenotypeDef BEWH_Kin;
 
     static Abhuman40kDefOf()
     {
