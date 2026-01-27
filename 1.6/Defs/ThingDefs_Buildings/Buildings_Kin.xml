@@ -26,42 +26,42 @@
     <size>(3, 3)</size>
     <canOverlapZones>false</canOverlapZones>
     <hasInteractionCell>true</hasInteractionCell>
-    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <interactionCellOffset>(0,0,-2)</interactionCellOffset>
     <defaultPlacingRot>North</defaultPlacingRot>
     <designationCategory>BEWH_RimDarkCategory</designationCategory>
     <uiOrder>2100</uiOrder>
-    <!--<researchPrerequisites>
-      <li>BEWH_GeneseedCreation</li>
-    </researchPrerequisites>-->
     <statBases>
-      <MaxHitPoints>1000</MaxHitPoints>
+      <MaxHitPoints>5000</MaxHitPoints>
       <WorkToBuild>9000</WorkToBuild>
       <Mass>85</Mass>
-      <Flammability>0.2</Flammability>
+      <Flammability>0</Flammability>
     </statBases>
     <costList>
-      <Steel>300</Steel>
-      <Plasteel>40</Plasteel>
-      <Gold>5</Gold>
-      <ComponentIndustrial>16</ComponentIndustrial>
-      <ComponentSpacer>8</ComponentSpacer>
+      <Steel>400</Steel>
+      <Plasteel>20</Plasteel>
+      <ComponentIndustrial>20</ComponentIndustrial>
+      <ComponentSpacer>4</ComponentSpacer>
     </costList>
     <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
     <placeWorkers>
       <li>PlaceWorker_ShowFacilitiesConnections</li>
       <li>PlaceWorker_PreventInteractionSpotOverlap</li>
       <li>Core40k.PlaceWorker_OnlyOnePerMap</li>
+      <li>Abhuman40k.PlaceWorker_OnlyAvailableWithKinInColony</li>
     </placeWorkers>
     <building>
       <workTableRoomRole>Laboratory</workTableRoomRole>
     </building>
+    <researchPrerequisites>
+      <li>MicroelectronicsBasics</li>
+    </researchPrerequisites>
     <comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <basePowerConsumption>1500</basePowerConsumption>
       </li>
       <li Class="CompProperties_Facility">
-        <maxSimultaneous>5</maxSimultaneous>
+        <maxSimultaneous>20</maxSimultaneous>
         <maxDistance>20</maxDistance>
       </li>
       <li Class="CompProperties_Flickable" />
@@ -94,8 +94,7 @@
     </statBases>
     <costList>
       <Steel>150</Steel>
-      <ComponentIndustrial>3</ComponentIndustrial>
-      <ComponentSpacer>1</ComponentSpacer>
+      <ComponentIndustrial>4</ComponentIndustrial>
     </costList>
     <altitudeLayer>Building</altitudeLayer>
     <passability>PassThroughOnly</passability>
@@ -111,9 +110,6 @@
     <inspectorTabs>
       <li>ITab_Genes</li>
     </inspectorTabs>
-    <!--<researchPrerequisites>
-      <li>GrowthVats</li>
-    </researchPrerequisites>-->
     <building>
       <ai_chillDestination>false</ai_chillDestination>
       <haulToContainerDuration>120</haulToContainerDuration>
@@ -147,11 +143,18 @@
         </filter>
       </defaultStorageSettings>
     </building>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+      <li>Abhuman40k.PlaceWorker_OnlyAvailableWithKinInColony</li>
+    </placeWorkers>
     <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <researchPrerequisites>
+      <li>GrowthVats</li>
+    </researchPrerequisites>
     <comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
-        <basePowerConsumption>200</basePowerConsumption>
+        <basePowerConsumption>300</basePowerConsumption>
         <idlePowerDraw>80</idlePowerDraw>
       </li>
       <li Class="CompProperties_Flickable"/>

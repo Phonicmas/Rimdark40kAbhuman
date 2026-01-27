@@ -6,7 +6,7 @@
         <graphicPath>Things/Pawn/Humanlike/Beastman/Heads/BeastmanHead</graphicPath>
         <randomChosen>false</randomChosen>
         <requiredGenes>
-            <li>BEWH_BeastmanGoatHead</li>
+            <li>BEWH_BeastmanGoatPhysique</li>
         </requiredGenes>
         <selectionWeight>1000</selectionWeight>
     </HeadTypeDef>

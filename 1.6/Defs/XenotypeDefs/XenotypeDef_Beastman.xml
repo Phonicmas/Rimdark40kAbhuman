@@ -10,18 +10,17 @@
         <canGenerateAsCombatant>false</canGenerateAsCombatant>
         <factionlessGenerationWeight>0.2</factionlessGenerationWeight>
         <genes>
-            <li>BEWH_BeastmanGoatHead</li>
+            <li>BEWH_BeastmanGoatPhysique</li>
             <li>BEWH_BeastmanHooved</li>
             <li>BEWH_BeastmanHorned</li>
             <li>BEWH_BeastmanInnateBloodlust</li>
             <li>BEWH_BeastmanRowdy</li>
-            <li>BEWH_BeastmanHerdstoneBorn</li>
-            <li>Furskin</li>
-            <li>Sterile</li>
+            <li>BEWH_BeastmanHerdstoneAffinity</li>
             <li>VoiceRoar</li>
-            <li>Body_Standard</li>
             <li>Hair_BaldOnly</li>
             <li>Beard_NoBeardOnly</li>
+            <li>AptitudeTerrible_Plants</li>
+            <li>AptitudeTerrible_Intellectual</li>
         </genes>
     </XenotypeDef>
 
@@ -32,7 +31,9 @@
         <iconPath>UI/Genes/Placeholder</iconPath>
         <factionlessGenerationWeight>0.05</factionlessGenerationWeight>
         <genes>
+            <li>BEWH_MinotaurHerdstoneBorn</li>
             <li>BEWH_MinotaurAdrenalSurgeNode</li>
+            <li>Body_Hulk</li>
         </genes>
     </XenotypeDef>
 

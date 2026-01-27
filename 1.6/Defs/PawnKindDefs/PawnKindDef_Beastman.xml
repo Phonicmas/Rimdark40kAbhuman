@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!-- Player Spawned Minotaur -->
+    <PawnKindDef>
+        <defName>BEWH_HerdstoneBornMinotaur</defName>
+        <label>minotaur</label>
+        <race>Human</race>
+        <combatPower>60</combatPower>
+        <initialWillRange>8~20</initialWillRange>
+        <initialResistanceRange>8~20</initialResistanceRange>
+        <ignoreIdeoApparelColors>true</ignoreIdeoApparelColors>
+        <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+        <minGenerationAge>18</minGenerationAge>
+        <maxGenerationAge>32</maxGenerationAge>
+        <fixedGender>Male</fixedGender>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <backstoryFiltersOverride>
+            <li>
+                <categories>
+                    <li>BEWH_Beastman</li>
+                </categories>
+            </li>
+        </backstoryFiltersOverride>
+        <skills>
+            <li>
+                <skill>Intellectual</skill>
+                <range>0~3</range>
+            </li>
+            <li>
+                <skill>Medicine</skill>
+                <range>0~3</range>
+            </li>
+            <li>
+                <skill>Social</skill>
+                <range>0~3</range>
+            </li>
+            <li>
+                <skill>Artistic</skill>
+                <range>0~3</range>
+            </li>
+            <li>
+                <skill>Crafting</skill>
+                <range>0~3</range>
+            </li>
+            <li>
+                <skill>Cooking</skill>
+                <range>0~3</range>
+            </li>
+            <li>
+                <skill>Construction</skill>
+                <range>0~3</range>
+            </li>
+            <li>
+                <skill>Melee</skill>
+                <range>7~10</range>
+            </li>
+        </skills>
+        <xenotypeSet>
+            <xenotypeChances>
+                <BEWH_Minotaur>1</BEWH_Minotaur>
+            </xenotypeChances>
+        </xenotypeSet>
+    </PawnKindDef>
+
+</Defs>

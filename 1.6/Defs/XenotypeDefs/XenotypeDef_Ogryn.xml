@@ -10,7 +10,7 @@
         <canGenerateAsCombatant>true</canGenerateAsCombatant>
         <factionlessGenerationWeight>0.4</factionlessGenerationWeight>
         <genes>
-            <li>BEWH_OgrynBruteBuild</li>
+            <li>BEWH_OgrynBrutePhysique</li>
             <li>BEWH_OgrynSlowWitted</li>
             <li>BEWH_OgrynThickFlesh</li>
             <li>BEWH_OgrynToddlerLogic</li>

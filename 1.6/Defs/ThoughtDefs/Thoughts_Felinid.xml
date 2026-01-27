@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThoughtDef>
+    <defName>BEWH_FelinidNuzzle</defName>
+    <thoughtClass>Abhuman40k.Thought_MemoryFelinid</thoughtClass>
+    <durationDays>1</durationDays>
+    <stackLimit>3</stackLimit>
+    <stackedEffectMultiplier>0.5</stackedEffectMultiplier>
+    <stagesStack>true</stagesStack>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>nuzzled</label>
+        <description>A cute felinid nuzzled me.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+      <li>
+        <label>nuzzled someone</label>
+        <description>I nuzzled someone, it was nice and relaxing</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>BEWH_FelinidCutePresence</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>Abhuman40k.ThoughtWorker_FelinidCutePresence</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>Cute UwU</label>
+        <baseOpinionOffset>15</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

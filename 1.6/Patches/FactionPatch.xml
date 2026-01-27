@@ -6,6 +6,7 @@
         <value>
             <BEWH_Ratling>0.3</BEWH_Ratling>
             <BEWH_Ogryn>0.3</BEWH_Ogryn>
+            <BEWH_Felinid>0.1</BEWH_Felinid>
             <!-- <BEWH_Beastman>0.05</BEWH_Beastman> -->
         </value>
     </Operation>
@@ -15,6 +16,7 @@
         <value>
             <BEWH_Ratling>0.15</BEWH_Ratling>
             <BEWH_Ogryn>0.15</BEWH_Ogryn>
+            <BEWH_Felinid>0.05</BEWH_Felinid>
             <!-- <BEWH_Beastman>0.3</BEWH_Beastman>
             <BEWH_Minotaur>0.1</BEWH_Minotaur> -->
         </value>

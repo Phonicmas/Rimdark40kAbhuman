@@ -2,15 +2,16 @@
 <Defs>
 
     <!-- Navigator: Warp Eye -->
-    <GeneDef>
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_NavigtorWarpEye</defName>
         <label>warp eye</label>
         <description>???</description>
-        <iconPath>UI/Genes/Placeholder</iconPath>
+        <iconPath>UI/Genes/Navigator/BEWH_ThirdEye</iconPath>
         <geneClass>Core40k.Gene_GiveVEFAbility</geneClass>
-        <biostatCpx>0</biostatCpx>
-        <biostatMet>0</biostatMet>
+        <biostatCpx>4</biostatCpx>
+        <biostatMet>-3</biostatMet>
         <displayOrderInCategory>61</displayOrderInCategory>
+
         <exclusionTags>
             <li>Psyker</li>
             <li>Pariah</li>
@@ -31,7 +32,7 @@
         <descriptionHyperlinks>
             <AbilityDef>BEWH_NavigatorExposeWarpEye</AbilityDef>
         </descriptionHyperlinks>
-        <!--<renderNodeProperties>
+        <renderNodeProperties>
             <li>
                 <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
                 <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
@@ -48,19 +49,20 @@
                     </defaultData>
                 </drawData>
             </li>
-        </renderNodeProperties>-->
+        </renderNodeProperties>
     </GeneDef>
 
     <!-- Navigator: Warp Navigation -->
-    <GeneDef>
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_NavigtorWarpNavigation</defName>
         <label>warp navigation</label>
         <description>???</description>
-        <iconPath>UI/Genes/Placeholder</iconPath>
+        <iconPath>UI/Genes/Navigator/BEWH_WarpNavigation</iconPath>
         <geneClass>Core40k.Gene_GiveVEFAbility</geneClass>
-        <biostatCpx>0</biostatCpx>
-        <biostatMet>0</biostatMet>
-        <displayOrderInCategory>61</displayOrderInCategory>
+        <biostatCpx>4</biostatCpx>
+        <biostatMet>-2</biostatMet>
+        <displayOrderInCategory>62</displayOrderInCategory>
+
         <statOffsets>
             <PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">1.33</PilotingAbility>
             <CaravanBonusSpeedFactor>0.1</CaravanBonusSpeedFactor>
@@ -81,28 +83,30 @@
     </GeneDef>
 
     <!-- Navigator: Unsettling Presence -->
-    <GeneDef>
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_NavigtorUnsettlingPresence</defName>
         <label>unsettling presence</label>
         <description>???</description>
         <iconPath>UI/Genes/Placeholder</iconPath>
-        <biostatCpx>0</biostatCpx>
-        <biostatMet>0</biostatMet>
-        <displayOrderInCategory>61</displayOrderInCategory>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>1</biostatMet>
+        <displayOrderInCategory>63</displayOrderInCategory>
+
         <customEffectDescriptions>
             <li>Other pawns have decreased opinion of this pawn</li>
         </customEffectDescriptions>
     </GeneDef>
 
     <!-- Navigator: Long Lived -->
-    <GeneDef>
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_NavigtorLongLived</defName>
         <label>long lived</label>
         <description>???</description>
-        <iconPath>UI/Genes/Placeholder</iconPath>
-        <biostatCpx>0</biostatCpx>
-        <biostatMet>0</biostatMet>
-        <displayOrderInCategory>61</displayOrderInCategory>
+        <iconPath>UI/Genes/Navigator/BEWH_Long-lived</iconPath>
+        <biostatCpx>3</biostatCpx>
+        <biostatMet>-1</biostatMet>
+        <displayOrderInCategory>64</displayOrderInCategory>
+
         <biologicalAgeTickFactorFromAgeCurve>
             <points>
                 <li>(18, 0.2)</li>
@@ -111,15 +115,16 @@
     </GeneDef>
 
     <!-- Navigator: Navis Nobilite -->
-    <GeneDef>
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_NavigtorNavisNobilite</defName>
         <label>navis nobilite</label>
         <description>???</description>
-        <iconPath>UI/Genes/Placeholder</iconPath>
+        <iconPath>UI/Genes/Navigator/BEWH_NavisNobilite</iconPath>
         <geneClass>Core40k.Gene_AddRandomGeneAndOrTraitByWeight</geneClass>
-        <biostatCpx>0</biostatCpx>
-        <biostatMet>0</biostatMet>
-        <displayOrderInCategory>61</displayOrderInCategory>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>-1</biostatMet>
+        <displayOrderInCategory>65</displayOrderInCategory>
+
         <modExtensions>
             <li Class="Core40k.DefModExtension_AddRandomGeneByWeight">
                 <possibleGenesToGive>
@@ -140,33 +145,37 @@
                         <value>25</value>
                     </li>
                 </possibleGenesToGive>
+                <addAsXenogene>false</addAsXenogene>
+                <skipIfAnyAlreadyExistsOnPawn>false</skipIfAnyAlreadyExistsOnPawn>
             </li>
         </modExtensions>
     </GeneDef>
 
     <!-- Navigator: House Achelieux -->
-    <GeneDef>
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_NavigtorHouseAchelieux</defName>
         <label>house achelieux</label>
         <description>???</description>
-        <iconPath>UI/Genes/Placeholder</iconPath>
-        <biostatCpx>0</biostatCpx>
+        <iconPath>UI/Genes/Navigator/BEWH_HouseAchelieux</iconPath>
+        <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
-        <displayOrderInCategory>61</displayOrderInCategory>
+        <canGenerateInGeneSet>false</canGenerateInGeneSet>
+        <displayOrderInCategory>66</displayOrderInCategory>
         <customEffectDescriptions>
             <li>Decreases overall time spent when using the "Warp Travel" ability</li>
         </customEffectDescriptions>
     </GeneDef>
 
     <!-- Navigator: House Belisarius -->
-    <GeneDef>
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_NavigtorHouseBelisarius</defName>
         <label>house belisarius</label>
         <description>???</description>
-        <iconPath>UI/Genes/Placeholder</iconPath>
-        <biostatCpx>0</biostatCpx>
+        <iconPath>UI/Genes/Navigator/BEWH_HouseBelisarius</iconPath>
+        <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
-        <displayOrderInCategory>61</displayOrderInCategory>
+        <canGenerateInGeneSet>false</canGenerateInGeneSet>
+        <displayOrderInCategory>67</displayOrderInCategory>
         <geneClass>Abhuman40k.Gene_Belisarius</geneClass>
         <abilities>
             <li>BEWH_NavigatorAssignBodyguard</li>
@@ -177,14 +186,15 @@
     </GeneDef>
 
     <!-- Navigator: House Brobantis -->
-    <GeneDef>
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_NavigtorHouseBrobantis</defName>
         <label>house brobantis</label>
         <description>???</description>
-        <iconPath>UI/Genes/Placeholder</iconPath>
-        <biostatCpx>0</biostatCpx>
+        <iconPath>UI/Genes/Navigator/BEWH_HouseBrobantis</iconPath>
+        <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
-        <displayOrderInCategory>61</displayOrderInCategory>
+        <canGenerateInGeneSet>false</canGenerateInGeneSet>
+        <displayOrderInCategory>68</displayOrderInCategory>
         <statOffsets>
             <PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">0.33</PilotingAbility>
             <CaravanBonusSpeedFactor>0.5</CaravanBonusSpeedFactor>
@@ -192,14 +202,15 @@
     </GeneDef>
 
     <!-- Navigator: House Castana -->
-    <GeneDef>
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_NavigtorHouseCastana</defName>
         <label>house castana</label>
         <description>???</description>
-        <iconPath>UI/Genes/Placeholder</iconPath>
-        <biostatCpx>0</biostatCpx>
+        <iconPath>UI/Genes/Navigator/BEWH_HouseCastana</iconPath>
+        <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
-        <displayOrderInCategory>61</displayOrderInCategory>
+        <canGenerateInGeneSet>false</canGenerateInGeneSet>
+        <displayOrderInCategory>69</displayOrderInCategory>
         <capMods>
             <li>
                 <capacity>Consciousness</capacity>

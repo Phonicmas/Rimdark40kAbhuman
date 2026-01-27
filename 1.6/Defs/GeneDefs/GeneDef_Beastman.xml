@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!-- Beastman: Goat Physique -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_BeastmanGoatPhysique</defName>
+        <label>goat physique</label>
+        <description>???</description>
+        <iconPath>UI/Genes/Placeholder</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>81</displayOrderInCategory>
+
+        <missingGeneRomanceChanceFactor>0.2</missingGeneRomanceChanceFactor>
+        <forcedHeadTypes>
+            <li>BEWH_BeastmanHead</li>
+        </forcedHeadTypes>
+        <beardTagFilter>
+            <whitelist>true</whitelist>
+            <tags>
+                <li>BeardLong</li>
+                <li>Furskin</li>
+            </tags>
+        </beardTagFilter>
+        <exclusionTags>
+            <li>HairStyle</li>
+            <li>Fur</li>
+            <li>BeardStyle</li>
+        </exclusionTags>
+        <statOffsets>
+            <ComfyTemperatureMin>-5</ComfyTemperatureMin>
+        </statOffsets>
+        <fur>Furskin</fur>
+        <skinIsHairColor>true</skinIsHairColor>
+        <tattoosVisible>false</tattoosVisible>
+        <renderNodeProperties>
+            <li>
+                <debugLabel>Fur</debugLabel>
+                <nodeClass>PawnRenderNode_Fur</nodeClass>
+                <workerClass>PawnRenderNodeWorker_Fur</workerClass>
+                <baseLayer>5</baseLayer>
+                <rotDrawMode>Fresh, Rotting</rotDrawMode>
+                <colorType>Hair</colorType>
+                <parentTagDef>Body</parentTagDef>
+            </li>
+        </renderNodeProperties>
+        <exclusionTags>
+            <li>Physique</li>
+        </exclusionTags>
+    </GeneDef>
+
+    <!-- Beastman: Hooved -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_BeastmanHooved</defName>
+        <label>hooved</label>
+        <description>???</description>
+        <iconPath>UI/Genes/Beastmen/BEWH_Hooved</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>1</biostatMet>
+        <displayOrderInCategory>82</displayOrderInCategory>
+
+        <statOffsets>
+            <MoveSpeed>0.3</MoveSpeed>
+        </statOffsets>
+        <conditionalStatAffecters>
+            <li Class="Abhuman40k.ConditionalStatAffecter_FeetUncovered">
+                <statOffsets>
+                    <MoveSpeed>0.5</MoveSpeed>
+                </statOffsets>
+            </li>
+            <li Class="Abhuman40k.ConditionalStatAffecter_FeetCovered">
+                <statOffsets>
+                    <MoveSpeed>-0.5</MoveSpeed>
+                </statOffsets>
+            </li>
+        </conditionalStatAffecters>
+    </GeneDef>
+
+    <!-- Beastman: Horned -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_BeastmanHorned</defName>
+        <label>horned</label>
+        <description>???</description>
+        <iconPath>UI/Genes/Beastmen/BEWH_Horned</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>83</displayOrderInCategory>
+
+        <exclusionTags>
+            <li>Horn</li>
+            <li>Horns</li>
+        </exclusionTags>
+        <renderNodeProperties>
+            <li>
+                <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+                <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+                <texPath>Things/Pawn/Humanlike/Beastman/HeadAttachments/Horns/BeastmanHorns</texPath>
+                <color>
+                    <r>0.5</r>
+                    <g>0.5</g>
+                    <b>0.5</b>
+                    <a>1</a>
+                </color>
+                <parentTagDef>Head</parentTagDef>
+                <drawData>
+                    <defaultData>
+                        <layer>80</layer>
+                    </defaultData>
+                    <dataNorth>
+                        <layer>10</layer>
+                        <offset>(0, -0.1, 0)</offset>
+                    </dataNorth>
+                </drawData>
+            </li>
+        </renderNodeProperties>
+        <customEffectDescriptions>
+            <li>Gives a horn attack</li>
+        </customEffectDescriptions>
+        <modExtensions>
+            <li Class="VEF.Genes.GeneExtension">
+                <hediffsToBodyParts>
+                    <li>
+                        <hediff>BEWH_BeastmanHornAttack</hediff>
+                        <bodyparts>
+                            <li>Head</li>
+                        </bodyparts>
+                    </li>
+                </hediffsToBodyParts>
+            </li>
+        </modExtensions>
+    </GeneDef>
+
+    <!-- Beastman: Innate Bloodlust -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_BeastmanInnateBloodlust</defName>
+        <label>innate bloodlust</label>
+        <description>???</description>
+        <iconPath>UI/Genes/Beastmen/BEWH_InnateBloodlust</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>-1</biostatMet>
+        <displayOrderInCategory>84</displayOrderInCategory>
+
+        <aggroMentalBreakSelectionChanceFactor>2</aggroMentalBreakSelectionChanceFactor>
+        <enablesNeeds>
+            <li>KillThirst</li>
+        </enablesNeeds>
+        <statOffsets>
+            <MeleeDamageFactor>0.15</MeleeDamageFactor>
+        </statOffsets>
+        <aptitudes>
+            <Melee>4</Melee>
+            <Shooting>-2</Shooting>
+        </aptitudes>
+        <suppressedTraits>
+            <li>
+                <def>Wimp</def>
+            </li>
+            <li>
+                <def>Kind</def>
+            </li>
+        </suppressedTraits>
+        <exclusionTags>
+            <li>KillThirst</li>
+        </exclusionTags>
+    </GeneDef>
+
+    <!-- Beastman: Rowdy -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_BeastmanRowdy</defName>
+        <label>rowdy</label>
+        <description>???</description>
+        <iconPath>UI/Genes/Beastmen/BEWH_Rowdy</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>-1</biostatMet>
+        <displayOrderInCategory>85</displayOrderInCategory>
+
+        <socialFightChanceFactor>1.6</socialFightChanceFactor>
+        <prisonBreakMTBFactor>0.4</prisonBreakMTBFactor>
+    </GeneDef>
+
+    <!-- Minotaur: Herdstone Affinity -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_BeastmanHerdstoneAffinity</defName>
+        <label>herdstone affinity</label>
+        <description>???</description>
+        <iconPath>UI/Genes/Placeholder</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>1</biostatMet>
+        <displayOrderInCategory>86</displayOrderInCategory>
+
+        <biologicalAgeTickFactorFromAgeCurve>
+            <points>
+                <li>(18, 0.6)</li>
+            </points>
+        </biologicalAgeTickFactorFromAgeCurve>
+
+        <dontMindRawFood>true</dontMindRawFood>
+
+        <conditionalStatAffecters>
+            <li Class="Abhuman40k.ConditionalStatAffecter_HerdstonePresent">
+                <statOffsets>
+                    <MoveSpeed>0.1</MoveSpeed>
+                    <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
+                    <ArmorRating_Sharp>0.05</ArmorRating_Sharp>
+                    <ArmorRating_Heat>0.05</ArmorRating_Heat>
+                    <MeleeDamageFactor>0.1</MeleeDamageFactor>
+
+                    <GlobalLearningFactor>0.05</GlobalLearningFactor>
+                </statOffsets>
+            </li>
+        </conditionalStatAffecters>
+    </GeneDef>
+
+    <!-- Minotaur: Herdstone Born -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_MinotaurHerdstoneBorn</defName>
+        <label>herdstone born</label>
+        <description>???</description>
+        <iconPath>UI/Genes/Placeholder</iconPath>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <displayOrderInCategory>87</displayOrderInCategory>
+        <missingGeneRomanceChanceFactor>0</missingGeneRomanceChanceFactor>
+        <statFactors>
+            <Fertility>0</Fertility>
+        </statFactors>
+        <conditionalStatAffecters>
+            <li Class="Abhuman40k.ConditionalStatAffecter_HerdstonePresent">
+                <statOffsets>
+                    <MoveSpeed>0.05</MoveSpeed>
+                    <ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+                    <ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+                    <ArmorRating_Heat>0.1</ArmorRating_Heat>
+                    <MeleeDamageFactor>0.05</MeleeDamageFactor>
+                </statOffsets>
+            </li>
+        </conditionalStatAffecters>
+    </GeneDef>
+
+    <!-- Minotaur: Adrenal Surge Node -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_MinotaurAdrenalSurgeNode</defName>
+        <label>adrenal surge node</label>
+        <description>???</description>
+        <iconPath>UI/Genes/Placeholder</iconPath>
+        <biostatCpx>2</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <canGenerateInGeneSet>false</canGenerateInGeneSet>
+        <displayOrderInCategory>88</displayOrderInCategory>
+
+        <socialFightChanceFactor>2</socialFightChanceFactor>
+        <prisonBreakMTBFactor>0.5</prisonBreakMTBFactor>
+        <aggroMentalBreakSelectionChanceFactor>2</aggroMentalBreakSelectionChanceFactor>
+        <statOffsets>
+            <MeleeDamageFactor>0.2</MeleeDamageFactor>
+
+            <VEF_BodySize_Offset>0.4</VEF_BodySize_Offset>
+
+            <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
+            <ArmorRating_Sharp>0.15</ArmorRating_Sharp>
+            <ArmorRating_Heat>0.20</ArmorRating_Heat>
+            <CarryingCapacity>80</CarryingCapacity>
+        </statOffsets>
+        <bodyType>Hulk</bodyType>
+        <modExtensions>
+            <li Class="Core40k.DefModExtension_GeneExtension">
+                <addedWorldCarryCapacity>80</addedWorldCarryCapacity>
+            </li>
+        </modExtensions>
+    </GeneDef>
+
+</Defs>

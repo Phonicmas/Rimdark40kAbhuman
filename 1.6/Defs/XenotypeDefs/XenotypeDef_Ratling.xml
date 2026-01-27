@@ -10,7 +10,7 @@
         <canGenerateAsCombatant>true</canGenerateAsCombatant>
         <factionlessGenerationWeight>0.4</factionlessGenerationWeight>
         <genes>
-            <li>BEWH_RatlingNimbleBuild</li>
+            <li>BEWH_RatlingNimblePhysique</li>
             <li>BEWH_RatlingCulinaryInstinct</li>
             <li>BEWH_RatlingIndolentDisposition</li>
             <li>BEWH_RatlingGregarious</li>

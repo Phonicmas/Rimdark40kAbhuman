@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <BackstoryDef>
+    <defName>BEWH_BeastmanChild</defName>
+    <title>herdstone born</title>
+    <titleShort>herdstone born</titleShort>
+    <description>Child of the herdstone, [PAWN_nameDef] was somehow concieved through the warp and had to get by in an unforgivable place.</description>
+    <slot>Childhood</slot>
+    <spawnCategories>
+      <li>BEWH_Beastman</li>
+    </spawnCategories>
+    <skillGains>
+      <Melee>2</Melee>
+      <Animals>1</Animals>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Violent</li>
+      <li>Animals</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>BEWH_BeastmanAdult</defName>
+    <title>herdstone beastman</title>
+    <titleShort>herdstone beastman</titleShort>
+    <description>[PAWN_nameDef] mature quickly in the warp, learning how to slaughter and nothing else.</description>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>BEWH_Beastman</li>
+    </spawnCategories>
+    <skillGains>
+      <Melee>2</Melee>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+</Defs>

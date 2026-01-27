@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThinkTreeDef>
+        <defName>BEWH_FelinidNuzzle</defName>
+        <insertTag>Humanlike_PostMentalState</insertTag>
+        <insertPriority>100</insertPriority>
+        <thinkRoot Class="Abhuman40k.JobGiver_FelinidNuzzle" />
+    </ThinkTreeDef>
+
+</Defs>

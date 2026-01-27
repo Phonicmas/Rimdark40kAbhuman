@@ -7,12 +7,26 @@ namespace Abhuman40k;
 [DefOf]
 public static class Abhuman40kDefOf
 {
+    public static BodyPartGroupDef Feet;
+    
+    public static JobDef BEWH_CarryKinToAncestorCore;
+    public static JobDef BEWH_FelinidNuzzle;
+    public static JobDef BEWH_DoMinotaurRitual;
+    
     public static WorldObjectDef BEWH_NavigatorWarpTravel;
     
     public static MentalBreakDef Tantrum;
     
+    public static InteractionDef BEWH_Nuzzle;
+    
+    public static GeneDef BEWH_FelinidCatlikeMindset;
+    
+    public static GeneDef BEWH_BeastmanHerdstoneAffinity;
+    public static GeneDef BEWH_MinotaurAdrenalSurgeNode;
+    
     public static GeneDef BEWH_KinGrudgy;
     public static GeneDef BEWH_KinClanLoyalty;
+    public static GeneDef BEWH_KinCloneskein;
     
     public static GeneDef BEWH_NavigtorUnsettlingPresence;
     public static GeneDef BEWH_NavigtorHouseCastana;
@@ -33,7 +47,11 @@ public static class Abhuman40kDefOf
     public static ThingDef BEWH_AncestorCore;
     public static ThingDef BEWH_KinCrucible;
     
+    public static ThingDef BEWH_HerdstonePlayer;
+    
     public static XenotypeDef BEWH_Kin;
+    
+    public static PawnKindDef BEWH_HerdstoneBornMinotaur;
 
     static Abhuman40kDefOf()
     {

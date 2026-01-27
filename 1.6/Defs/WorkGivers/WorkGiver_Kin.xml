@@ -14,4 +14,17 @@
         </requiredCapacities>
     </WorkGiverDef>
 
+    <WorkGiverDef>
+        <defName>BEWH_HaulCorpseToAncestorCore</defName>
+        <label>upload kin to Ancestor Core</label>
+        <giverClass>Abhuman40k.WorkGiver_HaulCorpseToAncestorCore</giverClass>
+        <workType>Hauling</workType>
+        <verb>upload to</verb>
+        <gerund>uploading to</gerund>
+        <priorityInType>110</priorityInType>
+        <requiredCapacities>
+            <li>Manipulation</li>
+        </requiredCapacities>
+    </WorkGiverDef>
+
 </Defs>

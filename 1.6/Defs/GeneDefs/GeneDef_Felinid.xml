@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!-- Felinid: Clawed -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_FelinidClawed</defName>
+        <label>clawed</label>
+        <description>???</description>
+        <iconPath>UI/Genes/Felinid/BEWH_Clawed</iconPath>
+        <biostatCpx>2</biostatCpx>
+        <biostatMet>-1</biostatMet>
+        <displayOrderInCategory>81</displayOrderInCategory>
+
+        <statOffsets>
+            <MeleeDamageFactor>0.1</MeleeDamageFactor>
+        </statOffsets>
+        <modExtensions>
+            <li Class="VEF.Genes.GeneExtension">
+                <hediffsToBodyParts>
+                    <li>
+                        <hediff>BEWH_FelinidClawAttack</hediff>
+                        <bodyparts>
+                            <li>Hand</li>
+                            <li>Hand</li>
+                        </bodyparts>
+                    </li>
+                </hediffsToBodyParts>
+            </li>
+        </modExtensions>
+    </GeneDef>
+
+    <!-- Felinid: Feline Agility -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_FelinidFelineAgility</defName>
+        <label>feline agility</label>
+        <description>???</description>
+        <iconPath>UI/Genes/Felinid/BEWH_FelineAgility</iconPath>
+        <biostatCpx>2</biostatCpx>
+        <biostatMet>-2</biostatMet>
+        <displayOrderInCategory>82</displayOrderInCategory>
+
+        <statOffsets>
+            <MeleeDodgeChance>2</MeleeDodgeChance>
+            <MoveSpeed>0.2</MoveSpeed>
+        </statOffsets>
+        <conditionalStatAffecters>
+            <li Class="ConditionalStatAffecter_Unclothed">
+                <statOffsets>
+                    <MeleeDodgeChance>2</MeleeDodgeChance>
+                    <MoveSpeed>0.2</MoveSpeed>
+                </statOffsets>
+            </li>
+        </conditionalStatAffecters>
+    </GeneDef>
+
+    <!-- Felinid: Catlike Mindset -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_FelinidCatlikeMindset</defName>
+        <label>catlike mindset</label>
+        <description>???</description>
+        <iconPath>UI/Genes/Felinid/BEWH_CatlikeMindset</iconPath>
+        <geneClass>Abhuman40k.Gene_CatlikeMindset</geneClass>
+        <biostatCpx>5</biostatCpx>
+        <biostatMet>-1</biostatMet>
+        <displayOrderInCategory>83</displayOrderInCategory>
+
+        <customEffectDescriptions>
+            <li>Can nuzzle with other colonists.</li>
+            <li>Other pawns have increased opinion of this pawn</li>
+        </customEffectDescriptions>
+    </GeneDef>
+
+</Defs>

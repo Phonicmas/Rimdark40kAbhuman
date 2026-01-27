@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <JobDef>
+        <defName>BEWH_CarryKinToAncestorCore</defName>
+        <driverClass>Abhuman40k.JobDriver_CarryKinToAncestorCore</driverClass>
+        <reportString>carrying TargetA to TargetB.</reportString>
+        <suspendable>false</suspendable>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    </JobDef>
+
+    <JobDef>
+        <defName>BEWH_FelinidNuzzle</defName>
+        <driverClass>Abhuman40k.JobDriver_FelinidNuzzle</driverClass>
+        <reportString>nuzzling with TargetA.</reportString>
+        <suspendable>false</suspendable>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    </JobDef>
+
+    <JobDef>
+        <defName>BEWH_DoMinotaurRitual</defName>
+        <driverClass>Abhuman40k.JobDriver_SummonMinotaur</driverClass>
+        <reportString>summoning minotaur.</reportString>
+        <suspendable>false</suspendable>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    </JobDef>
+
+</Defs>

@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-    <!-- Ratling: Nimble Build -->
-    <GeneDef>
-        <defName>BEWH_RatlingNimbleBuild</defName>
-        <label>nimble build</label>
+    <!-- Ratling: Nimble Physique -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_RatlingNimblePhysique</defName>
+        <label>nimble Physique</label>
         <description>???</description>
-        <iconPath>UI/Genes/Placeholder</iconPath>
-        <biostatCpx>1</biostatCpx>
-        <biostatMet>0</biostatMet>
+        <iconPath>UI/Genes/Ratling/BEWH_NimblePhysique</iconPath>
+        <biostatCpx>3</biostatCpx>
+        <biostatMet>-1</biostatMet>
         <displayOrderInCategory>1</displayOrderInCategory>
+
         <statFactors>
             <IncomingDamageFactor>1.15</IncomingDamageFactor>
             <MoveSpeed>1.15</MoveSpeed>
@@ -17,25 +18,26 @@
         <statOffsets>
             <HuntingStealth>0.35</HuntingStealth>
             <MeleeDodgeChance>3</MeleeDodgeChance>
-            <VEF_CosmeticBodySize_Multiplier>-0.25</VEF_CosmeticBodySize_Multiplier>
-            <LeatherAmount>-0.25</LeatherAmount>
-            <MeatAmount>-0.25</MeatAmount>
-            <Mass>-0.25</Mass>
+            <VEF_BodySize_Offset>-0.25</VEF_BodySize_Offset>
         </statOffsets>
         <customEffectDescriptions>
             <li>Decreased Size</li>
         </customEffectDescriptions>
+        <exclusionTags>
+            <li>Physique</li>
+        </exclusionTags>
     </GeneDef>
 
     <!-- Ratling: Culinary Instinct -->
-    <GeneDef>
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_RatlingCulinaryInstinct</defName>
         <label>culinary instinct</label>
         <description>???</description>
-        <iconPath>UI/Genes/Placeholder</iconPath>
+        <iconPath>UI/Genes/Ratling/BEWH_CulinaryInstincts</iconPath>
         <biostatCpx>1</biostatCpx>
-        <biostatMet>0</biostatMet>
+        <biostatMet>-1</biostatMet>
         <displayOrderInCategory>2</displayOrderInCategory>
+
         <statOffsets>
             <CookSpeed>0.15</CookSpeed>
             <FoodPoisonChance>-0.75</FoodPoisonChance>
@@ -46,14 +48,15 @@
     </GeneDef>
 
     <!-- Ratling: Indolent Disposition -->
-    <GeneDef>
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_RatlingIndolentDisposition</defName>
         <label>indolent disposition</label>
         <description>???</description>
-        <iconPath>UI/Genes/Placeholder</iconPath>
+        <iconPath>UI/Genes/Ratling/BEWH_IndolentDisposition</iconPath>
         <biostatCpx>1</biostatCpx>
-        <biostatMet>0</biostatMet>
+        <biostatMet>1</biostatMet>
         <displayOrderInCategory>3</displayOrderInCategory>
+
         <forcedTraits>
             <li>
                 <def>Industriousness</def>
@@ -67,14 +70,15 @@
     </GeneDef>
 
     <!-- Ratling: Gregarious -->
-    <GeneDef>
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_RatlingGregarious</defName>
         <label>gregarious</label>
         <description>???</description>
-        <iconPath>UI/Genes/Placeholder</iconPath>
-        <biostatCpx>1</biostatCpx>
-        <biostatMet>0</biostatMet>
+        <iconPath>UI/Genes/Ratling/BEWH_Gregarious</iconPath>
+        <biostatCpx>2</biostatCpx>
+        <biostatMet>-2</biostatMet>
         <displayOrderInCategory>4</displayOrderInCategory>
+
         <aptitudes>
             <Social>2</Social>
         </aptitudes>
@@ -94,14 +98,15 @@
     </GeneDef>
 
     <!-- Ratling: Keen Eyed -->
-    <GeneDef>
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_RatlingKeenEyed</defName>
         <label>keen eyed</label>
         <description>???</description>
-        <iconPath>UI/Genes/Placeholder</iconPath>
+        <iconPath>UI/Genes/Ratling/BEWH_Keen-eyed</iconPath>
         <biostatCpx>1</biostatCpx>
-        <biostatMet>0</biostatMet>
+        <biostatMet>-1</biostatMet>
         <displayOrderInCategory>5</displayOrderInCategory>
+
         <capMods>
             <li>
                 <capacity>Sight</capacity>
@@ -120,14 +125,15 @@
     </GeneDef>
 
     <!-- Ratling: Scavenger Instinct -->
-    <GeneDef>
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_RatlingScavengerInstinct</defName>
         <label>scavenger instinct</label>
         <description>???</description>
-        <iconPath>UI/Genes/Placeholder</iconPath>
-        <biostatCpx>1</biostatCpx>
-        <biostatMet>0</biostatMet>
+        <iconPath>UI/Genes/Ratling/BEWH_CulinaryInstincts</iconPath>
+        <biostatCpx>2</biostatCpx>
+        <biostatMet>-1</biostatMet>
         <displayOrderInCategory>6</displayOrderInCategory>
+
         <statFactors>
             <ForagedNutritionPerDay>1.65</ForagedNutritionPerDay>
         </statFactors>
@@ -141,14 +147,15 @@
     </GeneDef>
 
     <!-- Ratling: Fecund -->
-    <GeneDef>
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_RatlingFecund</defName>
         <label>fecund</label>
         <description>???</description>
-        <iconPath>UI/Genes/Placeholder</iconPath>
+        <iconPath>UI/Genes/Ratling/BEWH_Fecund</iconPath>
         <biostatCpx>1</biostatCpx>
-        <biostatMet>0</biostatMet>
+        <biostatMet>-1</biostatMet>
         <displayOrderInCategory>7</displayOrderInCategory>
+
         <lovinMTBFactor>0.4</lovinMTBFactor>
         <statOffsets>
             <Fertility>0.5</Fertility>

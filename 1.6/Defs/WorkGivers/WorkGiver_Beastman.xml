@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <WorkGiverDef>
+        <defName>BEWH_HerdstoneRitual</defName>
+        <label>perform ritual at herdstone</label>
+        <giverClass>Abhuman40k.WorkGiver_HerdstoneRitual</giverClass>
+        <workType>Research</workType>
+        <verb>chant</verb>
+        <gerund>chanting</gerund>
+        <priorityInType>110</priorityInType>
+        <requiredCapacities>
+            <li>Talking</li>
+        </requiredCapacities>
+    </WorkGiverDef>
+
+</Defs>

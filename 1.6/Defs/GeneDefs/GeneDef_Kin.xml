@@ -2,15 +2,15 @@
 <Defs>
 
     <!-- Kin: Cloneskein -->
-    <GeneDef>
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_KinCloneskein</defName>
         <label>cloneskein</label>
         <description>???</description>
-        <iconPath>UI/Genes/Placeholder</iconPath>
-        <biostatCpx>1</biostatCpx>
-        <biostatMet>0</biostatMet>
+        <iconPath>UI/Genes/Kin/BEWH_Cloneskein</iconPath>
+        <biostatCpx>4</biostatCpx>
+        <biostatMet>-3</biostatMet>
         <displayOrderInCategory>41</displayOrderInCategory>
-        <geneClass>Core40k.Gene_AddRandomGeneAndOrTraitByWeight</geneClass>
+        <geneClass>Abhuman40k.Gene_Cloneskein</geneClass>
         <customEffectDescriptions>
             <li>Can be grown from a Growth Vat connected to a Votann Core.</li>
             <li>Can be absorbed by a Votann Core upon death, giving learning bonus to all living Kin.</li>
@@ -26,42 +26,16 @@
                 <li>(18, 1)</li>
             </points>
         </biologicalAgeTickFactorFromAgeCurve>
-        <modExtensions>
-            <li Class="Core40k.DefModExtension_AddRandomGeneByWeight">
-                <possibleGenesToGive>
-                    <li>
-                        <key>BEWH_KinCloneskeinTemplateSubdermalLayer</key>
-                        <value>20</value>
-                    </li>
-                    <li>
-                        <key>BEWH_KinCloneskeinTemplateTunnelEyes</key>
-                        <value>20</value>
-                    </li>
-                    <li>
-                        <key>BEWH_KinCloneskeinTemplateGravbornSinews</key>
-                        <value>20</value>
-                    </li>
-                    <li>
-                        <key>BEWH_KinCloneskeinTemplateStoneheart</key>
-                        <value>20</value>
-                    </li>
-                    <li>
-                        <key>BEWH_KinCloneskeinTemplateRadvein</key>
-                        <value>20</value>
-                    </li>
-                </possibleGenesToGive>
-            </li>
-        </modExtensions>
     </GeneDef>
 
     <!-- Kin: Grudgy -->
-    <GeneDef>
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_KinGrudgy</defName>
         <label>grudgy</label>
         <description>???</description>
-        <iconPath>UI/Genes/Placeholder</iconPath>
+        <iconPath>UI/Genes/Kin/BEWH_Grudgy</iconPath>
         <biostatCpx>1</biostatCpx>
-        <biostatMet>0</biostatMet>
+        <biostatMet>1</biostatMet>
         <displayOrderInCategory>41</displayOrderInCategory>
         <customEffectDescriptions>
             <li>Negative social interactions memories lasts twice as long</li>
@@ -69,14 +43,14 @@
     </GeneDef>
 
     <!-- Kin: Technical Affinity -->
-    <GeneDef>
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_KinTechnicalAffinity</defName>
         <label>technical affinity</label>
         <description>???</description>
-        <iconPath>UI/Genes/Placeholder</iconPath>
-        <biostatCpx>1</biostatCpx>
-        <biostatMet>0</biostatMet>
-        <displayOrderInCategory>41</displayOrderInCategory>
+        <iconPath>UI/Genes/Kin/BEWH_TechnicalAffinity</iconPath>
+        <biostatCpx>2</biostatCpx>
+        <biostatMet>-2</biostatMet>
+        <displayOrderInCategory>42</displayOrderInCategory>
         <statOffsets>
             <HackingSpeed>0.1</HackingSpeed>
             <HackingStealth>10</HackingStealth>
@@ -95,14 +69,14 @@
     </GeneDef>
 
     <!-- Kin: Clan Loyalty -->
-    <GeneDef>
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_KinClanLoyalty</defName>
         <label>clan loyalty</label>
         <description>???</description>
-        <iconPath>UI/Genes/Placeholder</iconPath>
+        <iconPath>UI/Genes/Kin/BEWH_ClanLoyalty</iconPath>
         <biostatCpx>1</biostatCpx>
-        <biostatMet>0</biostatMet>
-        <displayOrderInCategory>41</displayOrderInCategory>
+        <biostatMet>-1</biostatMet>
+        <displayOrderInCategory>43</displayOrderInCategory>
         <modExtensions>
             <li Class="Abhuman40k.DefModExtension_ClanLoyalty">
                 <doubledByRelations>
@@ -134,17 +108,18 @@
         </modExtensions>
     </GeneDef>
 
-    <!-- Kin: Dense Physiology -->
-    <GeneDef>
-        <defName>BEWH_KinDensePhysiology</defName>
-        <label>dense physiology</label>
+    <!-- Kin: Dense Physique -->
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
+        <defName>BEWH_KinDensePhysique</defName>
+        <label>dense Physique</label>
         <description>???</description>
-        <iconPath>UI/Genes/Placeholder</iconPath>
+        <iconPath>UI/Genes/Kin/BEWH_DensePhysique</iconPath>
         <biostatCpx>1</biostatCpx>
-        <biostatMet>0</biostatMet>
-        <displayOrderInCategory>41</displayOrderInCategory>
+        <biostatMet>-2</biostatMet>
+        <displayOrderInCategory>44</displayOrderInCategory>
         <statOffsets>
-            <VEF_CosmeticBodySize_Multiplier>-0.15</VEF_CosmeticBodySize_Multiplier>
+            <VEF_BodySize_Offset>-0.15</VEF_BodySize_Offset>
+
             <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
             <ArmorRating_Sharp>0.05</ArmorRating_Sharp>
             <ArmorRating_Heat>0.20</ArmorRating_Heat>
@@ -157,17 +132,24 @@
                 <addedWorldCarryCapacity>50</addedWorldCarryCapacity>
             </li>
         </modExtensions>
+        <exclusionTags>
+            <li>Physique</li>
+        </exclusionTags>
     </GeneDef>
 
     <!-- Kin: Cloneskein Template: Subdermal Layer -->
-    <GeneDef>
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_KinCloneskeinTemplateSubdermalLayer</defName>
         <label>cloneskein template: subdermal layer</label>
         <description>???</description>
-        <iconPath>UI/Genes/Placeholder</iconPath>
+        <iconPath>UI/Genes/Kin/BEWH_SubdermalLayer</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
-        <displayOrderInCategory>41</displayOrderInCategory>
+        <displayOrderInCategory>45</displayOrderInCategory>
+
+        <passOnDirectly>false</passOnDirectly>
+        <canGenerateInGeneSet>false</canGenerateInGeneSet>
+
         <statOffsets>
             <ArmorRating_Blunt>0.25</ArmorRating_Blunt>
             <ArmorRating_Sharp>0.25</ArmorRating_Sharp>
@@ -176,17 +158,24 @@
         <statFactors>
             <IncomingDamageFactor>0.95</IncomingDamageFactor>
         </statFactors>
+        <modExtensions>
+            <li Class="Abhuman40k.DefModExtension_CloneskeinMutation" />
+        </modExtensions>
     </GeneDef>
 
     <!-- Kin: Cloneskein Template: Tunnel Eyes -->
-    <GeneDef>
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_KinCloneskeinTemplateTunnelEyes</defName>
         <label>cloneskein template: tunnel eyes</label>
         <description>???</description>
-        <iconPath>UI/Genes/Placeholder</iconPath>
+        <iconPath>UI/Genes/Kin/BEWH_TunnelEyes</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
-        <displayOrderInCategory>41</displayOrderInCategory>
+        <displayOrderInCategory>46</displayOrderInCategory>
+
+        <passOnDirectly>false</passOnDirectly>
+        <canGenerateInGeneSet>false</canGenerateInGeneSet>
+
         <ignoreDarkness>true</ignoreDarkness>
         <capMods>
             <li>
@@ -194,23 +183,31 @@
                 <offset>0.1</offset>
             </li>
         </capMods>
+        <modExtensions>
+            <li Class="Abhuman40k.DefModExtension_CloneskeinMutation" />
+        </modExtensions>
     </GeneDef>
 
     <!-- Kin: Cloneskein Template: Gravborn Sinews -->
-    <GeneDef>
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_KinCloneskeinTemplateGravbornSinews</defName>
         <label>cloneskein template: gravborn sinews</label>
         <description>???</description>
-        <iconPath>UI/Genes/Placeholder</iconPath>
+        <iconPath>UI/Genes/Kin/BEWH_GravbornSinews</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
-        <displayOrderInCategory>41</displayOrderInCategory>
+        <displayOrderInCategory>47</displayOrderInCategory>
+
+        <passOnDirectly>false</passOnDirectly>
+        <canGenerateInGeneSet>false</canGenerateInGeneSet>
+
         <statOffsets>
             <CarryingCapacity>50</CarryingCapacity>
             <MeleeDodgeChance>1</MeleeDodgeChance>
             <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.1</VacuumResistance>
         </statOffsets>
         <modExtensions>
+            <li Class="Abhuman40k.DefModExtension_CloneskeinMutation" />
             <li Class="Core40k.DefModExtension_GeneExtension">
                 <addedWorldCarryCapacity>50</addedWorldCarryCapacity>
             </li>
@@ -218,34 +215,48 @@
     </GeneDef>
 
     <!-- Kin: Cloneskein Template: Stoneheart -->
-    <GeneDef>
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_KinCloneskeinTemplateStoneheart</defName>
         <label>cloneskein template: stoneheart</label>
         <description>???</description>
-        <iconPath>UI/Genes/Placeholder</iconPath>
+        <iconPath>UI/Genes/Kin/BEWH_Stoneheart</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
-        <displayOrderInCategory>41</displayOrderInCategory>
+        <displayOrderInCategory>48</displayOrderInCategory>
+
+        <passOnDirectly>false</passOnDirectly>
+        <canGenerateInGeneSet>false</canGenerateInGeneSet>
+
         <painFactor>0.85</painFactor>
         <hediffGiversCannotGive>
             <li>HeartAttack</li>
             <li>HeartArteryBlockage</li>
         </hediffGiversCannotGive>
+        <modExtensions>
+            <li Class="Abhuman40k.DefModExtension_CloneskeinMutation" />
+        </modExtensions>
     </GeneDef>
 
     <!-- Kin: Cloneskein Template: Radvein -->
-    <GeneDef>
+    <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_KinCloneskeinTemplateRadvein</defName>
         <label>cloneskein template: radvein</label>
         <description>???</description>
-        <iconPath>UI/Genes/Placeholder</iconPath>
+        <iconPath>UI/Genes/Kin/BEWH_Radvein</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
-        <displayOrderInCategory>41</displayOrderInCategory>
+        <displayOrderInCategory>49</displayOrderInCategory>
+
+        <passOnDirectly>false</passOnDirectly>
+        <canGenerateInGeneSet>false</canGenerateInGeneSet>
+
         <statOffsets>
             <ToxicEnvironmentResistance>2</ToxicEnvironmentResistance>
             <ToxicResistance>2</ToxicResistance>
         </statOffsets>
+        <modExtensions>
+            <li Class="Abhuman40k.DefModExtension_CloneskeinMutation" />
+        </modExtensions>
     </GeneDef>
 
 </Defs>

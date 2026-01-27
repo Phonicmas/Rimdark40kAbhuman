@@ -8,7 +8,24 @@ namespace Abhuman40k;
 public static class Abhuman40kUtils
 {
     private static readonly List<Pawn> tmpPawns = new List<Pawn>();
-
+    
+    public static int TotalBuriedKin()
+    {
+        var result = 0;
+        var maps = Find.Maps;
+        foreach (var map in maps)
+        {
+            var thing = map.listerThings.ThingsOfDef(Abhuman40kDefOf.BEWH_AncestorCore).FirstOrFallback();
+            if (thing is not Building_AncestorCore core)
+            {
+                continue;
+            }
+            
+            result += core.StoredKin;
+        }
+        return result;
+    }
+    
     public static WarpTravelWorldObject MakeWarpTravelObject(IEnumerable<Pawn> pawns, PlanetTile startingTile, int arrivalTick, bool addToWorldPawnsIfNotAlready, ThingOwner<Pawn> otherThingOwner)
     {
         if (!startingTile.Valid && addToWorldPawnsIfNotAlready)

@@ -1,18 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
+    <!-- Beastman -->
+    <BEWH.Abhuman.Beastman.HerdstonePresent>Herdstone on map</BEWH.Abhuman.Beastman.HerdstonePresent>
+    <BEWH.Abhuman.Beastman.GestateMinotaur>Gestate Minotaur</BEWH.Abhuman.Beastman.GestateMinotaur>
+
+    <BEWH.Abhuman.Beastman.HerdstoneInUse>{0} is currently conducting a ritual here.</BEWH.Abhuman.Beastman.HerdstoneInUse>
+    <BEWH.Abhuman.Beastman.HerdstoneNotStarted>Ritual not started.</BEWH.Abhuman.Beastman.HerdstoneNotStarted>
+    <BEWH.Abhuman.Beastman.HerdstoneNoAffinityGene>Does not have the Herdstone Affinity gene.</BEWH.Abhuman.Beastman.HerdstoneNoAffinityGene>
+    <BEWH.Abhuman.Beastman.HerdstoneTimeUntillBirth>Ritual time remaining</BEWH.Abhuman.Beastman.HerdstoneTimeUntillBirth>
+    <BEWH.Abhuman.Beastman.HerdstoneReadyForRitual>Can start summoning ritual</BEWH.Abhuman.Beastman.HerdstoneReadyForRitual>
+    <BEWH.Abhuman.Beastman.HerdstoneCooldown>Time until ritual can be performed</BEWH.Abhuman.Beastman.HerdstoneCooldown>
+
+    <BEWH.Abhuman.Beastman.SpawnedMinotaurLetter>Herdstone Born!</BEWH.Abhuman.Beastman.SpawnedMinotaurLetter>
+    <BEWH.Abhuman.Beastman.SpawnedMinotaurMessage>Through lengthy occult practice {0} has emerge from beyond the veil.</BEWH.Abhuman.Beastman.SpawnedMinotaurMessage>
+
+    <!-- Ogryn -->
     <BEWH.Abhuman.Ogryn.MissingSlowWitted>{0} does not have gene {1}</BEWH.Abhuman.Ogryn.MissingSlowWitted>
 
+    <!-- Navigator -->
     <BEWH.Abhuman.Navigator.WarpEyeCovered>Cannot use ability, warp eye is covered by {0}</BEWH.Abhuman.Navigator.WarpEyeCovered>
     <BEWH.Abhuman.Navigator.WillBeStunned>Will stun</BEWH.Abhuman.Navigator.WillBeStunned>
     <BEWH.Abhuman.Navigator.WillBeKilled>Will kill</BEWH.Abhuman.Navigator.WillBeKilled>
-
     <BEWH.Abhuman.Navigator.WarpTravelLetter>Warp Travel Concluded</BEWH.Abhuman.Navigator.WarpTravelLetter>
     <BEWH.Abhuman.Navigator.WarpTravelMessage>After spending {1} travelling in the warp, navigator {0} has succesfully teleported {2} to their desired location.</BEWH.Abhuman.Navigator.WarpTravelMessage>
     <BEWH.Abhuman.Navigator.TravelTimeRemaining>Time remaining between {0}~{1}</BEWH.Abhuman.Navigator.TravelTimeRemaining>
 
+    <!-- Kin -->
+    <BEWH.Abhuman.Kin.IsNotKin>{0} does not possess the gene {1}</BEWH.Abhuman.Kin.IsNotKin>
     <BEWH.Abhuman.Kin.AncestorCore>Ancestor Core</BEWH.Abhuman.Kin.AncestorCore>
+    <BEWH.Abhuman.Kin.AncestorCoreSharedKnowledge>Shared Knowledge</BEWH.Abhuman.Kin.AncestorCoreSharedKnowledge>
+    <BEWH.Abhuman.Kin.AncestorCoreFuneral>Bury kin</BEWH.Abhuman.Kin.AncestorCoreFuneral>
+    <BEWH.Abhuman.Kin.AncestorCoreNoDeadKin>No dead kin</BEWH.Abhuman.Kin.AncestorCoreNoDeadKin>
+    <BEWH.Abhuman.Kin.UploadToAncestorCore>Upload {0} to Ancestor Core</BEWH.Abhuman.Kin.UploadToAncestorCore>
     <BEWH.Abhuman.Kin.CrucibleGrow>Grow Kin</BEWH.Abhuman.Kin.CrucibleGrow>
     <BEWH.Abhuman.Kin.CrucibleGrowDesc>Start the process to grow a new Kin</BEWH.Abhuman.Kin.CrucibleGrowDesc>
+
+    <!-- Felinid -->
+    <BEWH.Abhuman.Felinid.Nuzzled>Cutie {0} nuzzled me, so soft! UwU</BEWH.Abhuman.Felinid.Nuzzled>
+
+    <!-- Placement Limit -->
+    <BEWH.Abhuman.PlacementLimit.RequiresKin>Requires a colonist with the 'Cloneskein' gene on the map to place.</BEWH.Abhuman.PlacementLimit.RequiresKin>
+    <BEWH.Abhuman.PlacementLimit.RequiresBeastman>Requires a colonist with the 'Herdstone Affinity' gene on the map to place.</BEWH.Abhuman.PlacementLimit.RequiresBeastman>
+
+    <!-- Conditionals -->
+    <BEWH.Abhuman.Conditional.StatsReport_FeetCovered>feet covered</BEWH.Abhuman.Conditional.StatsReport_FeetCovered>
+    <BEWH.Abhuman.Conditional.StatsReport_FeetUncovered>feet uncovered</BEWH.Abhuman.Conditional.StatsReport_FeetUncovered>
 
 </LanguageData>

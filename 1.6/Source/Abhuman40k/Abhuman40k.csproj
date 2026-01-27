@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Abhuman40k</RootNamespace>
     <AssemblyName>Abhuman40k</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <LangVersion>latest</LangVersion>
@@ -79,24 +79,46 @@
     <Compile Include="Abilities\WarpTravelWorldObject.cs" />
     <Compile Include="Buildings\Building_AncestorCore.cs" />
     <Compile Include="Buildings\Building_Crucible.cs" />
+    <Compile Include="Buildings\Building_Herdstone.cs" />
     <Compile Include="Comps\CompAbilityEffect_WarpEyeGaze.cs" />
     <Compile Include="Comps\CompProperties_AbilityWarpEyeGaze.cs" />
     <Compile Include="Debug\DebugActions.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_CloneskeinMutation.cs" />
     <Compile Include="DefMods\DefModExtension_ClanLoyalty.cs" />
     <Compile Include="Gene\Gene_Belisarius.cs" />
+    <Compile Include="Gene\Gene_CatlikeMindset.cs" />
+    <Compile Include="Gene\Gene_Cloneskein.cs" />
     <Compile Include="Harmony\DefModExtension_Gregarious.cs" />
+    <Compile Include="Harmony\HarmonyPatch_BuryKinCorpse.cs" />
+    <Compile Include="Harmony\HarmonyPatch_GetExplanationUnfinalizedFromAncestorCorePatch.cs" />
+    <Compile Include="Harmony\HarmonyPatch_GetValueUnfinalizedFromAncestorCorePatch.cs" />
     <Compile Include="Harmony\HarmonyPatch_Gregarious.cs" />
     <Compile Include="Harmony\HarmonyPatch_Grudge.cs" />
     <Compile Include="Abhuman40kDefOf.cs" />
     <Compile Include="Harmony\HarmonyPatch_ScavengerInstinct.cs" />
     <Compile Include="Harmony\HarmonyPatch_ToddlerLogicMentalBreakWorker.cs" />
     <Compile Include="Harmony\HarmonyPatch_ToddlerLogicMentalStateHandler.cs" />
+    <Compile Include="PlaceWorkers\PlaceWorker_OnlyAvailableWithBeastmanInColony.cs" />
+    <Compile Include="PlaceWorkers\PlaceWorker_OnlyAvailableWithKinInColony.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Thoughts\Thought_MemoryFelinid.cs" />
+    <Compile Include="Workers\ConditionalStatAffecter_FeetCovered.cs" />
+    <Compile Include="Workers\ConditionalStatAffecter_FeetUncovered.cs" />
+    <Compile Include="Workers\ConditionalStatAffecter_HerdstonePresent.cs" />
+    <Compile Include="Workers\InteractionWorker_FelinidNuzzle.cs" />
+    <Compile Include="Workers\JobDriver_CarryKinToAncestorCore.cs" />
+    <Compile Include="Workers\JobDriver_FelinidNuzzle.cs" />
+    <Compile Include="Workers\JobDriver_SummonMinotaur.cs" />
+    <Compile Include="Workers\JobGiver_FelinidNuzzle.cs" />
     <Compile Include="Workers\Recipe_Boner.cs" />
     <Compile Include="Workers\ThoughtWorker_ClanLoyalty.cs" />
+    <Compile Include="Workers\ThoughtWorker_FelinidCutePresence.cs" />
     <Compile Include="Workers\ThoughtWorker_Gregarious.cs" />
+    <Compile Include="Workers\ThoughtWorker_HerdstoneRitual.cs" />
     <Compile Include="Workers\ThoughtWorker_UnsettlingPresence.cs" />
+    <Compile Include="Workers\WorkGiver_HaulCorpseToAncestorCore.cs" />
     <Compile Include="Workers\WorkGiver_HaulToCrucible.cs" />
+    <Compile Include="Workers\WorkGiver_HerdstoneRitual.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
