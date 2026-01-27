@@ -73,9 +73,4 @@ public static class GetValueUnfinalizedFromAncestorCorePatch
 
         return num;
     }
-
-    public static float GetStatFactorForRank(float num, StatRequest req, StatDef stat)
-    {
-        return num;
-    }
 }

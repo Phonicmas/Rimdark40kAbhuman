@@ -12,8 +12,8 @@
         <displayOrderInCategory>41</displayOrderInCategory>
         <geneClass>Abhuman40k.Gene_Cloneskein</geneClass>
         <customEffectDescriptions>
-            <li>Can be grown from a Growth Vat connected to a Votann Core.</li>
-            <li>Can be absorbed by a Votann Core upon death, giving learning bonus to all living Kin.</li>
+            <li>Can be grown from a Crucible connected to an Ancestor Core.</li>
+            <li>Can be uploaded to an Ancestor Core upon death, giving learning bonus to all living Kin.</li>
             <li>Will have a random Cloneskein mutation.</li>
         </customEffectDescriptions>
         <exclusionTags>

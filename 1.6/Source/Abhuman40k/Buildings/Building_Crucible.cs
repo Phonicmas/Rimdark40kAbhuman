@@ -61,7 +61,7 @@ public class Building_Crucible  : Building_Enterable, IStoreSettingsParent, IThi
 
 	public float HeldPawnDrawPos_Y => DrawPos.y + 0.03658537f;
 
-	public float HeldPawnBodyAngle => base.Rotation.AsAngle;
+	public float HeldPawnBodyAngle => Rotation.AsAngle;
 
 	public PawnPosture HeldPawnPosture => PawnPosture.LayingOnGroundFaceUp;
 
@@ -196,7 +196,7 @@ public class Building_Crucible  : Building_Enterable, IStoreSettingsParent, IThi
 	protected override void TickInterval(int delta)
 	{
 		base.TickInterval(delta);
-		if (base.Working && selectedPawn != null && innerContainer.Contains(selectedPawn))
+		if (Working && selectedPawn != null && innerContainer.Contains(selectedPawn))
 		{
 			VatLearning?.TickInterval(delta);
 			VatLearning?.PostTickInterval(delta);

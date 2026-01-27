@@ -74,13 +74,13 @@
     <Compile Include="Abhuman40kSecondDefOf.cs" />
     <Compile Include="Abhuman40kUtils.cs" />
     <Compile Include="Abilities\Ability_WarpEyeWarpTravel.cs" />
-    <Compile Include="Abilities\CompAbilityEffect_GiveBodyguardHediff.cs" />
-    <Compile Include="Abilities\CompProperties_AbilityGiveBodyguardHediff.cs" />
     <Compile Include="Abilities\WarpTravelWorldObject.cs" />
     <Compile Include="Buildings\Building_AncestorCore.cs" />
     <Compile Include="Buildings\Building_Crucible.cs" />
     <Compile Include="Buildings\Building_Herdstone.cs" />
+    <Compile Include="Comps\CompAbilityEffect_GiveBodyguardHediff.cs" />
     <Compile Include="Comps\CompAbilityEffect_WarpEyeGaze.cs" />
+    <Compile Include="Comps\CompProperties_AbilityGiveBodyguardHediff.cs" />
     <Compile Include="Comps\CompProperties_AbilityWarpEyeGaze.cs" />
     <Compile Include="Debug\DebugActions.cs" />
     <Compile Include="DefModExtensions\DefModExtension_CloneskeinMutation.cs" />
