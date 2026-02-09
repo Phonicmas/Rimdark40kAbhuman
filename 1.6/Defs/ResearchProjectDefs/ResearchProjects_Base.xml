@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!-- Abhuman Research Base -->
+    <ResearchProjectDef Name="BEWH_AbhumanResearchBase" Abstract="True">
+        <tab>BEWH_WH40kTab</tab>
+    </ResearchProjectDef>
+
+</Defs>

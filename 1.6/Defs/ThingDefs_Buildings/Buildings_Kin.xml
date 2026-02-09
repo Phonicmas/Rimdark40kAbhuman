@@ -53,12 +53,12 @@
       <workTableRoomRole>Laboratory</workTableRoomRole>
     </building>
     <researchPrerequisites>
-      <li>MicroelectronicsBasics</li>
+      <li>BEWH_AncestorCore</li>
     </researchPrerequisites>
     <comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
-        <basePowerConsumption>1500</basePowerConsumption>
+        <basePowerConsumption>2500</basePowerConsumption>
       </li>
       <li Class="CompProperties_Facility">
         <maxSimultaneous>20</maxSimultaneous>
@@ -150,12 +150,13 @@
     <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
     <researchPrerequisites>
       <li>GrowthVats</li>
+      <li>BEWH_AncestorCore</li>
     </researchPrerequisites>
     <comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
-        <basePowerConsumption>300</basePowerConsumption>
-        <idlePowerDraw>80</idlePowerDraw>
+        <basePowerConsumption>1200</basePowerConsumption>
+        <idlePowerDraw>150</idlePowerDraw>
       </li>
       <li Class="CompProperties_Flickable"/>
       <li Class="CompProperties_AffectedByFacilities">

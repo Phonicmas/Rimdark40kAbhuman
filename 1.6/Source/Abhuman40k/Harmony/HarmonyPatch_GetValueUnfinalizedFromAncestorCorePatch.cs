@@ -13,21 +13,9 @@ public static class GetValueUnfinalizedFromAncestorCorePatch
     static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
     {
         var addedOffset = false;
-        var addedFactor = false;
         var codeInstructions = instructions.ToList();
         foreach (var instruction in codeInstructions)
         {
-            if (!addedFactor && instruction.opcode == OpCodes.Ret)
-            {
-                yield return new CodeInstruction(OpCodes.Ldarg_1);
-                yield return new CodeInstruction(OpCodes.Ldarg_0);
-                yield return new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(StatWorker), "stat"));
-                yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(GetValueUnfinalizedFromAncestorCorePatch), "GetStatFactorForRank"));
-                yield return new CodeInstruction(OpCodes.Stloc_0);
-                yield return new CodeInstruction(OpCodes.Ldloc_0);
-                addedFactor = true;
-            }
-                
             yield return instruction;
                 
             if (!addedOffset && instruction.opcode == OpCodes.Stloc_0)

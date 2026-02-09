@@ -1,5 +1,3 @@
-Replace herdstone recipe
-
 Beastman faction.
 
 Enemy beastman raid where they summon a herdstone which continously spawns more beastmen until destroyed.

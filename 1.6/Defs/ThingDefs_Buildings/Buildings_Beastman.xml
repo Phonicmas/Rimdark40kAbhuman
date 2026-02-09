@@ -30,19 +30,17 @@
       <Mass>85</Mass>
       <Flammability>0</Flammability>
     </statBases>
-    <costList>      <!-- should be any stone, and them maybe corpse or meat or smth?-->
-      <Steel>400</Steel>
-      <Plasteel>20</Plasteel>
-      <ComponentIndustrial>20</ComponentIndustrial>
-      <ComponentSpacer>4</ComponentSpacer>
-    </costList>
+    <stuffCategories>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>250</costStuffCount>
     <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
     <placeWorkers>
       <li>Core40k.PlaceWorker_OnlyOnePerMap</li>
       <li>Abhuman40k.PlaceWorker_OnlyAvailableWithBeastmanInColony</li>
     </placeWorkers>
     <researchPrerequisites>
-      <li>Stonecutting</li>
+      <li>BEWH_Herdstones</li>
     </researchPrerequisites>
   </ThingDef>
 
