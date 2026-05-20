@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
     <ThoughtDef>
@@ -11,6 +11,47 @@
                 <label>Unsettling Presence</label>
                 <baseOpinionOffset>-20</baseOpinionOffset>
             </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>BEWH_NavigtorNavisNobilite</defName>
+        <workerClass>ThoughtWorker_Greedy</workerClass>
+        <requiredGenes>
+            <li>BEWH_NavigtorNavisNobilite</li>
+        </requiredGenes>
+        <stages>
+            <li> <!-- used if no bedroom at all -->
+                <label>navis nobilite expectations</label>
+                <description>I'm used to better. I want a really impressive bedroom.</description>
+                <baseMoodEffect>-8</baseMoodEffect>
+            </li>
+            <li>
+                <label>navis nobilite expectations</label>
+                <description>I'm used to better. My room is pathetic! I want a really impressive bedroom.</description>
+                <baseMoodEffect>-8</baseMoodEffect>
+            </li>
+            <li>
+                <label>navis nobilite expectations</label>
+                <description>I'm used to better. My room isn't nearly good enough. I want a really impressive bedroom.</description>
+                <baseMoodEffect>-8</baseMoodEffect>
+            </li>
+            <li>
+                <label>navis nobilite expectations</label>
+                <description>I'm used to better. My room isn't good enough. I want a really impressive bedroom.</description>
+                <baseMoodEffect>-6</baseMoodEffect>
+            </li>
+            <li>
+                <label>navis nobilite expectations</label>
+                <description>I'm used to better. My room isn't quite good enough. I want a really impressive bedroom.</description>
+                <baseMoodEffect>-4</baseMoodEffect>
+            </li>
+            <li IsNull="True" /> <!-- slightly impressive -->
+            <li IsNull="True" /> <!-- somewhat impressive -->
+            <li IsNull="True" /> <!-- very impressive -->
+            <li IsNull="True" /> <!-- extremely impressive -->
+            <li IsNull="True" /> <!-- unbelievably impressive -->
+            <li IsNull="True" /> <!-- wondrously impressive -->
         </stages>
     </ThoughtDef>
 

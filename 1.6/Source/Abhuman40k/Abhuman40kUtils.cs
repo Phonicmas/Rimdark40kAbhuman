@@ -9,6 +9,8 @@ public static class Abhuman40kUtils
 {
     private static readonly List<Pawn> tmpPawns = new List<Pawn>();
     
+    public static readonly CachedTexture RefreshIcon = new ("UI/Misc/BEWH_Refresh");
+    
     public static int TotalBuriedKin()
     {
         var result = 0;

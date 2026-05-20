@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Reactor Conduit -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>BEWH_ReactorConduit</defName>
+    <label>reactor conduit (critical)</label>
+    <description>A gravship plasma conduit venting superheated gas. Structural failure is imminent.</description>
+
+    <graphicData>
+      <texPath>Things/Building/Misc/Genebank/Genebank_north</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2, 1)</drawSize>
+      <shadowData>
+        <volume>(1.7, 0.3, 0.85)</volume>
+      </shadowData>
+    </graphicData>
+    <size>(2,1)</size>
+
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.40</fillPercent>
+    <uiIconOffset>(0, 0.15)</uiIconOffset>
+
+    <designationCategory>BEWH_RimDarkCategory</designationCategory>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>15</Mass>
+      <Flammability>2.0</Flammability>
+      <Beauty>7.5</Beauty>
+    </statBases>
+
+    <pathCost>14</pathCost>
+    <rotatable>false</rotatable>
+
+    <building>
+      <destroySound>MortarBomb_Explode</destroySound>
+      <claimable>false</claimable>
+    </building>
+    <tickerType>Normal</tickerType>
+    <filthLeaving>Filth_Fuel</filthLeaving>
+
+    <comps>
+      <li Class="Abhuman40k.CompProperties_TimedExplosion">
+        <ticksToExplode>15000~20000</ticksToExplode>
+        <explosionRadius>19.9</explosionRadius>
+        <damageDef>BombSuper</damageDef>
+        <damageAmount>500</damageAmount>
+      </li>
+
+      <li Class="CompProperties_SpawnerFilth">
+        <filthDef>Filth_Fuel</filthDef>
+        <spawnRadius>2</spawnRadius>
+        <spawnMtbHours>0.5</spawnMtbHours>
+      </li>
+
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>19.9</explosiveRadius>
+        <explosiveDamageType>BombSuper</explosiveDamageType>
+        <explosiveExpandPerStackcount>0.4</explosiveExpandPerStackcount>
+        <startWickHitPointsPercent>0.7</startWickHitPointsPercent>
+        <chanceToStartFire>0.22</chanceToStartFire>
+        <damageFalloff>true</damageFalloff>
+        <explosionEffect>GiantExplosion</explosionEffect>
+        <explosionSound>Explosion_GiantBomb</explosionSound>
+        <wickTicks>150~300</wickTicks>
+        <preExplosionSpawnSingleThingDef>CraterMedium</preExplosionSpawnSingleThingDef>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

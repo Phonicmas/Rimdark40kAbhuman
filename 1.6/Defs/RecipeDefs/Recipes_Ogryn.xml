@@ -4,14 +4,14 @@
     <!-- Biochemical Ogryn Neural Enhancment Reprogramming - B.O.N.E.R -->
     <RecipeDef ParentName="SurgeryFlesh">
         <defName>BEWH_OgrynBONER</defName>
-        <label>Biochemical Ogryn Neural Enhancment Reprogramming</label>
-        <description>Biochemical Ogryn Neural Enhancment Reprogramming a.k.a B.O.N.E.R is a medical procedure that aims to expand the ogryns base intellect.</description>
+        <label>Biochemical Ogryn Neural Enhancement Reprogramming</label>
+        <description>Biochemical Ogryn Neural Enhancement Reprogramming a.k.a B.O.N.E.R is a medical procedure that aims to expand the ogryns base intellect.</description>
         <jobString>Giving {0} a B.O.N.E.R.</jobString>
         <workerClass>Abhuman40k.Recipe_Boner</workerClass>
         <successfullyRemovedHediffMessage>{0} has successfully been given a B.O.N.E.R.</successfullyRemovedHediffMessage>
         <workAmount>2200</workAmount>
         <hideBodyPartNames>true</hideBodyPartNames>
-        <targetsBodyPart>false</targetsBodyPart>
+        <targetsBodyPart>false</targetsBodyPart>    
         <surgerySuccessChanceFactor>1</surgerySuccessChanceFactor>
         <ingredients>
             <li>

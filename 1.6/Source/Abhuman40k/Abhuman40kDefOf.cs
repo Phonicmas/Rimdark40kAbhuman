@@ -7,18 +7,25 @@ namespace Abhuman40k;
 [DefOf]
 public static class Abhuman40kDefOf
 {
+    //BodypartGroupDef
     public static BodyPartGroupDef Feet;
     
+    //JobDef
     public static JobDef BEWH_CarryKinToAncestorCore;
     public static JobDef BEWH_FelinidNuzzle;
     public static JobDef BEWH_DoMinotaurRitual;
+    public static JobDef BEWH_OpenContractWindow;
     
+    //WorldObjectDef
     public static WorldObjectDef BEWH_NavigatorWarpTravel;
     
+    //MentalBreakDef
     public static MentalBreakDef Tantrum;
     
+    //InteractionDef
     public static InteractionDef BEWH_Nuzzle;
     
+    //GeneDef
     public static GeneDef BEWH_FelinidCatlikeMindset;
     
     public static GeneDef BEWH_BeastmanHerdstoneAffinity;
@@ -40,18 +47,34 @@ public static class Abhuman40kDefOf
     public static GeneDef BEWH_RatlingGregarious;
     public static GeneDef BEWH_RatlingScavengerInstinct;
 
+    //DamageDef
     public static DamageDef BEWH_WarpGaze;
 
+    //LetterDef
     public static LetterDef BEWH_WarpTravel;
     
+    //ThingDef
     public static ThingDef BEWH_AncestorCore;
     public static ThingDef BEWH_KinCrucible;
     
     public static ThingDef BEWH_HerdstonePlayer;
+    public static ThingDef BEWH_HerdstoneConduitPlayer;
     
+    public static ThingDef BEWH_ReactorConduit;
+    
+    //XenotypeDef
     public static XenotypeDef BEWH_Kin;
+    public static XenotypeDef BEWH_Navigator;
     
+    //PawnKindDef
     public static PawnKindDef BEWH_HerdstoneBornMinotaur;
+    public static PawnKindDef BEWH_NavigatorRescue;
+    
+    //ResearchProjectDef
+    public static ResearchProjectDef TransportPod;
+    
+    //FactionDef
+    public static FactionDef BEWH_OffworldKinFaction;
 
     static Abhuman40kDefOf()
     {

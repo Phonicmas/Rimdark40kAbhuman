@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <!-- Herdstone (Player version) -->
-  <ThingDef ParentName="BuildingBase">
-    <defName>BEWH_HerdstonePlayer</defName>
+  <!-- Herdstone base -->
+  <ThingDef ParentName="BuildingBase" Name="BEWH_HerdstoneBase" Abstract="True">
     <label>herdstone</label>
     <description>???</description>
-    <thingClass>Abhuman40k.Building_Herdstone</thingClass>
-    <containedPawnsSelectable>true</containedPawnsSelectable>
     <altitudeLayer>Building</altitudeLayer>
     <passability>PassThroughOnly</passability>
     <pathCost>50</pathCost>
@@ -42,6 +39,127 @@
     <researchPrerequisites>
       <li>BEWH_Herdstones</li>
     </researchPrerequisites>
+    <comps>
+      <li Class="Abhuman40k.CompProperties_CustomCauseHediff_Extra_AoE">
+        <hediff>BEWH_BeastmanHerdstoneAuraBuff</hediff>
+        <range>15</range>
+        <checkInterval>500</checkInterval>
+        <hediffDuration>2500</hediffDuration>
+        <startingSeverity>1</startingSeverity>
+        <sameRoomOnly>false</sameRoomOnly>
+        <requiredGene>BEWH_BeastmanHerdstoneAffinity</requiredGene>
+      </li>
+    </comps>
+    <specialDisplayRadius>15</specialDisplayRadius>
+  </ThingDef>
+
+  <!-- Herdstone (Player version) -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>BEWH_HerdstonePlayer</defName>
+    <label>herdstone</label>
+    <description>???</description>
+    <thingClass>Abhuman40k.Building_Herdstone</thingClass>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Building/Ship/ShipComputerCore</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <size>(1, 1)</size>
+    <canOverlapZones>false</canOverlapZones>
+    <defaultPlacingRot>North</defaultPlacingRot>
+    <designationCategory>BEWH_RimDarkCategory</designationCategory>
+    <uiOrder>2100</uiOrder>
+    <statBases>
+      <MaxHitPoints>2000</MaxHitPoints>
+      <WorkToBuild>9000</WorkToBuild>
+      <Mass>85</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <stuffCategories>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>250</costStuffCount>
+    <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+    <placeWorkers>
+      <li>Core40k.PlaceWorker_OnlyOnePerMap</li>
+      <li>Abhuman40k.PlaceWorker_OnlyAvailableWithBeastmanInColony</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>BEWH_Herdstones</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="Abhuman40k.CompProperties_CustomCauseHediff_Extra_AoE">
+        <hediff>BEWH_BeastmanHerdstoneAuraBuff</hediff>
+        <range>15</range>
+        <checkInterval>500</checkInterval>
+        <hediffDuration>2500</hediffDuration>
+        <startingSeverity>1</startingSeverity>
+        <sameRoomOnly>false</sameRoomOnly>
+        <requiredGene>BEWH_BeastmanHerdstoneAffinity</requiredGene>
+      </li>
+    </comps>
+    <specialDisplayRadius>15</specialDisplayRadius>
+  </ThingDef>
+
+  <!-- Can build 1 at 2 pawns with herdstone affinity to a max of 9 at 20 pawns with herstone affinity, follows some curve i made -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>BEWH_HerdstoneConduitPlayer</defName>
+    <label>herdstone conduit</label>
+    <description>???</description>
+    <thingClass>Abhuman40k.Building_HerdstoneConduit</thingClass>
+    <containedPawnsSelectable>true</containedPawnsSelectable>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Building/Ship/ShipComputerCore</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <size>(1, 1)</size>
+    <canOverlapZones>false</canOverlapZones>
+    <defaultPlacingRot>North</defaultPlacingRot>
+    <designationCategory>BEWH_RimDarkCategory</designationCategory>
+    <uiOrder>2100</uiOrder>
+    <statBases>
+      <MaxHitPoints>2000</MaxHitPoints>
+      <WorkToBuild>9000</WorkToBuild>
+      <Mass>85</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <stuffCategories>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>250</costStuffCount>
+    <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+    <placeWorkers>
+      <li>Abhuman40k.PlaceWorker_OnlyAvailableWithHerdstoneOnMap</li>
+      <li>Abhuman40k.PlaceWorker_BeastmanInColonyLimited</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>BEWH_Herdstones</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="Abhuman40k.CompProperties_CustomCauseHediff_Extra_AoE">
+        <hediff>BEWH_BeastmanHerdstoneAuraBuff</hediff>
+        <range>9</range>
+        <checkInterval>300</checkInterval>
+        <hediffDuration>320</hediffDuration>
+        <startingSeverity>1</startingSeverity>
+        <sameRoomOnly>false</sameRoomOnly>
+        <requiredGene>BEWH_BeastmanHerdstoneAffinity</requiredGene>
+      </li>
+    </comps>
+    <specialDisplayRadius>9</specialDisplayRadius>
   </ThingDef>
 
 </Defs>

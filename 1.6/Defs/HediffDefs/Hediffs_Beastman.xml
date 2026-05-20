@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <HediffDef>
+        <defName>BEWH_BeastmanHerdstoneAuraBuff</defName>
+        <label>Power of the Herdstone</label>
+        <hediffClass>Abhuman40k.HediffHerdstoneSeverity</hediffClass>
+        <description>...</description>
+        <scenarioCanAdd>false</scenarioCanAdd>
+        <everCurableByItem>false</everCurableByItem>
+        <isBad>false</isBad>
+        <stages>
+            <li>
+                <minSeverity>0.1</minSeverity>
+            </li>
+            <li>
+                <minSeverity>1</minSeverity>
+                <statOffsets>
+                    <ArmorRating_Blunt>10</ArmorRating_Blunt>
+                </statOffsets>
+            </li>
+            <li>
+                <minSeverity>2</minSeverity>
+                <statOffsets>
+                    <ArmorRating_Blunt>9</ArmorRating_Blunt>
+                </statOffsets>
+            </li>
+            <li>
+                <minSeverity>3</minSeverity>
+                <statOffsets>
+                    <ArmorRating_Blunt>8</ArmorRating_Blunt>
+                </statOffsets>
+            </li>
+            <li>
+                <minSeverity>4</minSeverity>
+                <statOffsets>
+                    <ArmorRating_Blunt>7</ArmorRating_Blunt>
+                </statOffsets>
+            </li>
+            <li>
+                <minSeverity>5</minSeverity>
+                <statOffsets>
+                    <ArmorRating_Blunt>6</ArmorRating_Blunt>
+                </statOffsets>
+            </li>
+            <li>
+                <minSeverity>6</minSeverity>
+                <statOffsets>
+                    <ArmorRating_Blunt>5</ArmorRating_Blunt>
+                </statOffsets>
+            </li>
+            <li>
+                <minSeverity>7</minSeverity>
+                <statOffsets>
+                    <ArmorRating_Blunt>4</ArmorRating_Blunt>
+                </statOffsets>
+            </li>
+            <li>
+                <minSeverity>8</minSeverity>
+                <statOffsets>
+                    <ArmorRating_Blunt>3</ArmorRating_Blunt>
+                </statOffsets>
+            </li>
+            <li>
+                <minSeverity>9</minSeverity>
+                <statOffsets>
+                    <ArmorRating_Blunt>2</ArmorRating_Blunt>
+                </statOffsets>
+            </li>
+            <li>
+                <minSeverity>10</minSeverity>
+                <statOffsets>
+                    <ArmorRating_Blunt>1</ArmorRating_Blunt>
+                </statOffsets>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_DisappearsOnDeath" />
+            <li Class="HediffCompProperties_Disappears">
+                <showRemainingTime>True</showRemainingTime>
+            </li>
+        </comps>
+    </HediffDef>
+
+</Defs>

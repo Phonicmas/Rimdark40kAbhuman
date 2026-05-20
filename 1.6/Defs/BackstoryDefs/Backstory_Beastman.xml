@@ -8,7 +8,7 @@
     <description>Child of the herdstone, [PAWN_nameDef] was somehow concieved through the warp and had to get by in an unforgivable place.</description>
     <slot>Childhood</slot>
     <spawnCategories>
-      <li>BEWH_Beastman</li>
+      <li>BEWH_BeastmanBackstoryPlayer</li>
     </spawnCategories>
     <skillGains>
       <Melee>2</Melee>
@@ -27,7 +27,7 @@
     <description>[PAWN_nameDef] mature quickly in the warp, learning how to slaughter and nothing else.</description>
     <slot>Adulthood</slot>
     <spawnCategories>
-      <li>BEWH_Beastman</li>
+      <li>BEWH_BeastmanBackstoryPlayer</li>
     </spawnCategories>
     <skillGains>
       <Melee>2</Melee>

@@ -28,7 +28,7 @@
             <li>BeardStyle</li>
         </exclusionTags>
         <statOffsets>
-            <ComfyTemperatureMin>-5</ComfyTemperatureMin>
+            <ComfyTemperatureMin>-15</ComfyTemperatureMin>
         </statOffsets>
         <fur>Furskin</fur>
         <skinIsHairColor>true</skinIsHairColor>

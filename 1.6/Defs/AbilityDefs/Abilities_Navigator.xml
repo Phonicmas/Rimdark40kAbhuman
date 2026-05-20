@@ -34,6 +34,12 @@
         </stunnedNotKilledGeneDef>
         <stunnedNotKilledPawnKindDef />
       </li>
+      <li Class="Core40k.CompProperties_DisableIfApparelCovers">
+        <disabledIfCovered>
+          <li>UpperHead</li>
+          <li>FullHead</li>
+        </disabledIfCovered>
+      </li>
     </comps>
   </AbilityDef>
 

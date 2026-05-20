@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <IncidentDef ParentName="GiveQuestBase">
+        <defName>BEWH_NavigatorDowned</defName>
+        <label>Downed Gravship</label>
+        <questScriptDef>BEWH_NavigatorDowned</questScriptDef>
+        <baseChance>0</baseChance> <!-- given by a special storyteller comp -->
+    </IncidentDef>
+
+    <QuestScriptDef>
+        <defName>BEWH_NavigatorDowned</defName>
+        <isRootSpecial>true</isRootSpecial>
+        <defaultChallengeRating>1</defaultChallengeRating>
+        <rootMinPoints>0</rootMinPoints>
+        <rootIncreasesPopulation>true</rootIncreasesPopulation>
+        <autoAccept>true</autoAccept>
+        <questNameRules>
+            <rulesStrings>
+                <li>questName->Downed Gravship</li>
+            </rulesStrings>
+        </questNameRules>
+        <questDescriptionRules>
+            <rulesStrings>
+                <li>questDescription(askerIsNull==true)->Long-range augurs have picked up a faint Mechanicus-pattern distress beacon. A gravship has come down hard and thermal signatures suggest imminent reactor failures and impossibly, a life sign sealed inside what looks like a Navigator's Sanctum.</li>
+            </rulesStrings>
+        </questDescriptionRules>
+        <root Class="QuestNode_Sequence">
+            <nodes>
+                <li Class="QuestNode_SubScript">
+                    <def>Util_AdjustPointsForDistantFight</def>
+                </li>
+
+                <li Class="QuestNode_GetMap">
+                    <canBeSpace>false</canBeSpace>
+                </li>
+
+                <li Class="QuestNode_Set">
+                    <name>askerIsNull</name>
+                    <value>true</value>
+                    <selectionWeight>1</selectionWeight>
+                </li>
+
+                <li Class="QuestNode_GetSiteTile">
+                    <storeAs>siteTile</storeAs>
+                    <preferCloserTiles>true</preferCloserTiles>
+                </li>
+
+                <li Class="QuestNode_GetSitePartDefsByTagsAndFaction">
+                    <storeAs>sitePartDefs</storeAs>
+                    <storeFactionAs>siteFaction</storeFactionAs>
+                    <sitePartsTags>
+                        <li>
+                            <tag>BEWH_NavigatorDownedGravship</tag>
+                        </li>
+                        <li>
+                            <tag>BEWH_NavigatorDowned</tag>
+                        </li>
+                        <li>
+                            <tag>BEWH_NavigatorDownedAmbush</tag>
+                        </li>
+                    </sitePartsTags>
+                </li>
+
+                <li Class="QuestNode_GetDefaultSitePartsParams">
+                    <tile>$siteTile</tile>
+                    <faction>$siteFaction</faction>
+                    <sitePartDefs>$sitePartDefs</sitePartDefs>
+                    <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+                </li>
+
+                <li Class="QuestNode_SubScript">
+                    <def>Util_GenerateSite</def>
+                    <parms>
+                        <hiddenSitePartsPossible>true</hiddenSitePartsPossible>
+                    </parms>
+                </li>
+
+                <li Class="QuestNode_SpawnWorldObjects">
+                    <worldObjects>$site</worldObjects>
+                </li>
+
+                <li Class="QuestNode_WorldObjectTimeout">
+                    <worldObject>$site</worldObject>
+                    <isQuestTimeout>true</isQuestTimeout>
+                    <delayTicks>$(randInt(7,15)*60000)</delayTicks>
+                    <inSignalDisable>site.MapGenerated</inSignalDisable>
+                    <node Class="QuestNode_Sequence">
+                        <nodes>
+                            <li Class="QuestNode_Letter">
+                                <label TKey="LetterLabelQuestExpired">Quest expired: [resolvedQuestName]</label>
+                                <text TKey="LetterTextQuestExpired">Distress signal have been lost, and report of a major explosion have been recieved, it is safe to say [refugee_nameDef] can no longer be rescued.</text>
+                            </li>
+                            <li Class="QuestNode_End">
+                                <outcome>Fail</outcome>
+                            </li>
+                        </nodes>
+                    </node>
+                </li>
+
+                <li Class="QuestNode_AddPawnReward">
+                    <pawn>$navigator</pawn>
+                    <inSignalChoiceUsed>site.MapGenerated</inSignalChoiceUsed>
+                    <rewardDetailsHidden>true</rewardDetailsHidden>
+                </li>
+
+                <li Class="QuestNode_NoWorldObject">
+                    <worldObject>$site</worldObject>
+                    <node Class="QuestNode_End" />
+                </li>
+            </nodes>
+        </root>
+    </QuestScriptDef>
+
+    <!-- Spawn Navigator -->
+    <SitePartDef>
+        <defName>BEWH_NavigatorDowned</defName>
+        <label>incapacitated refugee</label>
+        <description>A stranded, incapacitated refugee begging for help.</description>
+        <workerClass>Abhuman40k.SitePartWorker_DownedNavigator</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Expanding/Sites/DownedRefugee</expandingIconTexture>
+        <forceExitAndRemoveMapCountdownDurationDays>16</forceExitAndRemoveMapCountdownDurationDays>
+        <increasesPopulation>true</increasesPopulation>
+        <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
+        <gravShipsCanLandOn>true</gravShipsCanLandOn>
+        <tags>
+            <li>BEWH_NavigatorDowned</li>
+        </tags>
+    </SitePartDef>
+    <GenStepDef>
+        <defName>BEWH_NavigatorDowned</defName>
+        <linkWithSite>BEWH_NavigatorDowned</linkWithSite>
+        <order>1600</order>
+        <genStep Class="Abhuman40k.GenStep_DownedNavigator">
+            <count>1</count>
+            <nearMapCenter>true</nearMapCenter>
+        </genStep>
+    </GenStepDef>
+
+    <!-- Spawn Ambush -->
+    <SitePartDef>
+        <defName>BEWH_NavigatorDownedAmbush</defName>
+        <label>ambush</label>
+        <description>An ambush.</description>
+        <workerClass>SitePartWorker_Ambush</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Expanding/Sites/Ambush</expandingIconTexture>
+        <defaultHidden>true</defaultHidden>
+        <wantsThreatPoints>true</wantsThreatPoints>
+        <tags>
+            <li>BEWH_NavigatorDownedAmbush</li>
+        </tags>
+    </SitePartDef>
+    <GenStepDef>
+        <defName>BEWH_NavigatorDownedAmbush</defName>
+        <linkWithSite>BEWH_NavigatorDownedAmbush</linkWithSite>
+        <order>1600</order>
+        <genStep Class="GenStep_Ambush_Edge" />
+    </GenStepDef>
+
+    <!-- Spawn Gravship -->
+    <SitePartDef>
+        <defName>BEWH_NavigatorDownedGravship</defName>
+        <label>navigator gravship</label>
+        <description>A navigator gravship.</description>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Expanding/Sites/DownedRefugee</expandingIconTexture>
+        <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
+        <tags>
+            <li>BEWH_NavigatorDownedGravship</li>
+        </tags>
+    </SitePartDef>
+    <GenStepDef>
+        <defName>BEWH_NavigatorDownedGravship</defName>
+        <linkWithSite>BEWH_NavigatorDownedGravship</linkWithSite>
+        <order>460</order>
+        <genStep Class="KCSG.GenStep_CustomStructureGen">
+            <structureLayoutDefs>
+                <li>BEWH_NavigatorGravshipNoOdyssey</li>
+            </structureLayoutDefs>
+            <!-- Additional options -->
+            <fullClear>false</fullClear> <!-- Clear any impassable in the way -->
+            <clearFogInRect>false</clearFogInRect> <!-- Clear fog on the structure -->
+            <preventBridgeable>true</preventBridgeable> <!-- Prevent lake/river/marsh (bridgeable) -->
+        </genStep>
+    </GenStepDef>
+
+    <!-- Ship layout -->
+    <KCSG.StructureLayoutDef>
+        <defName>BEWH_NavigatorGravshipNoOdyssey</defName>
+        <layouts>
+            <li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,.,.,.,.,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_Steel,Autodoor_Steel,Wall_Steel,.,.,.,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Shelf_Steel_North,.,Shelf_Steel_North,.,GeneBank_North,.,GeneBank_North,.,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,WallLamp_East,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Filth_Trash,.,.,Filth_Trash,.,.,.,.,.,.,.,.,.,Wall_Steel,Wall_Steel</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Autodoor_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,WallLamp_South,.,Wall_Steel,.,.,WallLamp_South,.,Autodoor_Steel,.,Filth_Trash,Filth_Trash,.,Filth_Trash,.,.,.,.,.,.,.,GeneAssembler_West,Wall_Steel,Wall_Steel</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,.,.,.,.,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,.,.,.,.,.,Filth_Fuel,Filth_Trash,.,.,.,.,.,Autodoor_Steel,.,.,.,.,Wall_Steel,.,.,.,WallLamp_North,.,.,.,.,.,WallLamp_North,.,.,.,Wall_Steel,Wall_Steel</li>
+                <li>.,.,.,.,.,.,.,.,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Filth_BlastMark,.,SlagRubble,SlagRubble,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,.,Filth_Blood,.,.,WallLamp_North,.,Filth_Trash,.,.,.,.,.,Wall_Steel,.,.,Turret_MiniTurret_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel</li>
+                <li>.,.,.,.,.,.,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,.,GrowthVat_West,.,.,GrowthVat_East,.,Wall_Steel,.,.,.,.,.,.,.,Wall_Steel,.,.,.,.,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,.,WallLamp_North,.,Autodoor_Steel,.,WallLamp_South,Autodoor_Steel,.,WallLamp_South,LightBall,.,.,.,Hemopump_West,Wall_Steel,.,.,PodLauncher_West,Wall_Steel,Wall_Steel</li>
+                <li>Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,ChemfuelPoweredGenerator,.,Battery_North,ChemfuelPoweredGenerator,.,Wall_Steel,WallLamp_West,Filth_Trash,.,Filth_Trash,.,WallLamp_East,Wall_Steel,Shelf_Steel_East,.,.,.,.,.,.,Autodoor_Steel,.,Corpse_Human,WallLamp_North,.,Wall_Steel,.,.,.,WallLamp_South,.,Filth_Blood,.,Shelf_Steel_North,.,Wall_Steel,Autodoor_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,.,.,.,.,.,.,.,Autodoor_Steel,.,.,TransportPod,Wall_Steel,Wall_Steel</li>
+                <li>Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,WoodFiredGenerator,.,Battery_North,.,.,.,.,.,Wall_Steel,.,.,LightBall,.,.,.,Wall_Steel,WallLamp_West,Filth_Trash,.,.,.,.,.,Wall_Steel,.,.,Wall_Steel,Wall_Steel,Wall_Steel,.,.,DiningChair_WoodLog_North,.,DiningChair_WoodLog_North,.,Corpse_Human,Filth_RubbleRock,.,Wall_Steel,.,WallLamp_East,Wall_Steel,.,ElectricStove_South,.,Wall_Steel,Wall_Steel,Wall_Steel,.,.,Filth_Trash,.,.,Wall_Steel,WallLamp_West,TransportPod,.,Wall_Steel,Wall_Steel</li>
+                <li>Wall_Steel,Wall_Steel,LightBall,.,Column_Steel,Shelf_Steel_North,.,.,.,.,.,Filth_OilSmear,Filth_Trash,.,WallLamp_East,Wall_Steel,Wall_Steel,Autodoor_Steel,Wall_Steel,Wall_Steel,Autodoor_Steel,Wall_Steel,Wall_Steel,Filth_OilSmear,.,.,.,.,.,.,Wall_Steel,.,.,.,.,Wall_Steel,.,DiningChair_WoodLog_East,.,.,.,DiningChair_WoodLog_West,.,Filth_Trash,.,.,.,.,Wall_Steel,Filth_Blood,.,.,Wall_Steel,.,.,.,Filth_Trash,.,.,DeathrestAccelerator_South,Wall_Steel,.,PodLauncher_East,.,Wall_Steel,Wall_Steel</li>
+                <li>Wall_Steel,Wall_Steel,WallLamp_West,.,Turret_MiniTurret_Steel,.,.,.,.,Filth_Trash,.,.,.,Corpse_Human,.,Autodoor_Steel,WallLamp_North,.,.,.,.,WallLamp_South,Autodoor_Steel,.,Filth_Trash,Filth_OilSmear,.,DiningChair_WoodLog_East,HiTechResearchBench_Steel_East,.,Wall_Steel,Filth_Trash,.,WastepackAtomizer_East,.,Wall_Steel,WallLamp_West,.,.,Table3x3c_WoodLog,.,.,.,Filth_Trash,.,.,.,.,Autodoor_Steel,.,.,WallLamp_East,Wall_Steel,CommsConsole_East,.,.,.,.,DeathrestCasket_West,WallLamp_East,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel</li>
+                <li>Wall_Steel,Wall_Steel,.,Shelf_Steel_South,Column_Steel,LightBall,.,WoodFiredGenerator,.,Battery_North,.,.,.,.,WallLamp_East,Wall_Steel,Wall_Steel,Autodoor_Steel,Wall_Steel,Wall_Steel,Autodoor_Steel,Wall_Steel,Wall_Steel,.,.,.,.,.,.,.,Wall_Steel,.,.,.,.,Wall_Steel,.,Filth_RubbleBuilding,.,.,.,DiningChair_WoodLog_West,Filth_Trash,.,.,.,.,.,Wall_Steel,.,Filth_Blood,.,Wall_Steel,.,.,.,.,.,.,.,Wall_Steel,.,.,PodLauncher_West,Wall_Steel,Wall_Steel</li>
+                <li>Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,.,.,.,ChemfuelPoweredGenerator,.,Battery_North,ChemfuelPoweredGenerator,.,Wall_Steel,.,.,LightBall,.,.,.,Wall_Steel,WallLamp_West,.,.,.,Filth_Blood,.,.,Wall_Steel,Filth_Trash,Filth_Trash,Wall_Steel,Wall_Steel,Wall_Steel,.,Corpse_Human,DiningChair_WoodLog_South,Filth_Blood,DiningChair_WoodLog_South,Filth_Blood,.,.,.,Wall_Steel,.,WallLamp_East,Wall_Steel,.,TableButcher_WoodLog_North,.,Wall_Steel,Wall_Steel,Wall_Steel,.,.,.,.,DeathrestAccelerator_South,Wall_Steel,WallLamp_West,.,TransportPod,Wall_Steel,Wall_Steel</li>
+                <li>Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,.,.,.,.,.,Wall_Steel,WallLamp_West,.,.,Filth_Trash,.,WallLamp_East,Wall_Steel,.,Filth_Fuel,Filth_Fuel,.,.,.,.,Autodoor_Steel,Filth_Trash,.,WallLamp_South,.,Wall_Steel,.,.,.,WallLamp_North,.,.,.,.,Shelf_Steel_South,Wall_Steel,Autodoor_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,.,.,.,.,.,.,.,Autodoor_Steel,.,TransportPod,.,Wall_Steel,Wall_Steel</li>
+                <li>.,.,.,.,.,.,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,.,GrowthVat_West,.,.,GrowthVat_East,.,Wall_Steel,Shelf_Steel_East,.,LightBall,.,.,WallLamp_North,.,Wall_Steel,.,.,.,.,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,.,WallLamp_South,.,Autodoor_Steel,Filth_Blood,WallLamp_North,Autodoor_Steel,.,WallLamp_North,LightBall,.,.,.,Hemopump_West,Wall_Steel,.,PodLauncher_East,.,Wall_Steel,Wall_Steel</li>
+                <li>.,.,.,.,.,.,.,.,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,.,.,.,.,WallLamp_South,.,.,.,.,.,Filth_Blood,.,Wall_Steel,.,.,Turret_MiniTurret_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,.,.,.,.,.,.,.,.,.,.,.,.,Autodoor_Steel,.,.,.,.,Wall_Steel,.,.,.,WallLamp_South,.,.,.,Filth_RubbleRock,.,WallLamp_South,.,.,.,Wall_Steel,Wall_Steel</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Autodoor_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,WallLamp_North,.,Wall_Steel,.,.,WallLamp_North,.,Autodoor_Steel,.,.,Filth_Blood,.,.,.,.,.,Filth_Trash,.,Filth_Trash,.,MechGestator_West,Wall_Steel,Wall_Steel</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,WallLamp_East,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_Steel,Wall_Steel</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_Steel,Autodoor_Steel,Wall_Steel,.,.,.,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,.,Shelf_Steel_South,.,Shelf_Steel_South,.,.,BasicRecharger_South,.,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,Wall_Steel,.,.,.,.,.</li>
+            </li>
+            <li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,.,.,.,.,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,Filth_Dirt,.,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,PowerConduit,Genepack,.,Genepack,Genepack,.,.,.,.,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,.,.,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,.,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,LightBall,.,.,.,.,.,.,PowerConduit,.,.,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,SlagRubble,SlagRubble,.,.,.,.,.,.,PowerConduit,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,.,.,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,.,.,.,.,PowerConduit,PowerConduit,PowerConduit,PowerConduit,.,.,.,.,Filth_Trash,.,.,.,.,.,.,.,PowerConduit,.,.,.,.,PowerConduit,PowerConduit,PowerConduit,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,.,.,.,.,.,.,PowerConduit,WoodLog,.,.,SlagRubble,.,.,.,PowerConduit,.,.,.,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,.,.,.,.,.,.,PowerConduit,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,.</li>
+                <li>.,.,.,.,.,.,.,PowerConduit,PowerConduit,PowerConduit,.,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,Gold,.,.,.,.,.,.,HiddenConduit,.,.,LightBall,.,.,.,.,.,.,.,.,.,MealSurvivalPack,MealSurvivalPack,PowerConduit,.,.,.,.,.,.,PowerConduit,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,.,.,.,.,.,.,.,PowerConduit,.,.,.,.,.,.,.,.,.,.,.,.,Filth_Blood,.,PowerConduit,.,.,.,.,.,.,PowerConduit,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,.</li>
+                <li>.,.,.,.,.,Chemfuel,Chemfuel,.,.,.,.,Filth_Fuel,Filth_Fuel,.,.,.,.,.,.,.,.,.,PowerConduit,.,.,.,.,.,.,.,PowerConduit,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,.,Filth_OilSmear,.,.,.,.,.,PowerConduit,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,.</li>
+                <li>.,.,Chemfuel,.,.,.,.,.,.,.,.,.,.,.,Filth_Blood,.,.,.,.,.,.,.,PowerConduit,.,.,.,.,.,.,.,PowerConduit,.,.,.,.,.,.,DiningChair_WoodLog_East,.,.,.,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,.,.,.,.,.,.,.,PowerConduit,.,.,.,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,.,.,.,.,.,.,PowerConduit,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,.</li>
+                <li>.,.,.,.,.,.,.,PowerConduit,PowerConduit,PowerConduit,.,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,Steel,.,.,.,.,.,.,HiddenConduit,.,.,LightBall,.,.,.,.,.,.,.,.,.,MealSurvivalPack,.,PowerConduit,.,.,.,.,.,.,PowerConduit,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,.,.,.,.,.,.,PowerConduit,Steel,.,.,.,.,.,.,PowerConduit,.,.,.,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,.,.,.,.,.,.,PowerConduit,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,.,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,.,.,.,.,PowerConduit,PowerConduit,PowerConduit,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,.,.,.,.,.,.,.,Filth_Trash,.,Filth_Trash,.,.,.,PowerConduit,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,.,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,LightBall,.,.,.,.,.,.,PowerConduit,.,.,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,.,.,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,PowerConduit,.,.,MechSerumHealer,.,.,.,.,.,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,PowerConduit,.,.,.,.,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+            </li>
+            <li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+                <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+            </li>
+        </layouts>
+        <roofGrid>
+            <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+            <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,1,1,1,1,1,1,1,1,1,1,.,.,.,.,.</li>
+            <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,1,1,1,.,.,.,.,.,.,.,.,.,.,.,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,.</li>
+            <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,1,1,1,.,.,.,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,.</li>
+            <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,.</li>
+            <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1</li>
+            <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1</li>
+            <li>.,.,.,.,.,.,.,.,.,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1</li>
+            <li>.,.,.,.,.,.,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1</li>
+            <li>.,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1</li>
+            <li>.,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1</li>
+            <li>.,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1</li>
+            <li>.,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1</li>
+            <li>.,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1</li>
+            <li>.,.,.,.,.,.,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1</li>
+            <li>.,.,.,.,.,.,.,.,.,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1</li>
+            <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1</li>
+            <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1</li>
+            <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,.</li>
+            <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,1,1,1,.,.,.,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,.</li>
+            <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,1,1,1,.,.,.,.,.,.,.,.,.,.,.,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,.</li>
+            <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,1,1,1,1,1,1,1,1,1,1,.,.,.,.,.</li>
+            <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+        </roofGrid>
+        <terrainGrid>
+            <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,.,.,.,.,.</li>
+            <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,.</li>
+            <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,MetalTile,MetalTile,MetalTile,.,.,.,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile</li>
+            <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile</li>
+            <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile</li>
+            <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile</li>
+            <li>.,.,.,.,.,.,.,.,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile</li>
+            <li>.,.,.,.,.,.,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile</li>
+            <li>MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile</li>
+            <li>MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile</li>
+            <li>MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile</li>
+            <li>MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile</li>
+            <li>MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile</li>
+            <li>MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile</li>
+            <li>MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile</li>
+            <li>.,.,.,.,.,.,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile</li>
+            <li>.,.,.,.,.,.,.,.,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile</li>
+            <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile</li>
+            <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile</li>
+            <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile</li>
+            <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,MetalTile,MetalTile,MetalTile,.,.,.,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile</li>
+            <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,.</li>
+            <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,MetalTile,.,.,.,.,.</li>
+        </terrainGrid>
+        <modRequirements>
+            <li>oskarpotocki.vanillafactionsexpanded.core</li>
+            <li>ludeon.rimworld.biotech</li>
+            <li>ludeon.rimworld.ideology</li>
+        </modRequirements>
+    </KCSG.StructureLayoutDef>
+
+</Defs>

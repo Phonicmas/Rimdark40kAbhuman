@@ -21,6 +21,8 @@
             <li>Mood_Pessimist</li>
             <li>Beard_BushyOnly</li>
             <li>Sterile</li>
+            <li>Body_Hulk</li>
+            <li>Body_Standard</li>
         </genes>
     </XenotypeDef>
 

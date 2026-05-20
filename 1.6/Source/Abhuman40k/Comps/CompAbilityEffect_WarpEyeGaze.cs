@@ -52,27 +52,4 @@ public class CompAbilityEffect_WarpEyeGaze : CompAbilityEffect
         
         return StunNotKill(target.Pawn) ? "BEWH.Abhuman.Navigator.WillBeStunned".Translate() : "BEWH.Abhuman.Navigator.WillBeKilled".Translate();
     }
-
-    public override bool GizmoDisabled(out string reason)
-    {
-        var invalidates = new List<BodyPartGroupDef>
-        {
-            BodyPartGroupDefOf.UpperHead,
-            BodyPartGroupDefOf.FullHead
-        };
-        foreach (var apparel in parent.pawn.apparel.WornApparel)
-        {
-            if (!apparel.def.apparel.bodyPartGroups.Exists(x => invalidates.Contains(x)))
-            {
-                continue;
-            }
-
-            reason = "BEWH.Abhuman.Navigator.WarpEyeCovered".Translate(apparel.Label);
-            return true;
-        }
-
-        reason = null;
-        return false;
-    }
-
 }

@@ -65,7 +65,7 @@
 
         <statOffsets>
             <PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">1.33</PilotingAbility>
-            <CaravanBonusSpeedFactor>0.1</CaravanBonusSpeedFactor>
+            <CaravanBonusSpeedFactor>0.2</CaravanBonusSpeedFactor>
         </statOffsets>
         <customEffectDescriptions>
             <li>Gives ability: Warp travel</li>
@@ -125,6 +125,10 @@
         <biostatMet>-1</biostatMet>
         <displayOrderInCategory>65</displayOrderInCategory>
 
+        <customEffectDescriptions>
+            <li>Will belong to a noble navigator house</li>
+        </customEffectDescriptions>
+
         <modExtensions>
             <li Class="Core40k.DefModExtension_AddRandomGeneByWeight">
                 <possibleGenesToGive>
@@ -146,7 +150,7 @@
                     </li>
                 </possibleGenesToGive>
                 <addAsXenogene>false</addAsXenogene>
-                <skipIfAnyAlreadyExistsOnPawn>false</skipIfAnyAlreadyExistsOnPawn>
+                <skipIfAnyAlreadyExistsOnPawn>true</skipIfAnyAlreadyExistsOnPawn>
             </li>
         </modExtensions>
     </GeneDef>
@@ -214,7 +218,7 @@
         <capMods>
             <li>
                 <capacity>Consciousness</capacity>
-                <offset>0.05</offset>
+                <offset>0.1</offset>
             </li>
         </capMods>
         <customEffectDescriptions>

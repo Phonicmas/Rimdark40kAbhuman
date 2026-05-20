@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <PawnKindDef Name="BEWH_BeastmanPawnBase" Abstract="True">
+        <race>Human</race>
+        <defaultFactionType>BEWH_BeastmanFaction</defaultFactionType>
+        <invNutrition>2.55</invNutrition>
+        <backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+        <ignoreIdeoApparelColors>true</ignoreIdeoApparelColors>
+        <useFactionXenotypes>false</useFactionXenotypes>
+        <minGenerationAge>14</minGenerationAge>
+        <maxGenerationAge>79</maxGenerationAge>
+        <gearHealthRange>
+            <min>1</min>
+            <max>1</max>
+        </gearHealthRange>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <fixedChildBackstories>
+            <li>BEWH_BeastmanChild</li>
+        </fixedChildBackstories>
+        <fixedAdultBackstories>
+            <li>BEWH_BeastmanAdult</li>
+        </fixedAdultBackstories>
+        <skills>
+            <li>
+                <skill>Intellectual</skill>
+                <range>0~3</range>
+            </li>
+            <li>
+                <skill>Medicine</skill>
+                <range>0~3</range>
+            </li>
+            <li>
+                <skill>Social</skill>
+                <range>0~3</range>
+            </li>
+            <li>
+                <skill>Artistic</skill>
+                <range>0~3</range>
+            </li>
+            <li>
+                <skill>Crafting</skill>
+                <range>0~3</range>
+            </li>
+            <li>
+                <skill>Cooking</skill>
+                <range>0~3</range>
+            </li>
+            <li>
+                <skill>Construction</skill>
+                <range>0~3</range>
+            </li>
+            <li>
+                <skill>Animals</skill>
+                <range>4~8</range>
+            </li>
+            <li>
+                <skill>Shooting</skill>
+                <range>2~5</range>
+            </li>
+        </skills>
+    </PawnKindDef>
+
+    <!-- Faction Beastman -->
+    <PawnKindDef ParentName="BEWH_BeastmanPawnBase">
+        <defName>BEWH_BeastmanFactionBeastman</defName>
+        <label>beastman</label>
+        <combatPower>20</combatPower>
+        <initialWillRange>8~20</initialWillRange>
+        <initialResistanceRange>8~20</initialResistanceRange>
+        <fixedGender>Male</fixedGender>
+        <skills>
+            <li>
+                <skill>Melee</skill>
+                <range>6~9</range>
+            </li>
+        </skills>
+        <xenotypeSet>
+            <xenotypeChances>
+                <BEWH_Beastman>1</BEWH_Beastman>
+            </xenotypeChances>
+        </xenotypeSet>
+    </PawnKindDef>
+
+    <!-- Faction Minotaur -->
+    <PawnKindDef ParentName="BEWH_BeastmanPawnBase">
+        <defName>BEWH_BeastmanFactionMinotaur</defName>
+        <label>minotaur</label>
+        <combatPower>60</combatPower>
+        <initialWillRange>25~40</initialWillRange>
+        <initialResistanceRange>25~40</initialResistanceRange>
+        <fixedGender>Male</fixedGender>
+        <skills>
+            <li>
+                <skill>Melee</skill>
+                <range>8~14</range>
+            </li>
+        </skills>
+        <xenotypeSet>
+            <xenotypeChances>
+                <BEWH_Minotaur>1</BEWH_Minotaur>
+            </xenotypeChances>
+        </xenotypeSet>
+    </PawnKindDef>
+
+    <!-- Faction Chieftan -->
+    <PawnKindDef ParentName="BEWH_BeastmanPawnBase">
+        <defName>BEWH_BeastmanFactionChieftan</defName>
+        <label>chieftan</label>
+        <combatPower>200</combatPower>
+        <initialWillRange>65~80</initialWillRange>
+        <initialResistanceRange>65~80</initialResistanceRange>
+        <fixedGender>Male</fixedGender>
+        <skills>
+            <li>
+                <skill>Melee</skill>
+                <range>16~18</range>
+            </li>
+        </skills>
+        <xenotypeSet>
+            <xenotypeChances>
+                <BEWH_Minotaur>1</BEWH_Minotaur>
+            </xenotypeChances>
+        </xenotypeSet>
+    </PawnKindDef>
+
+</Defs>

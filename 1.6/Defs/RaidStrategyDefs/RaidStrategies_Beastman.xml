@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <RaidStrategyDef>
+    <defName>BEWH_Beastman</defName>
+    <workerClass>RaidStrategyWorker_Siege</workerClass>
+    <minPawns>4</minPawns>
+    <raidLootValueFactor>0</raidLootValueFactor>
+    <arriveModes>
+      <li>EdgeWalkIn</li>
+    </arriveModes>
+    <selectionWeightCurvesPerFaction>
+      <li>
+        <faction>BEWH_BeastmanFaction</faction>
+        <selectionWeightPerPointsCurve>
+          <points>
+            <li>0, 0.5</li>
+            <li>5000, 1</li>
+          </points>
+        </selectionWeightPerPointsCurve>
+      </li>
+    </selectionWeightCurvesPerFaction>
+    <selectionWeightPerPointsCurve>
+      <points>
+        <li>(0, 0)</li>
+      </points>
+    </selectionWeightPerPointsCurve>
+    <letterLabelEnemy>Siege</letterLabelEnemy>
+    <arrivalTextEnemy>It looks like they want to erect a herdstone and trample.</arrivalTextEnemy>
+    <letterLabelFriendly>Friendlies</letterLabelFriendly>
+    <arrivalTextFriendly>It looks like they want to erect a herdstone to help you.</arrivalTextFriendly>
+    <layerWhitelist>
+      <li>Surface</li>
+    </layerWhitelist>
+  </RaidStrategyDef>
+
+</Defs>

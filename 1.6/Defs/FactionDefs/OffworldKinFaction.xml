@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <FactionDef ParentName="FactionBase">
+        <defName>BEWH_OffworldKinFaction</defName>
+        <label>Offworld Kin</label>
+        <description>Offworld Kin mining ores frmo all over the system.</description>
+
+        <techLevel>Ultra</techLevel>
+        <rescueesCanJoin>false</rescueesCanJoin>
+        <autoFlee>false</autoFlee>
+
+        <hiddenIdeo>true</hiddenIdeo>
+        <hidden>true</hidden>
+
+        <pawnSingular>Kin</pawnSingular>
+        <pawnsPlural>Kin</pawnsPlural>
+        <fixedName>Offworld Kin</fixedName>
+
+        <backstoryFilters>
+            <li>
+                <categories>
+                    <li>Offworld</li>
+                </categories>
+            </li>
+        </backstoryFilters>
+
+        <requiredCountAtGameStart>1</requiredCountAtGameStart>
+        <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+        <configurationListOrderPriority>3000</configurationListOrderPriority>
+        <displayInFactionSelection>false</displayInFactionSelection>
+
+        <canSiege>false</canSiege>
+        <canStageAttacks>false</canStageAttacks>
+        <raidsForbidden>true</raidsForbidden>
+
+        <canGenerateQuestSites>false</canGenerateQuestSites>
+
+        <factionIconPath>UI/Xenotypes/BEWH_SpaceMarineXenoIcon</factionIconPath>
+        <settlementTexturePath>UI/Xenotypes/BEWH_SpaceMarineXenoIcon</settlementTexturePath>
+
+    </FactionDef>
+
+</Defs>

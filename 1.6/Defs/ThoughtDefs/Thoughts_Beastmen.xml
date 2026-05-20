@@ -9,12 +9,12 @@
       <li>
         <label>Occult Rituals</label>
         <description>One of the other colonist are doing some ominous ritual like thing at that weird stone...</description>
-        <baseMoodEffect>-25</baseMoodEffect>
+        <baseMoodEffect>-15</baseMoodEffect>
       </li>
       <li>
         <label>Occult Rituals</label>
         <description>One of my kin are bringing more of us into this world!</description>
-        <baseMoodEffect>2</baseMoodEffect>
+        <baseMoodEffect>4</baseMoodEffect>
       </li>
     </stages>
   </ThoughtDef>

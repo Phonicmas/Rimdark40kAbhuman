@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!-- Make settlement fight always have a herdstone that also spawns more enemies? -->
+    <FactionDef ParentName="FactionBase">
+        <defName>BEWH_BeastmanFaction</defName>
+        <label>Beatmen Horde</label>
+        <description>A horde of vicious beastmen.</description>
+
+        <pawnSingular>beastman</pawnSingular>
+        <pawnsPlural>beastmen</pawnsPlural>
+        <fixedLeaderKinds>
+            <li>BEWH_BeastmanFactionChieftan</li>
+        </fixedLeaderKinds>
+        <leaderTitle>Chieftain</leaderTitle>
+        <fixedName>Beastman Horde</fixedName>
+
+        <settlementGenerationWeight>1</settlementGenerationWeight>
+        <requiredCountAtGameStart>1</requiredCountAtGameStart>
+        <allowedArrivalTemperatureRange>8~40</allowedArrivalTemperatureRange>
+        <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+        <configurationListOrderPriority>91</configurationListOrderPriority>
+
+        <canSiege>true</canSiege>
+        <canStageAttacks>true</canStageAttacks>
+        <permanentEnemy>false</permanentEnemy>
+        <techLevel>Medieval</techLevel>
+        <rescueesCanJoin>false</rescueesCanJoin>
+
+        <factionNameMaker>BEWH_BeastmanFactionNameMaker</factionNameMaker>
+        <settlementNameMaker>BEWH_BeastmanSettlementNameMaker</settlementNameMaker>
+        <factionIconPath>UI/Icons/Imperium/ImperiumIcon</factionIconPath>
+        <settlementTexturePath>UI/Icons/Imperium/ImperiumIcon</settlementTexturePath>
+
+        <xenotypeSet Inherit="False">
+            <xenotypeChances>
+                <BEWH_Beastman>0.9</BEWH_Beastman>
+                <BEWH_Minotaur>0.1</BEWH_Minotaur>
+            </xenotypeChances>
+        </xenotypeSet>
+        <backstoryFilters>
+            <li>
+                <categories>
+                    <li>BEWH_BeastmanBackstoryPlayer</li>
+                </categories>
+            </li>
+        </backstoryFilters>
+
+
+        <!--<allowedCultures MayRequire="Ludeon.RimWorld.Ideology">
+            <li>Corunan</li>
+        </allowedCultures>
+
+        <fixedIdeo MayRequire="Ludeon.RimWorld.Ideology">true</fixedIdeo>
+        <ideoName MayRequire="Ludeon.RimWorld.Ideology">Dark gods worship</ideoName>
+        <ideoDescription MayRequire="Ludeon.RimWorld.Ideology">...</ideoDescription>
+        <deityPresets MayRequire="Ludeon.RimWorld.Ideology">
+            <li>
+                <nameType>
+                    <name>Dark gods</name>
+                    <type>gods</type>
+                </nameType>
+                <gender>Male</gender>
+                <iconPath>UI/Deities/DeityGeneric</iconPath>
+            </li>
+        </deityPresets>
+        <styles>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Animalist</li>
+        </styles>
+        <forcedMemes>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Supremacist</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Ritualist</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Cannibal</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">AnimalPersonhood</li>
+        </forcedMemes>
+        <requiredPreceptsOnly MayRequire="Ludeon.RimWorld.Ideology">true</requiredPreceptsOnly>-->
+
+        <earliestRaidDays>25</earliestRaidDays>
+        <autoFlee>false</autoFlee>
+        <raidCommonalityFromPointsCurve>
+            <points>
+                <li>(0, 1)</li>
+            </points>
+        </raidCommonalityFromPointsCurve>
+        <maxPawnCostPerTotalPointsCurve>
+            <points>
+                <li>(0,0)</li>
+                <li>(400, 100)</li>
+                <li>(1000, 200)</li>
+                <li>(2000, 400)</li>
+                <li>(5000, 1000)</li>
+                <li>(10000, 3000)</li>
+                <li>(100000, 10000)</li>
+            </points>
+        </maxPawnCostPerTotalPointsCurve>
+        <pawnGroupMakers>
+            <!-- Mixed fight -->
+            <li>
+                <kindDef>Combat</kindDef>
+                <commonality>100</commonality>
+                <options>
+                    <BEWH_BeastmanFactionBeastman>40</BEWH_BeastmanFactionBeastman>
+                    <BEWH_BeastmanFactionMinotaur>10</BEWH_BeastmanFactionMinotaur>
+                    <BEWH_BeastmanFactionChieftan>1</BEWH_BeastmanFactionChieftan>
+                </options>
+            </li>
+            <!-- Beastman Horde -->
+            <li>
+                <kindDef>Combat</kindDef>
+                <commonality>30</commonality>
+                <options>
+                    <BEWH_BeastmanFactionBeastman>1</BEWH_BeastmanFactionBeastman>
+                </options>
+            </li>
+            <!-- Minotaur Squad -->
+            <li>
+                <kindDef>Combat</kindDef>
+                <commonality>10</commonality>
+                <options>
+                    <BEWH_BeastmanFactionMinotaur>1</BEWH_BeastmanFactionMinotaur>
+                </options>
+            </li>
+            <!-- Base defense -->
+            <li>
+                <kindDef>Settlement</kindDef>
+                <options>
+                    <BEWH_ImperiumGuardmanPawn>6</BEWH_ImperiumGuardmanPawn>
+                    <BEWH_FirstbornPawn>14</BEWH_FirstbornPawn>
+                    <BEWH_PrimarisSpaceMarinePawn>8</BEWH_PrimarisSpaceMarinePawn>
+                    <BEWH_CustodesPawn>20</BEWH_CustodesPawn>
+                </options>
+            </li>
+        </pawnGroupMakers>
+    </FactionDef>
+
+
+    <!-- Name of Beastman Faction -->
+    <RulePackDef>
+        <defName>BEWH_BeastmanFactionNameMaker</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>r_name->Beastman Hordes</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+
+    <!-- Name of Imperium settlements -->
+    <RulePackDef>
+        <defName>BEWH_BeastmanSettlementNameMaker</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>r_name->[BEWH_BeastmanPre] [BEWH_BeastmanPost]</li>
+            </rulesStrings>
+            <rulesRaw>
+                <li Class="Rule_File">
+                    <keyword>BEWH_BeastmanPre</keyword>
+                    <path>NameBanks/BEWH_BeastmanSettlementNamePre</path>
+                </li>
+                <li Class="Rule_File">
+                    <keyword>BEWH_BeastmanPost</keyword>
+                    <path>NameBanks/BEWH_BeastmanSettlementNamePost</path>
+                </li>
+            </rulesRaw>
+        </rulePack>
+    </RulePackDef>
+
+</Defs>
