@@ -5,7 +5,7 @@
         <defName>BEWH_Beastman</defName>
         <label>beastman</label>
         <description>Beastmen (Homo sapiens variatus) are bestial abhumans combining the forms of animal and human. They are valued mainly for their bloodlust.</description>
-        <iconPath>UI/Genes/Placeholder</iconPath>
+        <iconPath>UI/Xenotypes/BEWH_Beastmen_icon</iconPath>
         <inheritable>true</inheritable>
         <canGenerateAsCombatant>false</canGenerateAsCombatant>
         <factionlessGenerationWeight>0.2</factionlessGenerationWeight>

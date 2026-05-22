@@ -5,7 +5,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>BEWH_AncestorCore</defName>
     <label>ancestore core</label>
-    <description>???</description>
+    <description>[Placeholder]</description>
     <thingClass>Abhuman40k.Building_AncestorCore</thingClass>
     <containedPawnsSelectable>true</containedPawnsSelectable>
     <altitudeLayer>Building</altitudeLayer>
@@ -71,7 +71,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>BEWH_KinCrucible</defName>
     <label>crucible</label>
-    <description>???</description>
+    <description>[Placeholder]</description>
     <thingClass>Abhuman40k.Building_Crucible</thingClass>
     <containedPawnsSelectable>true</containedPawnsSelectable>
     <tickerType>Normal</tickerType>

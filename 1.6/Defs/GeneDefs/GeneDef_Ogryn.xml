@@ -5,7 +5,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_OgrynBrutePhysique</defName>
         <label>brute Physique</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Ogryn/BEWH_BrutePhysique</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>-4</biostatMet>
@@ -37,7 +37,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_OgrynSlowWitted</defName>
         <label>slow witted</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Ogryn/BEWH_SlowWitted</iconPath>
         <geneClass>Core40k.Gene_DisabledBy</geneClass>
         <biostatCpx>2</biostatCpx>
@@ -74,7 +74,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_OgrynThickFlesh</defName>
         <label>thick flesh</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Ogryn/BEWH_ThickFlesh</iconPath>
         <biostatCpx>2</biostatCpx>
         <biostatMet>-3</biostatMet>
@@ -93,7 +93,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_OgrynToddlerLogic</defName>
         <label>toddler logic</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Ogryn/BEWH_ToddlerLogic</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>2</biostatMet>
@@ -116,7 +116,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_OgrynBoneEad</defName>
         <label>bone 'ead</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Ogryn/BEWH_BoneEad</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>3</biostatMet>

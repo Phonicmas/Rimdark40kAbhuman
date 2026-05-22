@@ -5,7 +5,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_KinCloneskein</defName>
         <label>cloneskein</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Kin/BEWH_Cloneskein</iconPath>
         <biostatCpx>4</biostatCpx>
         <biostatMet>-3</biostatMet>
@@ -32,7 +32,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_KinGrudgy</defName>
         <label>grudgy</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Kin/BEWH_Grudgy</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>1</biostatMet>
@@ -46,7 +46,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_KinTechnicalAffinity</defName>
         <label>technical affinity</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Kin/BEWH_TechnicalAffinity</iconPath>
         <biostatCpx>2</biostatCpx>
         <biostatMet>-2</biostatMet>
@@ -72,7 +72,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_KinClanLoyalty</defName>
         <label>clan loyalty</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Kin/BEWH_ClanLoyalty</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>-1</biostatMet>
@@ -112,7 +112,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_KinDensePhysique</defName>
         <label>dense Physique</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Kin/BEWH_DensePhysique</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>-2</biostatMet>
@@ -141,7 +141,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_KinCloneskeinTemplateSubdermalLayer</defName>
         <label>cloneskein template: subdermal layer</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Kin/BEWH_SubdermalLayer</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
@@ -167,7 +167,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_KinCloneskeinTemplateTunnelEyes</defName>
         <label>cloneskein template: tunnel eyes</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Kin/BEWH_TunnelEyes</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
@@ -192,7 +192,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_KinCloneskeinTemplateGravbornSinews</defName>
         <label>cloneskein template: gravborn sinews</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Kin/BEWH_GravbornSinews</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
@@ -218,7 +218,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_KinCloneskeinTemplateStoneheart</defName>
         <label>cloneskein template: stoneheart</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Kin/BEWH_Stoneheart</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
@@ -241,7 +241,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_KinCloneskeinTemplateRadvein</defName>
         <label>cloneskein template: radvein</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Kin/BEWH_Radvein</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>

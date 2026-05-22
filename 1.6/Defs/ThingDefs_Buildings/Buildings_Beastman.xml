@@ -4,7 +4,7 @@
   <!-- Herdstone base -->
   <ThingDef ParentName="BuildingBase" Name="BEWH_HerdstoneBase" Abstract="True">
     <label>herdstone</label>
-    <description>???</description>
+    <description>[Placeholder]</description>
     <altitudeLayer>Building</altitudeLayer>
     <passability>PassThroughOnly</passability>
     <pathCost>50</pathCost>
@@ -57,7 +57,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>BEWH_HerdstonePlayer</defName>
     <label>herdstone</label>
-    <description>???</description>
+    <description>[Placeholder]</description>
     <thingClass>Abhuman40k.Building_Herdstone</thingClass>
     <altitudeLayer>Building</altitudeLayer>
     <passability>PassThroughOnly</passability>
@@ -111,7 +111,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>BEWH_HerdstoneConduitPlayer</defName>
     <label>herdstone conduit</label>
-    <description>???</description>
+    <description>[Placeholder]</description>
     <thingClass>Abhuman40k.Building_HerdstoneConduit</thingClass>
     <containedPawnsSelectable>true</containedPawnsSelectable>
     <altitudeLayer>Building</altitudeLayer>
