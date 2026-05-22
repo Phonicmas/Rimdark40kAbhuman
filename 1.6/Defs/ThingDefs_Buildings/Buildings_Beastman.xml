@@ -12,11 +12,11 @@
     <castEdgeShadows>true</castEdgeShadows>
     <tickerType>Normal</tickerType>
     <graphicData>
-      <texPath>Things/Building/Ship/ShipComputerCore</texPath>
+      <texPath>Things/Building/BEWH_HerdStone_Raid</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <drawSize>(1,1)</drawSize>
     </graphicData>
-    <size>(1, 1)</size>
+    <size>(3, 4)</size>
     <canOverlapZones>false</canOverlapZones>
     <defaultPlacingRot>North</defaultPlacingRot>
     <designationCategory>BEWH_RimDarkCategory</designationCategory>
@@ -63,14 +63,15 @@
     <passability>PassThroughOnly</passability>
     <pathCost>50</pathCost>
     <fillPercent>0.4</fillPercent>
-    <castEdgeShadows>true</castEdgeShadows>
+    <castEdgeShadows>false</castEdgeShadows>
     <tickerType>Normal</tickerType>
     <graphicData>
-      <texPath>Things/Building/Ship/ShipComputerCore</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(1,1)</drawSize>
+      <texPath>Things/Building/BEWH_HerdStone_Raid</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(4,5)</drawSize>
     </graphicData>
-    <size>(1, 1)</size>
+    <size>(3, 4)</size>
+    <drawerType>RealtimeOnly</drawerType>
     <canOverlapZones>false</canOverlapZones>
     <defaultPlacingRot>North</defaultPlacingRot>
     <designationCategory>BEWH_RimDarkCategory</designationCategory>
@@ -81,9 +82,9 @@
       <Mass>85</Mass>
       <Flammability>0</Flammability>
     </statBases>
-    <stuffCategories>
+    <!-- <stuffCategories>
       <li>Stony</li>
-    </stuffCategories>
+    </stuffCategories> -->
     <costStuffCount>250</costStuffCount>
     <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
     <placeWorkers>
@@ -102,6 +103,14 @@
         <startingSeverity>1</startingSeverity>
         <sameRoomOnly>false</sameRoomOnly>
         <requiredGene>BEWH_BeastmanHerdstoneAffinity</requiredGene>
+      </li>
+      <li Class="CompProperties_FireOverlay">
+        <fireSize>0.7</fireSize>
+        <offset>(0,0,-1.15)</offset>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>10</glowRadius>
+        <glowColor>(252,187,113,0)</glowColor>
       </li>
     </comps>
     <specialDisplayRadius>15</specialDisplayRadius>
