@@ -30,7 +30,7 @@
     <HediffDef>
         <defName>BEWH_FelinidClawAttack</defName>
         <label>felinid claws</label>
-        <description>...</description>
+        <description>[Placeholder]</description>
         <hediffClass>HediffWithComps</hediffClass>
         <scenarioCanAdd>false</scenarioCanAdd>
         <maxSeverity>1.0</maxSeverity>

@@ -5,7 +5,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_FelinidClawed</defName>
         <label>clawed</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Felinid/BEWH_Clawed</iconPath>
         <biostatCpx>2</biostatCpx>
         <biostatMet>-1</biostatMet>
@@ -33,7 +33,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_FelinidFelineAgility</defName>
         <label>feline agility</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Felinid/BEWH_FelineAgility</iconPath>
         <biostatCpx>2</biostatCpx>
         <biostatMet>-2</biostatMet>
@@ -57,7 +57,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_FelinidCatlikeMindset</defName>
         <label>catlike mindset</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Felinid/BEWH_CatlikeMindset</iconPath>
         <geneClass>Abhuman40k.Gene_CatlikeMindset</geneClass>
         <biostatCpx>5</biostatCpx>

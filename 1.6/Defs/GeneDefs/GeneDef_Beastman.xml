@@ -5,8 +5,8 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_BeastmanGoatPhysique</defName>
         <label>goat physique</label>
-        <description>???</description>
-        <iconPath>UI/Genes/Placeholder</iconPath>
+        <description>[Placeholder]</description>
+        <iconPath>UI/Genes/Beastmen/BEWH_GoatPhysique</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
         <displayOrderInCategory>81</displayOrderInCategory>
@@ -53,7 +53,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_BeastmanHooved</defName>
         <label>hooved</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Beastmen/BEWH_Hooved</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>1</biostatMet>
@@ -80,7 +80,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_BeastmanHorned</defName>
         <label>horned</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Beastmen/BEWH_Horned</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
@@ -134,7 +134,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_BeastmanInnateBloodlust</defName>
         <label>innate bloodlust</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Beastmen/BEWH_InnateBloodlust</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>-1</biostatMet>
@@ -168,7 +168,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_BeastmanRowdy</defName>
         <label>rowdy</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Beastmen/BEWH_Rowdy</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>-1</biostatMet>
@@ -182,7 +182,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_BeastmanHerdstoneAffinity</defName>
         <label>herdstone affinity</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Placeholder</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>1</biostatMet>
@@ -215,8 +215,8 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_MinotaurHerdstoneBorn</defName>
         <label>herdstone born</label>
-        <description>???</description>
-        <iconPath>UI/Genes/Placeholder</iconPath>
+        <description>[Placeholder]</description>
+        <iconPath>UI/Genes/Beastmen/BEWH_HerdstoneBorn</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
         <displayOrderInCategory>87</displayOrderInCategory>
@@ -241,7 +241,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_MinotaurAdrenalSurgeNode</defName>
         <label>adrenal surge node</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Placeholder</iconPath>
         <biostatCpx>2</biostatCpx>
         <biostatMet>0</biostatMet>

@@ -5,7 +5,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_RatlingNimblePhysique</defName>
         <label>nimble Physique</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Ratling/BEWH_NimblePhysique</iconPath>
         <biostatCpx>3</biostatCpx>
         <biostatMet>-1</biostatMet>
@@ -32,7 +32,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_RatlingCulinaryInstinct</defName>
         <label>culinary instinct</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Ratling/BEWH_CulinaryInstincts</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>-1</biostatMet>
@@ -51,7 +51,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_RatlingIndolentDisposition</defName>
         <label>indolent disposition</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Ratling/BEWH_IndolentDisposition</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>1</biostatMet>
@@ -73,7 +73,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_RatlingGregarious</defName>
         <label>gregarious</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Ratling/BEWH_Gregarious</iconPath>
         <biostatCpx>2</biostatCpx>
         <biostatMet>-2</biostatMet>
@@ -101,7 +101,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_RatlingKeenEyed</defName>
         <label>keen eyed</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Ratling/BEWH_Keen-eyed</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>-1</biostatMet>
@@ -128,8 +128,8 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_RatlingScavengerInstinct</defName>
         <label>scavenger instinct</label>
-        <description>???</description>
-        <iconPath>UI/Genes/Ratling/BEWH_CulinaryInstincts</iconPath>
+        <description>[Placeholder]</description>
+        <iconPath>UI/Genes/Ratling/BEWH_ScavengerInstinct</iconPath>
         <biostatCpx>2</biostatCpx>
         <biostatMet>-1</biostatMet>
         <displayOrderInCategory>6</displayOrderInCategory>
@@ -150,7 +150,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_RatlingFecund</defName>
         <label>fecund</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Ratling/BEWH_Fecund</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>-1</biostatMet>

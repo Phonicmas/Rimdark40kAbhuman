@@ -5,7 +5,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_NavigtorWarpEye</defName>
         <label>warp eye</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Navigator/BEWH_ThirdEye</iconPath>
         <geneClass>Core40k.Gene_GiveVEFAbility</geneClass>
         <biostatCpx>4</biostatCpx>
@@ -56,7 +56,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_NavigtorWarpNavigation</defName>
         <label>warp navigation</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Navigator/BEWH_WarpNavigation</iconPath>
         <geneClass>Core40k.Gene_GiveVEFAbility</geneClass>
         <biostatCpx>4</biostatCpx>
@@ -86,8 +86,8 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_NavigtorUnsettlingPresence</defName>
         <label>unsettling presence</label>
-        <description>???</description>
-        <iconPath>UI/Genes/Placeholder</iconPath>
+        <description>[Placeholder]</description>
+        <iconPath>UI/Genes/Navigator/BEWH_UnsettlingPresence</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>1</biostatMet>
         <displayOrderInCategory>63</displayOrderInCategory>
@@ -101,7 +101,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_NavigtorLongLived</defName>
         <label>long lived</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Navigator/BEWH_Long-lived</iconPath>
         <biostatCpx>3</biostatCpx>
         <biostatMet>-1</biostatMet>
@@ -118,7 +118,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_NavigtorNavisNobilite</defName>
         <label>navis nobilite</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Navigator/BEWH_NavisNobilite</iconPath>
         <geneClass>Core40k.Gene_AddRandomGeneAndOrTraitByWeight</geneClass>
         <biostatCpx>1</biostatCpx>
@@ -159,7 +159,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_NavigtorHouseAchelieux</defName>
         <label>house achelieux</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Navigator/BEWH_HouseAchelieux</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
@@ -174,7 +174,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_NavigtorHouseBelisarius</defName>
         <label>house belisarius</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Navigator/BEWH_HouseBelisarius</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
@@ -193,7 +193,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_NavigtorHouseBrobantis</defName>
         <label>house brobantis</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Navigator/BEWH_HouseBrobantis</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
@@ -209,7 +209,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_NavigtorHouseCastana</defName>
         <label>house castana</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <iconPath>UI/Genes/Navigator/BEWH_HouseCastana</iconPath>
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>

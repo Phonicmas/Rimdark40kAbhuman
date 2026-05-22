@@ -4,8 +4,8 @@
     <XenotypeDef>
         <defName>BEWH_Felinid</defName>
         <label>felinid</label>
-        <description>...</description>
-        <iconPath>UI/Genes/Placeholder</iconPath>
+        <description>[Placeholder]</description>
+        <iconPath>UI/Xenotypes/BEWH_Felinid_icon</iconPath>
         <inheritable>true</inheritable>
         <canGenerateAsCombatant>true</canGenerateAsCombatant>
         <factionlessGenerationWeight>0.1</factionlessGenerationWeight>
