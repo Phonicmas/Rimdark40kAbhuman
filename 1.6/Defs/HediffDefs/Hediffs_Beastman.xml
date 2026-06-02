@@ -5,7 +5,7 @@
         <defName>BEWH_BeastmanHerdstoneAuraBuff</defName>
         <label>Power of the Herdstone</label>
         <hediffClass>Abhuman40k.HediffHerdstoneSeverity</hediffClass>
-        <description>...</description>
+        <description>[Placeholder]</description>
         <scenarioCanAdd>false</scenarioCanAdd>
         <everCurableByItem>false</everCurableByItem>
         <isBad>false</isBad>

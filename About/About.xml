@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<name>RimDark 40k - Abhuman</name>
-	<author>Phonicmas</author>
+	<name>RimDark 40k - Abhumans</name>
+	<author>Phonicmas, Mewn Goddess, Grim Cheese</author>
 	<supportedVersions>
 		<li>1.6</li>
 	</supportedVersions>
 	<packageId>Phonicmas.RimDark.Abhuman</packageId>
-	<description> RimDark 40k - Abhuman</description>
+	<description>[PLACEHOLDER]RimDark 40k - Abhumans. The mod features new xenotypes, new unique genes, new mechanics for some of the xenotypes.</description>
 	<modDependencies>
 		<li>
 			<packageId>Ludeon.RimWorld.Biotech</packageId>

@@ -5,7 +5,7 @@
         <defName>BEWH_Ogryn</defName>
         <label>ogryn</label>
         <description>Ogryns (Homo sapiens gigantus) are a huge and physically powerful Abhuman. They are brutally strong and completely loyal, although extremely limited intellectually, which restricts their battlefield role to simple and direct assaults.</description>
-        <iconPath>UI/Genes/Placeholder</iconPath>
+        <iconPath>UI/Xenotypes/BEWH_Ogryn_icon</iconPath>
         <inheritable>true</inheritable>
         <canGenerateAsCombatant>true</canGenerateAsCombatant>
         <factionlessGenerationWeight>0.4</factionlessGenerationWeight>

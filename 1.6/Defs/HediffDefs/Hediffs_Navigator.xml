@@ -4,7 +4,7 @@
     <HediffDef>
         <defName>BEWH_NavigtorHouseBelisariusBuff</defName>
         <label>Wolfblade</label>
-        <description>???</description>
+        <description>[Placeholder]</description>
         <hediffClass>HediffWithComps</hediffClass>
         <scenarioCanAdd>false</scenarioCanAdd>
         <isBad>false</isBad>
