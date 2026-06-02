@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
+    <BEWH.Abhuman.ModSettings.ModName>RimDark 40k - Abhumans - {0}</BEWH.Abhuman.ModSettings.ModName>
+
+    <BEWH.Abhuman.ModSettings.KinContractMinValue>Minimum value of items that Kin will want to trade.</BEWH.Abhuman.ModSettings.KinContractMinValue>
+    <BEWH.Abhuman.ModSettings.KinContractMinValueTooltip>Too low value can cause slow downs when refreshing contracts.</BEWH.Abhuman.ModSettings.KinContractMinValueTooltip>
+
     <!-- Kin Contracts -->
     <BEWH.Abhuman.Contract.OpenContracts>Open contracts window</BEWH.Abhuman.Contract.OpenContracts>
     <BEWH.Abhuman.Contract.Title>Kin Contracts</BEWH.Abhuman.Contract.Title>
@@ -26,6 +31,9 @@
     
     <BEWH.Abhuman.Contract.GivenItemContract>{0} x{1}</BEWH.Abhuman.Contract.GivenItemContract>
     <BEWH.Abhuman.Contract.ExpiresInContract>{0} days</BEWH.Abhuman.Contract.ExpiresInContract>
+
+    <BEWH.Abhuman.Contract.ItemReceivedTitle>Kin have sent {0} as their part of the deal. They're waiting for you to send back the agreed upon item via transport pods</BEWH.Abhuman.Contract.ItemReceivedTitle>
+    <BEWH.Abhuman.Contract.ItemReceivedMessage>Kin sends Shipment</BEWH.Abhuman.Contract.ItemReceivedMessage>
 
     <BEWH.Abhuman.Contract.StatusAccepted>Accepted</BEWH.Abhuman.Contract.StatusAccepted>
     <BEWH.Abhuman.Contract.StatusCompleted>Completed</BEWH.Abhuman.Contract.StatusCompleted>
@@ -70,7 +78,6 @@
     <BEWH.Abhuman.Felinid.Nuzzled>Cutie {0} nuzzled me, so soft! UwU</BEWH.Abhuman.Felinid.Nuzzled>
 
     <!-- Placement Limit -->
-    <BEWH.Abhuman.PlacementLimit.RequiresKin>Requires a colonist with the 'Cloneskein' gene on the map to place.</BEWH.Abhuman.PlacementLimit.RequiresKin>
     <BEWH.Abhuman.PlacementLimit.RequiresBeastman>Requires a colonist with the 'Herdstone Affinity' gene on the map to place.</BEWH.Abhuman.PlacementLimit.RequiresBeastman>
     <BEWH.Abhuman.PlacementLimit.RequiresHerdstone>Requires a player built herdstone on the map.</BEWH.Abhuman.PlacementLimit.RequiresHerdstone>
     <BEWH.Abhuman.PlacementLimit.HerdstoneConduitLimit>Can only place {0} conduits on map, currently {1} exists.</BEWH.Abhuman.PlacementLimit.HerdstoneConduitLimit>

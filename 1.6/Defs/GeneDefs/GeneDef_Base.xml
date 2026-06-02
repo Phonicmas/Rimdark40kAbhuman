@@ -2,7 +2,7 @@
 <Defs>
 
     <!-- Gene Category -->
-    <!-- Mankind Finest -->
+    <!-- Abhuman -->
     <GeneCategoryDef>
         <defName>BEWH_AbhumanGenes</defName>
         <label>abhuman</label>
