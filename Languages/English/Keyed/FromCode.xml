@@ -6,40 +6,6 @@
     <BEWH.Abhuman.ModSettings.KinContractMinValue>Minimum value of items that Kin will want to trade.</BEWH.Abhuman.ModSettings.KinContractMinValue>
     <BEWH.Abhuman.ModSettings.KinContractMinValueTooltip>Too low value can cause slow downs when refreshing contracts.</BEWH.Abhuman.ModSettings.KinContractMinValueTooltip>
 
-    <!-- Kin Contracts -->
-    <BEWH.Abhuman.Contract.OpenContracts>Open contracts window</BEWH.Abhuman.Contract.OpenContracts>
-    <BEWH.Abhuman.Contract.Title>Kin Contracts</BEWH.Abhuman.Contract.Title>
-
-    <BEWH.Abhuman.Contract.RefreshCooldown>Can refresh contracts in: {0}</BEWH.Abhuman.Contract.RefreshCooldown>
-    <BEWH.Abhuman.Contract.CanRefresh>Can refresh contracts</BEWH.Abhuman.Contract.CanRefresh>
-
-    <BEWH.Abhuman.Contract.Goodwill>Goodwill: {0}</BEWH.Abhuman.Contract.Goodwill>
-    <BEWH.Abhuman.Contract.GoodwillTooltip>Goodwill is the general show of much the kin like and affects other aspects. It goes from 0-100 with -100 being reserved for hostility.</BEWH.Abhuman.Contract.GoodwillTooltip>
-
-    <BEWH.Abhuman.Contract.PriceMult>Contract trade price multiplier: x{0}</BEWH.Abhuman.Contract.PriceMult>
-    <BEWH.Abhuman.Contract.PriceMultTooltip>This is the price multipler on the things they'll trade you. over 1 being in your favor and below being in theirs. Scales of goodwill</BEWH.Abhuman.Contract.PriceMultTooltip>
-
-    <BEWH.Abhuman.Contract.MaximumContracts>Maximum contracts: {0}</BEWH.Abhuman.Contract.MaximumContracts>
-    <BEWH.Abhuman.Contract.MaximumContractsTooltip>Maximum amount of offered contracts. Scales of goodwill</BEWH.Abhuman.Contract.MaximumContractsTooltip>
-
-    <BEWH.Abhuman.Contract.ItemNotReceived>You didn't send the requested item in time and have angered the Kin, they will soon send a "reclaiming" party to get what is theirs and settle their grudge.</BEWH.Abhuman.Contract.ItemNotReceived>
-    
-    <BEWH.Abhuman.Contract.Status>Status</BEWH.Abhuman.Contract.Status>
-    <BEWH.Abhuman.Contract.RequestedItem>Requested Item</BEWH.Abhuman.Contract.RequestedItem>
-    <BEWH.Abhuman.Contract.GivenItem>Given Item</BEWH.Abhuman.Contract.GivenItem>
-    <BEWH.Abhuman.Contract.ExpiresIn>Expires In</BEWH.Abhuman.Contract.ExpiresIn>
-    
-    <BEWH.Abhuman.Contract.GivenItemContract>{0} x{1}</BEWH.Abhuman.Contract.GivenItemContract>
-    <BEWH.Abhuman.Contract.ExpiresInContract>{0} days</BEWH.Abhuman.Contract.ExpiresInContract>
-
-    <BEWH.Abhuman.Contract.ItemReceivedTitle>Kin have sent {0} as their part of the deal. They're waiting for you to send back the agreed upon item via transport pods</BEWH.Abhuman.Contract.ItemReceivedTitle>
-    <BEWH.Abhuman.Contract.ItemReceivedMessage>Kin sends Shipment</BEWH.Abhuman.Contract.ItemReceivedMessage>
-
-    <BEWH.Abhuman.Contract.StatusAccepted>Accepted</BEWH.Abhuman.Contract.StatusAccepted>
-    <BEWH.Abhuman.Contract.StatusCompleted>Completed</BEWH.Abhuman.Contract.StatusCompleted>
-    <BEWH.Abhuman.Contract.StatusExpired>Expired</BEWH.Abhuman.Contract.StatusExpired>
-    <BEWH.Abhuman.Contract.StatusAvailable>Available</BEWH.Abhuman.Contract.StatusAvailable>
-
     <!-- Beastman -->
     <BEWH.Abhuman.Beastman.HerdstonePresent>Herdstone on map</BEWH.Abhuman.Beastman.HerdstonePresent>
     <BEWH.Abhuman.Beastman.GestateMinotaur>Gestate Minotaur</BEWH.Abhuman.Beastman.GestateMinotaur>
@@ -63,16 +29,6 @@
     <BEWH.Abhuman.Navigator.WarpTravelLetter>Warp Travel Concluded</BEWH.Abhuman.Navigator.WarpTravelLetter>
     <BEWH.Abhuman.Navigator.WarpTravelMessage>After spending {1} travelling in the warp, navigator {0} has succesfully teleported {2} to their desired location.</BEWH.Abhuman.Navigator.WarpTravelMessage>
     <BEWH.Abhuman.Navigator.TravelTimeRemaining>Time remaining between {0}~{1}</BEWH.Abhuman.Navigator.TravelTimeRemaining>
-
-    <!-- Kin -->
-    <BEWH.Abhuman.Kin.IsNotKin>{0} does not possess the gene {1}</BEWH.Abhuman.Kin.IsNotKin>
-    <BEWH.Abhuman.Kin.AncestorCore>Ancestor Core</BEWH.Abhuman.Kin.AncestorCore>
-    <BEWH.Abhuman.Kin.AncestorCoreSharedKnowledge>Shared Knowledge</BEWH.Abhuman.Kin.AncestorCoreSharedKnowledge>
-    <BEWH.Abhuman.Kin.AncestorCoreFuneral>Bury kin</BEWH.Abhuman.Kin.AncestorCoreFuneral>
-    <BEWH.Abhuman.Kin.AncestorCoreNoDeadKin>No dead kin</BEWH.Abhuman.Kin.AncestorCoreNoDeadKin>
-    <BEWH.Abhuman.Kin.UploadToAncestorCore>Upload {0} to Ancestor Core</BEWH.Abhuman.Kin.UploadToAncestorCore>
-    <BEWH.Abhuman.Kin.CrucibleGrow>Grow Kin</BEWH.Abhuman.Kin.CrucibleGrow>
-    <BEWH.Abhuman.Kin.CrucibleGrowDesc>Start the process to grow a new Kin</BEWH.Abhuman.Kin.CrucibleGrowDesc>
 
     <!-- Felinid -->
     <BEWH.Abhuman.Felinid.Nuzzled>Cutie {0} nuzzled me, so soft! UwU</BEWH.Abhuman.Felinid.Nuzzled>
