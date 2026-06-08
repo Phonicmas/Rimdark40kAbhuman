@@ -5,7 +5,7 @@
   <ThingDef ParentName="BuildingBase" Name="BEWH_HerdstoneBase" Abstract="True">
     <label>herdstone</label>
     <description>[Placeholder]</description>
-    <altitudeLayer>Building</altitudeLayer>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
     <passability>PassThroughOnly</passability>
     <pathCost>50</pathCost>
     <fillPercent>0.4</fillPercent>
@@ -13,7 +13,7 @@
     <tickerType>Normal</tickerType>
     <graphicData>
       <texPath>Things/Building/BEWH_HerdStone_Raid</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
+      <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(1,1)</drawSize>
     </graphicData>
     <size>(3, 4)</size>
@@ -59,16 +59,18 @@
     <label>herdstone</label>
     <description>[Placeholder]</description>
     <thingClass>Abhuman40k.Building_Herdstone</thingClass>
-    <altitudeLayer>Building</altitudeLayer>
-    <passability>PassThroughOnly</passability>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <passability>Impassable</passability>
     <pathCost>50</pathCost>
     <fillPercent>0.4</fillPercent>
     <castEdgeShadows>false</castEdgeShadows>
     <tickerType>Normal</tickerType>
     <graphicData>
-      <texPath>Things/Building/BEWH_HerdStone_Raid</texPath>
+      <texPath>Things/Building/BEWH_HerdStone_Player</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(4,5)</drawSize>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(4.5,5.5)</drawSize>
+      <drawOffset>(0, 0, 0.4)</drawOffset>
     </graphicData>
     <size>(3, 4)</size>
     <drawerType>RealtimeOnly</drawerType>
@@ -82,9 +84,9 @@
       <Mass>85</Mass>
       <Flammability>0</Flammability>
     </statBases>
-    <!-- <stuffCategories>
+    <stuffCategories>
       <li>Stony</li>
-    </stuffCategories> -->
+    </stuffCategories>
     <costStuffCount>250</costStuffCount>
     <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
     <placeWorkers>
@@ -105,8 +107,8 @@
         <requiredGene>BEWH_BeastmanHerdstoneAffinity</requiredGene>
       </li>
       <li Class="CompProperties_FireOverlay">
-        <fireSize>0.7</fireSize>
-        <offset>(0,0,-1.15)</offset>
+        <fireSize>0.8</fireSize>
+        <offset>(0,0,-1.23)</offset>
       </li>
       <li Class="CompProperties_Glower">
         <glowRadius>10</glowRadius>
@@ -127,18 +129,21 @@
     <passability>PassThroughOnly</passability>
     <pathCost>50</pathCost>
     <fillPercent>0.4</fillPercent>
-    <castEdgeShadows>true</castEdgeShadows>
+    <castEdgeShadows>False</castEdgeShadows>
     <tickerType>Normal</tickerType>
     <graphicData>
-      <texPath>Things/Building/Ship/ShipComputerCore</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(1,1)</drawSize>
+      <texPath>Things/Building/HerdStoneConduit</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <shaderType>Cutout</shaderType>
+      <drawSize>(1.8,1.8)</drawSize>
+      <drawOffset>(0, 0, 0.15)</drawOffset>
     </graphicData>
     <size>(1, 1)</size>
     <canOverlapZones>false</canOverlapZones>
     <defaultPlacingRot>North</defaultPlacingRot>
     <designationCategory>BEWH_RimDarkCategory</designationCategory>
     <uiOrder>2100</uiOrder>
+    <uiIconScale>0.55</uiIconScale>
     <statBases>
       <MaxHitPoints>2000</MaxHitPoints>
       <WorkToBuild>9000</WorkToBuild>

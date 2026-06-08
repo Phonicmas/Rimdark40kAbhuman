@@ -4,8 +4,8 @@
     <XenotypeDef Name="BEWH_BeastmanXenotype">
         <defName>BEWH_Beastman</defName>
         <label>beastman</label>
-        <description>Beastmen (Homo sapiens variatus) are bestial abhumans combining the forms of animal and human. They are valued mainly for their bloodlust.</description>
-        <iconPath>UI/Xenotypes/BEWH_Beastmen_icon</iconPath>
+        <description>[Placeholder]Beastmen (Homo sapiens variatus) are bestial abhumans combining the forms of animal and human. They are valued mainly for their bloodlust.</description>
+        <iconPath>UI/Xenotypes/BEWH_Beastman_icon</iconPath>
         <inheritable>true</inheritable>
         <canGenerateAsCombatant>false</canGenerateAsCombatant>
         <factionlessGenerationWeight>0.2</factionlessGenerationWeight>
@@ -17,23 +17,48 @@
             <li>BEWH_BeastmanRowdy</li>
             <li>BEWH_BeastmanHerdstoneAffinity</li>
             <li>VoiceRoar</li>
-            <li>Hair_BaldOnly</li>
+            <!-- <li>Hair_BaldOnly</li> -->
             <li>Beard_NoBeardOnly</li>
             <li>AptitudeTerrible_Plants</li>
             <li>AptitudeTerrible_Intellectual</li>
+            <li>Body_Hulk</li>
+            <li>Body_Standard</li>
+            <li>Hair_DarkBlack</li>
+            <li>Hair_MidBlack</li>
+            <li>Hair_DarkReddish</li>
+            <li>Hair_DarkSaturatedReddish</li>
+            <li>Hair_DarkBrown</li>
+            <li>Hair_ReddishBrown</li>
+            <li>Hair_SandyBlonde</li>
         </genes>
     </XenotypeDef>
 
     <XenotypeDef ParentName="BEWH_BeastmanXenotype">
         <defName>BEWH_Minotaur</defName>
         <label>minotaur</label>
-        <description>??</description>
-        <iconPath>UI/Genes/Placeholder</iconPath>
+        <description>[Placeholder]</description>
+        <iconPath>UI/Xenotypes/BEWH_Minotaur_icon</iconPath>
         <factionlessGenerationWeight>0.05</factionlessGenerationWeight>
-        <genes>
+        <genes Inherit="False">
+            <li>BEWH_MinotaurPhysique</li>
+            <li>BEWH_BeastmanHooved</li>
+            <li>BEWH_BeastmanHorned</li>
+            <li>BEWH_BeastmanInnateBloodlust</li>
+            <li>BEWH_BeastmanRowdy</li>
+            <li>BEWH_BeastmanHerdstoneAffinity</li>
+            <li>VoiceRoar</li>
+            <li>Hair_BaldOnly</li>
+            <li>Beard_NoBeardOnly</li>
+            <li>AptitudeTerrible_Plants</li>
+            <li>AptitudeTerrible_Intellectual</li>
             <li>BEWH_MinotaurHerdstoneBorn</li>
             <li>BEWH_MinotaurAdrenalSurgeNode</li>
             <li>Body_Hulk</li>
+            <li>Hair_DarkBlack</li>
+            <li>Hair_MidBlack</li>
+            <li>Hair_DarkReddish</li>
+            <li>Hair_DarkBrown</li>
+            <li>Hair_ReddishBrown</li>
         </genes>
     </XenotypeDef>
 
