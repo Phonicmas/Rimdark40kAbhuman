@@ -36,7 +36,7 @@
             <li>
                 <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
                 <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
-                <texPath>Things/Pawn/Humanlike/Navigator/HeadAttachments/WarpEye/WarpEye</texPath>
+                <texPath>Things/Pawn/Humanlike/Navigator/HeadAttachments/WarpEye/BEWH_WarpEye</texPath>
                 <parentTagDef>Head</parentTagDef>
                 <visibleFacing>
                     <li>East</li>
@@ -47,6 +47,12 @@
                     <defaultData>
                         <layer>60</layer>
                     </defaultData>
+                    <dataEast>
+                        <offset>(-0.012, 0, 0)</offset>
+                    </dataEast>
+                    <dataWest>
+                        <offset>(0.012, 0, 0)</offset>
+                    </dataWest>
                 </drawData>
             </li>
         </renderNodeProperties>

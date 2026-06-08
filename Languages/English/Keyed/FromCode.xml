@@ -3,9 +3,6 @@
 
     <BEWH.Abhuman.ModSettings.ModName>RimDark 40k - Abhumans - {0}</BEWH.Abhuman.ModSettings.ModName>
 
-    <BEWH.Abhuman.ModSettings.KinContractMinValue>Minimum value of items that Kin will want to trade.</BEWH.Abhuman.ModSettings.KinContractMinValue>
-    <BEWH.Abhuman.ModSettings.KinContractMinValueTooltip>Too low value can cause slow downs when refreshing contracts.</BEWH.Abhuman.ModSettings.KinContractMinValueTooltip>
-
     <!-- Beastman -->
     <BEWH.Abhuman.Beastman.HerdstonePresent>Herdstone on map</BEWH.Abhuman.Beastman.HerdstonePresent>
     <BEWH.Abhuman.Beastman.GestateMinotaur>Gestate Minotaur</BEWH.Abhuman.Beastman.GestateMinotaur>
@@ -27,7 +24,7 @@
     <BEWH.Abhuman.Navigator.WillBeStunned>Will stun</BEWH.Abhuman.Navigator.WillBeStunned>
     <BEWH.Abhuman.Navigator.WillBeKilled>Will kill</BEWH.Abhuman.Navigator.WillBeKilled>
     <BEWH.Abhuman.Navigator.WarpTravelLetter>Warp Travel Concluded</BEWH.Abhuman.Navigator.WarpTravelLetter>
-    <BEWH.Abhuman.Navigator.WarpTravelMessage>After spending {1} travelling in the warp, navigator {0} has succesfully teleported {2} to their desired location.</BEWH.Abhuman.Navigator.WarpTravelMessage>
+    <BEWH.Abhuman.Navigator.WarpTravelMessage>After spending {1} traveling in the warp, navigator {0} has successfully teleported {2} to their desired location.</BEWH.Abhuman.Navigator.WarpTravelMessage>
     <BEWH.Abhuman.Navigator.TravelTimeRemaining>Time remaining between {0}~{1}</BEWH.Abhuman.Navigator.TravelTimeRemaining>
 
     <!-- Felinid -->
