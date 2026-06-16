@@ -1,12 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
 
+	<!-- Beastmen -->
     <HeadTypeDef ParentName="AverageBase">
-        <defName>BEWH_BeastmanHead</defName>
-        <graphicPath>Things/Pawn/Humanlike/Beastman/Heads/BeastmanHead</graphicPath>
+        <defName>BEWH_BeastmanHeadM</defName>
+        <graphicPath>Things/Pawn/Humanlike/Beastman/Heads/BEWH_Male_BeastmanHead</graphicPath>
         <randomChosen>false</randomChosen>
+        <gender>Male</gender>
         <requiredGenes>
             <li>BEWH_BeastmanGoatPhysique</li>
+        </requiredGenes>
+        <selectionWeight>1000</selectionWeight>
+    </HeadTypeDef>
+
+	<HeadTypeDef ParentName="AverageBase">
+        <defName>BEWH_BeastmanHeadF</defName>
+        <graphicPath>Things/Pawn/Humanlike/Beastman/Heads/BEWH_Female_BeastmanHead</graphicPath>
+        <randomChosen>false</randomChosen>
+        <gender>Female</gender>
+        <requiredGenes>
+            <li>BEWH_BeastmanGoatPhysique</li>
+        </requiredGenes>
+        <selectionWeight>1000</selectionWeight>
+    </HeadTypeDef>
+	
+	<!-- Minotaurs -->
+    <HeadTypeDef ParentName="AverageBase">
+        <defName>BEWH_MinotaurHead1</defName>
+        <graphicPath>Things/Pawn/Humanlike/Minotaur/Heads/BEWH_MinotaurHead1</graphicPath>
+        <randomChosen>false</randomChosen>
+        <gender>Male</gender>
+        <requiredGenes>
+            <li>BEWH_MinotaurPhysique</li>
+        </requiredGenes>
+        <selectionWeight>1000</selectionWeight>
+    </HeadTypeDef>
+
+    <HeadTypeDef ParentName="AverageBase">
+        <defName>BEWH_MinotaurHead2</defName>
+        <graphicPath>Things/Pawn/Humanlike/Minotaur/Heads/BEWH_MinotaurHead2</graphicPath>
+        <randomChosen>false</randomChosen>
+        <gender>Male</gender>
+        <requiredGenes>
+            <li>BEWH_MinotaurPhysique</li>
+        </requiredGenes>
+        <selectionWeight>1000</selectionWeight>
+    </HeadTypeDef>
+
+    <HeadTypeDef ParentName="AverageBase">
+        <defName>BEWH_MinotaurHead3</defName>
+        <graphicPath>Things/Pawn/Humanlike/Minotaur/Heads/BEWH_MinotaurHead3</graphicPath>
+        <randomChosen>false</randomChosen>
+        <gender>Male</gender>
+        <requiredGenes>
+            <li>BEWH_MinotaurPhysique</li>
         </requiredGenes>
         <selectionWeight>1000</selectionWeight>
     </HeadTypeDef>

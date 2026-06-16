@@ -4,7 +4,7 @@
     <!-- Make settlement fight always have a herdstone that also spawns more enemies? -->
     <FactionDef ParentName="FactionBase">
         <defName>BEWH_BeastmanFaction</defName>
-        <label>Beatmen Horde</label>
+        <label>Beastmen Horde</label>
         <description>A horde of vicious beastmen.</description>
 
         <pawnSingular>beastman</pawnSingular>
@@ -29,8 +29,11 @@
 
         <factionNameMaker>BEWH_BeastmanFactionNameMaker</factionNameMaker>
         <settlementNameMaker>BEWH_BeastmanSettlementNameMaker</settlementNameMaker>
-        <factionIconPath>UI/Icons/Imperium/ImperiumIcon</factionIconPath>
-        <settlementTexturePath>UI/Icons/Imperium/ImperiumIcon</settlementTexturePath>
+        <factionIconPath>UI/Misc/BEWH_BeastmenHorde</factionIconPath>
+        <settlementTexturePath>UI/Misc/BEWH_BeastmenHorde</settlementTexturePath>
+        <colorSpectrum>
+            <li>(0.6, 0.3, 0.3)</li>
+        </colorSpectrum>
 
         <xenotypeSet Inherit="False">
             <xenotypeChances>
@@ -124,8 +127,8 @@
             <li>
                 <kindDef>Settlement</kindDef>
                 <options>
-                    <BEWH_BeastmanFactionBeastman>30</BEWH_BeastmanFactionBeastman>
-                    <BEWH_BeastmanFactionMinotaur>10</BEWH_BeastmanFactionMinotaur>
+                    <BEWH_BeastmanFactionBeastman>14</BEWH_BeastmanFactionBeastman>
+                    <BEWH_BeastmanFactionMinotaur>8</BEWH_BeastmanFactionMinotaur>
                     <BEWH_BeastmanFactionChieftan>1</BEWH_BeastmanFactionChieftan>
                 </options>
             </li>
@@ -138,7 +141,7 @@
         <defName>BEWH_BeastmanFactionNameMaker</defName>
         <rulePack>
             <rulesStrings>
-                <li>r_name->Beastman Hordes</li>
+                <li>r_name->Beastmen Hordes</li>
             </rulesStrings>
         </rulePack>
     </RulePackDef>
