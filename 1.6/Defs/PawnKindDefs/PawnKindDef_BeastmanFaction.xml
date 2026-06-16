@@ -67,7 +67,7 @@
     <PawnKindDef ParentName="BEWH_BeastmanPawnBase">
         <defName>BEWH_BeastmanFactionBeastman</defName>
         <label>beastman</label>
-        <combatPower>20</combatPower>
+        <combatPower>50</combatPower>
         <initialWillRange>8~20</initialWillRange>
         <initialResistanceRange>8~20</initialResistanceRange>
         <fixedGender>Male</fixedGender>
@@ -84,11 +84,32 @@
         </xenotypeSet>
     </PawnKindDef>
 
+    <!-- Faction Beastman -->
+    <PawnKindDef ParentName="BEWH_BeastmanPawnBase">
+        <defName>BEWH_BeastmanFactionBeastmanShaman</defName>
+        <label>beastman</label>
+        <combatPower>60</combatPower>
+        <initialWillRange>8~20</initialWillRange>
+        <initialResistanceRange>8~20</initialResistanceRange>
+        <fixedGender>Male</fixedGender>
+        <skills>
+            <li>
+                <skill>Melee</skill>
+                <range>4~7</range>
+            </li>
+        </skills>
+        <xenotypeSet>
+            <xenotypeChances>
+                <BEWH_Beastman>1</BEWH_Beastman>
+            </xenotypeChances>
+        </xenotypeSet>
+    </PawnKindDef>
+
     <!-- Faction Minotaur -->
     <PawnKindDef ParentName="BEWH_BeastmanPawnBase">
         <defName>BEWH_BeastmanFactionMinotaur</defName>
         <label>minotaur</label>
-        <combatPower>60</combatPower>
+        <combatPower>80</combatPower>
         <initialWillRange>25~40</initialWillRange>
         <initialResistanceRange>25~40</initialResistanceRange>
         <fixedGender>Male</fixedGender>

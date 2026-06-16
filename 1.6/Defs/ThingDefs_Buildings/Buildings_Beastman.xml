@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <!-- Herdstone base -->
-  <ThingDef ParentName="BuildingBase" Name="BEWH_HerdstoneBase" Abstract="True">
+  <!-- Herdstone Raid -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>BEWH_HerdstoneRaid</defName>
     <label>herdstone</label>
     <description>[Placeholder]</description>
+    <thingClass>Abhuman40k.Building_HerdstoneEnemy</thingClass>
     <altitudeLayer>Building</altitudeLayer>
     <passability>PassThroughOnly</passability>
     <pathCost>50</pathCost>
@@ -23,24 +25,16 @@
     <uiOrder>2100</uiOrder>
     <statBases>
       <MaxHitPoints>2000</MaxHitPoints>
-      <WorkToBuild>9000</WorkToBuild>
+      <WorkToBuild>100</WorkToBuild>
       <Mass>85</Mass>
       <Flammability>0</Flammability>
     </statBases>
     <stuffCategories>
       <li>Stony</li>
     </stuffCategories>
-    <costStuffCount>250</costStuffCount>
-    <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
-    <placeWorkers>
-      <li>Core40k.PlaceWorker_OnlyOnePerMap</li>
-      <li>Abhuman40k.PlaceWorker_OnlyAvailableWithBeastmanInColony</li>
-    </placeWorkers>
-    <researchPrerequisites>
-      <li>BEWH_Herdstones</li>
-    </researchPrerequisites>
+    <costStuffCount>100</costStuffCount>
     <comps>
-      <li Class="Abhuman40k.CompProperties_CustomCauseHediff_Extra_AoE">
+      <li Class="Abhuman40k.CompProperties_CustomCauseHediff_Extra_AoE"> <!-- Make custom one for enemy beastman -->
         <hediff>BEWH_BeastmanHerdstoneAuraBuff</hediff>
         <range>15</range>
         <checkInterval>500</checkInterval>
@@ -82,9 +76,9 @@
       <Mass>85</Mass>
       <Flammability>0</Flammability>
     </statBases>
-    <!-- <stuffCategories>
+    <stuffCategories>
       <li>Stony</li>
-    </stuffCategories> -->
+    </stuffCategories>
     <costStuffCount>250</costStuffCount>
     <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
     <placeWorkers>

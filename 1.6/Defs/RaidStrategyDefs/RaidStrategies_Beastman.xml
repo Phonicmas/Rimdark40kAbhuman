@@ -3,7 +3,7 @@
 
   <RaidStrategyDef>
     <defName>BEWH_Beastman</defName>
-    <workerClass>RaidStrategyWorker_Siege</workerClass>
+    <workerClass>Abhuman40k.RaidStrategyWorker_Beastman</workerClass>
     <minPawns>4</minPawns>
     <raidLootValueFactor>0</raidLootValueFactor>
     <arriveModes>

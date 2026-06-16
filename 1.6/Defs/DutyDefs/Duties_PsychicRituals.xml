@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <DutyDef>
+    <defName>BEWH_BestmanShamanChant</defName>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="JobGiver_FightFiresNearPoint">
+          <maxDistFromPoint>25</maxDistFromPoint>
+        </li>
+        <li Class="ThinkNode_ForbidOutsideFlagRadius">
+          <maxDistToSquadFlag>16</maxDistToSquadFlag>
+          <subNodes>
+            <li Class="JobGiver_Work" />
+          </subNodes>
+        </li>
+        <li Class="JobGiver_AIDefendPoint">
+          <targetAcquireRadius>35</targetAcquireRadius>
+          <targetKeepRadius>40</targetKeepRadius>
+        </li>
+        <li Class="ThinkNode_ForbidOutsideFlagRadius">
+          <maxDistToSquadFlag>16</maxDistToSquadFlag>
+          <subNodes>
+            <li Class="ThinkNode_Subtree">
+              <treeDef>SatisfyBasicNeedsAndWork</treeDef>
+            </li>
+          </subNodes>
+        </li>
+        <li Class="JobGiver_StandAndStare" />
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+</Defs>

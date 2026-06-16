@@ -124,10 +124,9 @@
             <li>
                 <kindDef>Settlement</kindDef>
                 <options>
-                    <BEWH_ImperiumGuardmanPawn>6</BEWH_ImperiumGuardmanPawn>
-                    <BEWH_FirstbornPawn>14</BEWH_FirstbornPawn>
-                    <BEWH_PrimarisSpaceMarinePawn>8</BEWH_PrimarisSpaceMarinePawn>
-                    <BEWH_CustodesPawn>20</BEWH_CustodesPawn>
+                    <BEWH_BeastmanFactionBeastman>30</BEWH_BeastmanFactionBeastman>
+                    <BEWH_BeastmanFactionMinotaur>10</BEWH_BeastmanFactionMinotaur>
+                    <BEWH_BeastmanFactionChieftan>1</BEWH_BeastmanFactionChieftan>
                 </options>
             </li>
         </pawnGroupMakers>

@@ -16,7 +16,7 @@ public class SitePartWorker_DownedNavigator : SitePartWorker_DownedRefugee
         var pawn = DownedRefugeeQuestUtility.GenerateRefugee(part.site.Tile, pawnKind, 0);
         part.things = new ThingOwner<Pawn>(part, oneStackOnly: true);
         part.things.TryAdd(pawn);
-        pawn.relations?.everSeenByPlayer = true;
+        pawn.relations?.everSeenByPlayer = false;
         var mostImportantColonyRelative = PawnRelationUtility.GetMostImportantColonyRelative(pawn);
         if (mostImportantColonyRelative != null)
         {

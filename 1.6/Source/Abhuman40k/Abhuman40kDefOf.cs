@@ -1,5 +1,6 @@
 ﻿using RimWorld;
 using Verse;
+using Verse.AI;
 
 
 namespace Abhuman40k;
@@ -47,6 +48,8 @@ public static class Abhuman40kDefOf
     //LetterDef
     public static LetterDef BEWH_WarpTravel;
     
+    public static ThingDef BEWH_HerdstoneRaid;
+    
     public static ThingDef BEWH_HerdstonePlayer;
     public static ThingDef BEWH_HerdstoneConduitPlayer;
     
@@ -57,7 +60,11 @@ public static class Abhuman40kDefOf
     
     //PawnKindDef
     public static PawnKindDef BEWH_HerdstoneBornMinotaur;
+    public static PawnKindDef BEWH_BeastmanFactionBeastmanShaman;
     public static PawnKindDef BEWH_NavigatorRescue;
+    
+    //DutyDef
+    public static DutyDef BEWH_BestmanShamanChant;
 
     static Abhuman40kDefOf()
     {
