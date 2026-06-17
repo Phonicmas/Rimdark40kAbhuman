@@ -2,7 +2,6 @@
 using System.Linq;
 using RimWorld;
 using UnityEngine;
-using VEF.Planet;
 using Verse;
 using Verse.AI;
 using Verse.AI.Group;
@@ -15,7 +14,7 @@ public class LordToil_Beastman : LordToil
 
 	private const float BaseRadiusMax = 25f;
 
-	private const int StartBuildingDelay = 450;
+	private const int StartBuildingDelay = 50;
 	
 	public Dictionary<Pawn, DutyDef> rememberedDuties = new();
 
@@ -29,7 +28,7 @@ public class LordToil_Beastman : LordToil
 		{
 			var data = Data;
 			var radSquared = (data.baseRadius + 10f) * (data.baseRadius + 10f);
-			var framesList = base.Map.listerThings.ThingsInGroup(ThingRequestGroup.BuildingFrame);
+			var framesList = Map.listerThings.ThingsInGroup(ThingRequestGroup.BuildingFrame);
 			if (framesList.Count == 0)
 			{
 				yield break;
@@ -49,7 +48,7 @@ public class LordToil_Beastman : LordToil
 
 	public LordToil_Beastman(IntVec3 siegeCenter, float blueprintPoints)
 	{
-		data = new LordToilData_SiegeCustom();
+		data = new LordToilData_SiegeBeastman();
 		Data.siegeCenter = siegeCenter;
 		Data.blueprintPoints = blueprintPoints;
 	}
@@ -60,9 +59,10 @@ public class LordToil_Beastman : LordToil
 		Data.baseRadius = Mathf.InverseLerp(BaseRadiusMin, BaseRadiusMax, lord.ownedPawns.Count / 50f);
 		Data.baseRadius = Mathf.Clamp(Data.baseRadius, BaseRadiusMin, BaseRadiusMax);
 		var costList = new List<Thing>();
-		var placedBlueprints = BeastmanSiegeUtility.PlaceBlueprint(Data, Map, lord.faction);
-		Data.blueprints.Add(placedBlueprints);
-		foreach (var cost in placedBlueprints.TotalMaterialCost())
+		var placedBlueprint = BeastmanSiegeUtility.PlaceBlueprint(Data, Map, lord.faction);
+		Log.Message("Blueprint: " +  placedBlueprint);
+		Data.blueprints.Add(placedBlueprint);
+		foreach (var cost in placedBlueprint.TotalMaterialCost())
 		{
 			var thing = costList.FirstOrDefault(t => t.def == cost.thingDef);
 			if (thing != null)
@@ -111,14 +111,14 @@ public class LordToil_Beastman : LordToil
 		
 		foreach (var group in list2)
 		{
-			if (!DropCellFinder.TryFindDropSpotNear(Data.siegeCenter, base.Map, out var pos, allowFogged: false, canRoofPunch: false))
+			if (!DropCellFinder.TryFindDropSpotNear(Data.siegeCenter, Map, out var pos, allowFogged: false, canRoofPunch: false))
 			{
 				continue;
 			}
 			foreach (var thing5 in group)
 			{
 				thing5.SetForbidden(value: true, warnOnFail: false);
-				GenPlace.TryPlaceThing(thing5, pos, base.Map, ThingPlaceMode.Near);
+				GenPlace.TryPlaceThing(thing5, pos, Map, ThingPlaceMode.Near);
 			}
 		}
 	}
@@ -202,6 +202,17 @@ public class LordToil_Beastman : LordToil
 		{
 			radius = data.baseRadius
 		};
+		p.skills.GetSkill(SkillDefOf.Construction).EnsureMinLevelWithMargin(5);
+		p.workSettings.EnableAndInitialize();
+		var allDefsListForReading = DefDatabase<WorkTypeDef>.AllDefsListForReading;
+		foreach (var workTypeDef in allDefsListForReading)
+		{
+			if (workTypeDef == WorkTypeDefOf.Construction)
+			{
+				p.workSettings.SetPriority(workTypeDef, 1);
+			}
+		}
+		
 	}
 
 	private void SetAsDefender(Pawn p)

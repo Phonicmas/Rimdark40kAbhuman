@@ -84,7 +84,7 @@
         </xenotypeSet>
     </PawnKindDef>
 
-    <!-- Faction Beastman -->
+    <!-- Faction Shaman -->
     <PawnKindDef ParentName="BEWH_BeastmanPawnBase">
         <defName>BEWH_BeastmanFactionBeastmanShaman</defName>
         <label>beastman</label>
@@ -92,6 +92,9 @@
         <initialWillRange>8~20</initialWillRange>
         <initialResistanceRange>8~20</initialResistanceRange>
         <fixedGender>Male</fixedGender>
+        <requiredWorkTags>
+            <li>Constructing</li>
+        </requiredWorkTags>
         <skills>
             <li>
                 <skill>Melee</skill>

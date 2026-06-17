@@ -16,7 +16,7 @@
     <graphicData>
       <texPath>Things/Building/BEWH_HerdStone_Raid</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(1,1)</drawSize>
+      <drawSize>(3,4)</drawSize>
     </graphicData>
     <size>(3, 4)</size>
     <canOverlapZones>false</canOverlapZones>
@@ -55,8 +55,9 @@
     <thingClass>Abhuman40k.Building_Herdstone</thingClass>
     <altitudeLayer>BuildingOnTop</altitudeLayer>
     <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <fillPercent>1</fillPercent>
     <pathCost>50</pathCost>
-    <fillPercent>0.4</fillPercent>
     <castEdgeShadows>false</castEdgeShadows>
     <tickerType>Normal</tickerType>
     <graphicData>

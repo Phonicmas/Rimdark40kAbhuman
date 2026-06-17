@@ -52,11 +52,14 @@ public static class Abhuman40kDefOf
     
     public static ThingDef BEWH_HerdstonePlayer;
     public static ThingDef BEWH_HerdstoneConduitPlayer;
-    
+
     public static ThingDef BEWH_ReactorConduit;
+    
+    public static ThingDef DevilstrandCloth;
     
     //XenotypeDef
     public static XenotypeDef BEWH_Navigator;
+    public static XenotypeDef BEWH_Beastman;
     
     //PawnKindDef
     public static PawnKindDef BEWH_HerdstoneBornMinotaur;

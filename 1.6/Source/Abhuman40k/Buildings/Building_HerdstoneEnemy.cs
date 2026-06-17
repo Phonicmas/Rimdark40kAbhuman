@@ -18,6 +18,10 @@ public class Building_HerdstoneEnemy : Building
         return stringBuilder.ToString();
     }
     
+    //When eneough are summoned make the previous "Group" attack, so one always "defends" basically and one always run toward the enemy
+    
+    //Makae curve for amaount, and curvee for amount that will be minotaurs
+    
     public override void ExposeData()
     {
         base.ExposeData();
