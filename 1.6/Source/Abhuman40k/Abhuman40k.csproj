@@ -90,6 +90,7 @@
     <Compile Include="DefModExtensions\DefModExtension_Gregarious.cs" />
     <Compile Include="Gene\Gene_Belisarius.cs" />
     <Compile Include="Gene\Gene_CatlikeMindset.cs" />
+    <Compile Include="Graphics\PawnRenderNode_FurSkin.cs" />
     <Compile Include="Harmony\HarmonyPatch_Gregarious.cs" />
     <Compile Include="Abhuman40kDefOf.cs" />
     <Compile Include="Harmony\HarmonyPatch_ScavengerInstinct.cs" />

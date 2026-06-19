@@ -33,7 +33,6 @@ public class RaidStrategyWorker_Beastman : RaidStrategyWorker
                 pawns.Add(pawn);
                 var warMask = (Apparel)ThingMaker.MakeThing(ThingDefOf.Apparel_Parka, Abhuman40kDefOf.DevilstrandCloth);
                 pawn.apparel.Wear(warMask);
-                Log.Message("Pawn: " + pawn.Name);
             }
         }
 

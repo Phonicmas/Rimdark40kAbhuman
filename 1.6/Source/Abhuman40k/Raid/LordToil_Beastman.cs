@@ -60,7 +60,6 @@ public class LordToil_Beastman : LordToil
 		Data.baseRadius = Mathf.Clamp(Data.baseRadius, BaseRadiusMin, BaseRadiusMax);
 		var costList = new List<Thing>();
 		var placedBlueprint = BeastmanSiegeUtility.PlaceBlueprint(Data, Map, lord.faction);
-		Log.Message("Blueprint: " +  placedBlueprint);
 		Data.blueprints.Add(placedBlueprint);
 		foreach (var cost in placedBlueprint.TotalMaterialCost())
 		{

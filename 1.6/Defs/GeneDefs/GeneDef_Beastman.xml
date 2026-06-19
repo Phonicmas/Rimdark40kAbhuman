@@ -38,11 +38,11 @@
         <renderNodeProperties>
             <li>
                 <debugLabel>Fur</debugLabel>
-                <nodeClass>PawnRenderNode_Fur</nodeClass>
+                <nodeClass>Abhuman40k.PawnRenderNode_FurSkin</nodeClass>
                 <workerClass>PawnRenderNodeWorker_Fur</workerClass>
                 <baseLayer>5</baseLayer>
                 <rotDrawMode>Fresh, Rotting</rotDrawMode>
-                <colorType>Hair</colorType>
+                <colorType>Skin</colorType>
                 <parentTagDef>Body</parentTagDef>
             </li>
             <li>
@@ -51,13 +51,13 @@
                 <texPaths>
                     <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Ears/BEWH_BeastmanEars1</li>
                     <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Ears/BEWH_BeastmanEars2</li>
-                    <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Ears/BEWH_BeastmanEars3</li>          
+                    <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Ears/BEWH_BeastmanEars3</li>
                 </texPaths>
-			    <colorType>Skin</colorType>
-			    <parentTagDef>Head</parentTagDef>
-			    <useSkinShader>true</useSkinShader>
-			    <useRottenColor>true</useRottenColor>
-			    <rotDrawMode>Fresh, Rotting</rotDrawMode>
+                <colorType>Skin</colorType>
+                <parentTagDef>Head</parentTagDef>
+                <useSkinShader>true</useSkinShader>
+                <useRottenColor>true</useRottenColor>
+                <rotDrawMode>Fresh, Rotting</rotDrawMode>
                 <drawData>
                     <defaultData>
                         <layer>70</layer>
@@ -111,13 +111,21 @@
             <li>Horn</li>
             <li>Horns</li>
         </exclusionTags>
-        <!--  <renderNodeProperties>
+        <renderNodeProperties>
             <li>
                 <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
                 <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
                 <texPaths>
-                    <li>PLACEHOLDER</li>                
+                    <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Horns/Male/BEWH_Male_BeastmanHorns1</li>
+                    <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Horns/Male/BEWH_Male_BeastmanHorns2</li>
+                    <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Horns/Male/BEWH_Male_BeastmanHorns3</li>
+                    <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Horns/Male/BEWH_Male_BeastmanHorns4</li>
                 </texPaths>
+                <texPathsFemale>
+                    <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Horns/Male/BEWH_Female_BeastmanHorns1</li>
+                    <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Horns/Male/BEWH_Female_BeastmanHorns2</li>
+                    <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Horns/Male/BEWH_Female_BeastmanHorns3</li>
+                </texPathsFemale>
                 <color>
                     <r>0.5</r>
                     <g>0.5</g>
@@ -135,7 +143,7 @@
                     </dataNorth>
                 </drawData>
             </li>
-        </renderNodeProperties> -->
+        </renderNodeProperties>
         <customEffectDescriptions>
             <li>Gives a horn attack</li>
         </customEffectDescriptions>
@@ -273,11 +281,11 @@
         <renderNodeProperties>
             <li>
                 <debugLabel>Fur</debugLabel>
-                <nodeClass>PawnRenderNode_Fur</nodeClass>
+                <nodeClass>Abhuman40k.PawnRenderNode_FurSkin</nodeClass>
                 <workerClass>PawnRenderNodeWorker_Fur</workerClass>
                 <baseLayer>5</baseLayer>
                 <rotDrawMode>Fresh, Rotting</rotDrawMode>
-                <colorType>Hair</colorType>
+                <colorType>Skin</colorType>
                 <parentTagDef>Body</parentTagDef>
             </li>
             <li>
@@ -286,13 +294,13 @@
                 <texPaths>
                     <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Ears/BEWH_BeastmanEars1</li>
                     <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Ears/BEWH_BeastmanEars2</li>
-                    <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Ears/BEWH_BeastmanEars3</li>          
+                    <li>Things/Pawn/Humanlike/Beastman/HeadAttachments/Ears/BEWH_BeastmanEars3</li>
                 </texPaths>
-			    <colorType>Skin</colorType>
-			    <parentTagDef>Head</parentTagDef>
-			    <useSkinShader>true</useSkinShader>
-			    <useRottenColor>true</useRottenColor>
-			    <rotDrawMode>Fresh, Rotting</rotDrawMode>
+                <colorType>Skin</colorType>
+                <parentTagDef>Head</parentTagDef>
+                <useSkinShader>true</useSkinShader>
+                <useRottenColor>true</useRottenColor>
+                <rotDrawMode>Fresh, Rotting</rotDrawMode>
                 <drawData>
                     <defaultData>
                         <layer>70</layer>
@@ -306,7 +314,7 @@
                     <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/Horns/BEWH_MinotaurHorns1</li>
                     <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/Horns/BEWH_MinotaurHorns2</li>
                     <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/Horns/BEWH_MinotaurHorns3</li>
-                    <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/Horns/BEWH_MinotaurHorns4</li>           
+                    <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/Horns/BEWH_MinotaurHorns4</li>
                 </texPaths>
                 <color>(135,135,135)</color>
                 <parentTagDef>Head</parentTagDef>
@@ -330,7 +338,7 @@
                     <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/HeadDecorations/BEWH_MinotaurDeco1</li>
                     <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/HeadDecorations/BEWH_MinotaurDeco2</li>
                     <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/HeadDecorations/BEWH_MinotaurDeco3</li>
-                    <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/HeadDecorations/BEWH_MinotaurDeco4</li>           
+                    <li>Things/Pawn/Humanlike/Minotaur/HeadAttachments/HeadDecorations/BEWH_MinotaurDeco4</li>
                 </texPaths>
                 <parentTagDef>Head</parentTagDef>
                 <drawData>
@@ -404,6 +412,7 @@
         <modExtensions>
             <li Class="Core40k.DefModExtension_GeneExtension">
                 <addedWorldCarryCapacity>80</addedWorldCarryCapacity>
+                <forceMale>true</forceMale>
             </li>
         </modExtensions>
     </GeneDef>
