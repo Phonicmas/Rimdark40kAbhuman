@@ -41,4 +41,10 @@ public class Comp_TimedExplosion : ThingComp
     {
         return "BEWH.Abhuman.Misc.ExplosionIn".Translate(ticksRemaining.ToStringTicksToPeriod().Colorize(ColoredText.DateTimeColor));
     }
+
+    public override void PostExposeData()
+    {
+        base.PostExposeData();
+        Scribe_Values.Look(ref ticksRemaining, "ticksRemaining");
+    }
 }
