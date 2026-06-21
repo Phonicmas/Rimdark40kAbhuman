@@ -412,6 +412,8 @@
         <modExtensions>
             <li Class="Core40k.DefModExtension_GeneExtension">
                 <addedWorldCarryCapacity>80</addedWorldCarryCapacity>
+            </li>
+            <li Class="VEF.Genes.GeneExtension">
                 <forceMale>true</forceMale>
             </li>
         </modExtensions>

@@ -19,11 +19,6 @@ public class JobDriver_SummonMinotaur : JobDriver
 		var ritual = ToilMaker.MakeToil("MakeNewToils");
 		yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.ClosestTouch)
 		.FailOnDestroyedNullOrForbidden(TargetIndex.A);
-		
-		yield return Toils_General.Do(delegate
-		{
-			Herdstone.workingPawn = pawn;
-		});
 
 		ritual.defaultCompleteMode = ToilCompleteMode.Delay;
 		ritual.defaultDuration = (int)Herdstone.TimeLeft+50;
@@ -33,10 +28,6 @@ public class JobDriver_SummonMinotaur : JobDriver
 			Herdstone.WorkTick();
 		});
 		ritual.AddEndCondition(() => Herdstone.TimeLeft < 0 || !Herdstone.canBeWorked ? JobCondition.Succeeded : JobCondition.Ongoing);
-		ritual.AddFinishAction(delegate
-		{
-			Herdstone.workingPawn = null;
-		});
 		yield return ritual;
 	}
 }

@@ -10,7 +10,6 @@ namespace Abhuman40k;
 public class Building_Herdstone : Building
 {
     public bool canBeWorked = false;
-    public Pawn workingPawn = null;
     
     private int totalTime = 0;
     private float TotalTimeAdjusted
@@ -116,7 +115,6 @@ public class Building_Herdstone : Building
         }
 
         canBeWorked = false;
-        workingPawn = null;
     }
     
     public override string GetInspectString()
@@ -201,6 +199,5 @@ public class Building_Herdstone : Building
         Scribe_Values.Look(ref cooldownInt, "cooldownInt");
         
         Scribe_Values.Look(ref canBeWorked, "canBeWorked");
-        Scribe_References.Look(ref workingPawn, "workingPawn");
     }
 }

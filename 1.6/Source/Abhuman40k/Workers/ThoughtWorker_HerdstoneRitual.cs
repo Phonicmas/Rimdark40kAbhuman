@@ -10,12 +10,7 @@ public class ThoughtWorker_HerdstoneRitual : ThoughtWorker
     {
         var thing = p?.Map?.listerThings?.ThingsOfDef(Abhuman40kDefOf.BEWH_HerdstonePlayer)?.FirstOrDefault();
         
-        if (thing is not Building_Herdstone herdstone)
-        {
-            return false;
-        }
-        
-        if (herdstone.workingPawn == null)
+        if (thing is not Building_Herdstone)
         {
             return false;
         }

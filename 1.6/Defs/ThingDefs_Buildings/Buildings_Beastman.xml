@@ -9,10 +9,11 @@
     <thingClass>Abhuman40k.Building_HerdstoneEnemy</thingClass>
     <altitudeLayer>BuildingOnTop</altitudeLayer>
     <passability>PassThroughOnly</passability>
-    <pathCost>50</pathCost>
-    <fillPercent>0.4</fillPercent>
-    <castEdgeShadows>true</castEdgeShadows>
     <tickerType>Normal</tickerType>
+    <blockWind>true</blockWind>
+    <fillPercent>1</fillPercent>
+    <pathCost>50</pathCost>
+    <castEdgeShadows>false</castEdgeShadows>
     <graphicData>
       <texPath>Things/Building/BEWH_HerdStone_Raid</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -20,7 +21,7 @@
     </graphicData>
     <size>(3, 4)</size>
     <canOverlapZones>false</canOverlapZones>
-    <defaultPlacingRot>North</defaultPlacingRot>
+    <defaultPlacingRot>South</defaultPlacingRot>
     <designationCategory>BEWH_RimDarkCategory</designationCategory>
     <uiOrder>2100</uiOrder>
     <statBases>
@@ -29,10 +30,9 @@
       <Mass>85</Mass>
       <Flammability>0</Flammability>
     </statBases>
-    <stuffCategories>
-      <li>Stony</li>
-    </stuffCategories>
-    <costStuffCount>100</costStuffCount>
+    <costList>
+      <Steel>100</Steel>
+    </costList>
     <comps>
       <li Class="Abhuman40k.CompProperties_CustomCauseHediff_Extra_AoE"> <!-- Make custom one for enemy beastman -->
         <hediff>BEWH_BeastmanHerdstoneAuraBuff</hediff>

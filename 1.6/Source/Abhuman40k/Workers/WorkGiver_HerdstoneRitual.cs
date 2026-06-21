@@ -36,13 +36,8 @@ public class WorkGiver_HerdstoneRitual : WorkGiver_Scanner
 		{
 			JobFailReason.Is("BEWH.Abhuman.Beastman.HerdstoneNotStarted".Translate());
 		}
-		if (buildingHerdstone.workingPawn != null)
-		{
-			JobFailReason.Is("BEWH.Abhuman.Beastman.HerdstoneInUse".Translate(buildingHerdstone.workingPawn));
-		}
 		
 		return true;
-
 	}
 
 	public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)
@@ -68,10 +63,6 @@ public class WorkGiver_HerdstoneRitual : WorkGiver_Scanner
 			return null;
 		}
 		if (!buildingHerdstone.canBeWorked)
-		{
-			return null;
-		}
-		if (buildingHerdstone.workingPawn != null)
 		{
 			return null;
 		}
