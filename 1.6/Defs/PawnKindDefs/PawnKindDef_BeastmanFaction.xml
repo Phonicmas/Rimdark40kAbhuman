@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
     <PawnKindDef Name="BEWH_BeastmanPawnBase" Abstract="True">
@@ -56,10 +56,6 @@
                 <skill>Animals</skill>
                 <range>4~8</range>
             </li>
-            <li>
-                <skill>Shooting</skill>
-                <range>2~5</range>
-            </li>
         </skills>
     </PawnKindDef>
 
@@ -75,6 +71,10 @@
             <li>
                 <skill>Melee</skill>
                 <range>6~9</range>
+            </li>
+            <li>
+                <skill>Shooting</skill>
+                <range>2~5</range>
             </li>
         </skills>
         <xenotypeSet>
@@ -95,10 +95,24 @@
         <requiredWorkTags>
             <li>Constructing</li>
         </requiredWorkTags>
+        <!-- Mix of short bows and recurve bows: the budget always covers a short bow and
+             sometimes stretches to a recurve, so the four shamans aren't identical. -->
+        <weaponMoney>85~140</weaponMoney>
+        <weaponTags>
+            <li>NeolithicRangedBasic</li>
+            <li>NeolithicRangedDecent</li>
+        </weaponTags>
+        <disallowedTraits>
+            <li>Brawler</li>
+        </disallowedTraits>
         <skills>
             <li>
                 <skill>Melee</skill>
                 <range>4~7</range>
+            </li>
+            <li>
+                <skill>Shooting</skill>
+                <range>5~9</range>
             </li>
         </skills>
         <xenotypeSet>
@@ -121,6 +135,10 @@
                 <skill>Melee</skill>
                 <range>8~14</range>
             </li>
+            <li>
+                <skill>Shooting</skill>
+                <range>2~5</range>
+            </li>
         </skills>
         <xenotypeSet>
             <xenotypeChances>
@@ -141,6 +159,10 @@
             <li>
                 <skill>Melee</skill>
                 <range>16~18</range>
+            </li>
+            <li>
+                <skill>Shooting</skill>
+                <range>2~5</range>
             </li>
         </skills>
         <xenotypeSet>

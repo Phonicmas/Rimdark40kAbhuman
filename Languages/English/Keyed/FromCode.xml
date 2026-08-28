@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
     <BEWH.Abhuman.ModSettings.ModName>RimDark 40k - Abhumans - {0}</BEWH.Abhuman.ModSettings.ModName>
@@ -16,6 +16,17 @@
 
     <BEWH.Abhuman.Beastman.SpawnedMinotaurLetter>Herdstone Born!</BEWH.Abhuman.Beastman.SpawnedMinotaurLetter>
     <BEWH.Abhuman.Beastman.SpawnedMinotaurMessage>Through lengthy occult practice {0} has emerge from beyond the veil.</BEWH.Abhuman.Beastman.SpawnedMinotaurMessage>
+
+    <!-- Raid herdstone -->
+    <BEWH.Abhuman.Beastman.HerdstoneWave>Herd wave {0}: {1} / {2} cp gathered</BEWH.Abhuman.Beastman.HerdstoneWave>
+    <BEWH.Abhuman.Beastman.HerdstoneShamansAlive>Chanting shamans: {0} / {1}</BEWH.Abhuman.Beastman.HerdstoneShamansAlive>
+    <BEWH.Abhuman.Beastman.HerdstoneNextWave>Next wave attacks in</BEWH.Abhuman.Beastman.HerdstoneNextWave>
+    <BEWH.Abhuman.Beastman.HerdstoneNextBirth>DEV: Next birth in</BEWH.Abhuman.Beastman.HerdstoneNextBirth>
+    <BEWH.Abhuman.Beastman.HerdstoneDormant>The stone is silent. No shaman remains to chant.</BEWH.Abhuman.Beastman.HerdstoneDormant>
+    <BEWH.Abhuman.Beastman.HerdstoneUnbound>The stone stands cold and unclaimed.</BEWH.Abhuman.Beastman.HerdstoneUnbound>
+    <BEWH.Abhuman.Beastman.HerdstoneWaveAttacks>The herd around the herdstone has swollen past bearing. The {0} of {1} are charging!</BEWH.Abhuman.Beastman.HerdstoneWaveAttacks>
+    <BEWH.Abhuman.Beastman.HerdstoneWentDark>The last shaman has fallen. The herdstone falls silent.</BEWH.Abhuman.Beastman.HerdstoneWentDark>
+    <BEWH.Abhuman.Beastman.HerdstoneShamansBroken>With their shamans broken, the remaining {0} of {1} abandon the herdstone and attack!</BEWH.Abhuman.Beastman.HerdstoneShamansBroken>
 
     <!-- Ogryn -->
     <BEWH.Abhuman.Ogryn.MissingSlowWitted>{0} does not have gene {1}</BEWH.Abhuman.Ogryn.MissingSlowWitted>

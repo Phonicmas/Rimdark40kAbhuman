@@ -16,6 +16,15 @@ public class LordToil_Beastman : LordToil
 
 	private const int StartBuildingDelay = 50;
 	
+	private const int WantedShamans = 4;
+
+	/// <summary>
+	/// How far a shaman may stray from the herdstone. JobGiver_AIDefendPoint takes this from the
+	/// duty, so it doubles as their target-acquire range: roughly bow reach, and they will never
+	/// chase past it.
+	/// </summary>
+	private const float ShamanDefendRadius = 24f;
+
 	public Dictionary<Pawn, DutyDef> rememberedDuties = new();
 
 	public override IntVec3 FlagLoc => Data.siegeCenter;
@@ -134,40 +143,24 @@ public class LordToil_Beastman : LordToil
 			return;
 		}
 		rememberedDuties.Clear();
-		var wantedShamans = 4;
-		
+
+		// Shamans are identified by pawn kind, and there are only ever WantedShamans of them in
+		// the group, so every shaman-kind pawn chants and everyone else guards the site.
 		var shamanAmount = 0;
 		foreach (var pawn in lord.ownedPawns)
 		{
-			if (pawn.mindState.duty.def != DutyDefOf.Build)
+			if (shamanAmount < WantedShamans && CanBeShaman(pawn))
 			{
+				rememberedDuties.Add(pawn, Abhuman40kDefOf.BEWH_BestmanShamanChant);
+				SetAsShaman(pawn);
+				shamanAmount++;
 				continue;
 			}
-			
-			rememberedDuties.Add(pawn, DutyDefOf.Build);
-			SetAsShaman(pawn);
-			shamanAmount++;
+
+			rememberedDuties.Add(pawn, DutyDefOf.Defend);
+			SetAsDefender(pawn);
 		}
-		var shamansToGet = wantedShamans - shamanAmount;
-		for (var k = 0; k < shamansToGet; k++)
-		{
-			if (!lord.ownedPawns.Where(pa => !rememberedDuties.ContainsKey(pa) && CanBeShaman(pa)).TryRandomElement(out var pawn2))
-			{
-				continue;
-			}
-			rememberedDuties.Add(pawn2, DutyDefOf.Build);
-			SetAsShaman(pawn2);
-			shamanAmount++;
-		}
-		for (var l = 0; l < lord.ownedPawns.Count; l++)
-		{
-			var pawn3 = lord.ownedPawns[l];
-			if (!rememberedDuties.ContainsKey(pawn3))
-			{
-				SetAsDefender(pawn3);
-				rememberedDuties.Add(pawn3, DutyDefOf.Defend);
-			}
-		}
+
 		if (shamanAmount == 0)
 		{
 			lord.ReceiveMemo("NoShaman");
@@ -189,6 +182,37 @@ public class LordToil_Beastman : LordToil
 		}
 	}
 
+	public override void Notify_ConstructionCompleted(Pawn pawn, Building building)
+	{
+		base.Notify_ConstructionCompleted(pawn, building);
+		if (building is not Building_HerdstoneEnemy raidHerdstone || building.Faction != lord.faction)
+		{
+			return;
+		}
+
+		// Frame.CompleteConstruction already ran lord.AddBuilding for us, don't add it twice.
+		Data.herdstone = raidHerdstone;
+		raidHerdstone.Register(lord, Data.blueprintPoints, ShamanCount);
+	}
+
+	/// <summary>Shamans of this lord still on their feet.</summary>
+	public int ShamanCount
+	{
+		get
+		{
+			var count = 0;
+			foreach (var pawn in lord.ownedPawns)
+			{
+				if (CanBeShaman(pawn) && pawn is { Dead: false, Downed: false })
+				{
+					count++;
+				}
+			}
+
+			return count;
+		}
+	}
+
 	private static bool CanBeShaman(Pawn p)
 	{
 		return p.kindDef == Abhuman40kDefOf.BEWH_BeastmanFactionBeastmanShaman;
@@ -197,9 +221,14 @@ public class LordToil_Beastman : LordToil
 	private void SetAsShaman(Pawn p)
 	{
 		var data = Data;
-		p.mindState.duty = new PawnDuty(Abhuman40kDefOf.BEWH_BestmanShamanChant, data.siegeCenter)
+
+		// Anchor on the stone itself once it is standing, so the prayer ring and the leash agree
+		// even when the blueprint got placed off to one side of the siege spot.
+		var focus = data.herdstone is { Spawned: true } ? data.herdstone.Position : data.siegeCenter;
+
+		p.mindState.duty = new PawnDuty(Abhuman40kDefOf.BEWH_BestmanShamanChant, focus)
 		{
-			radius = data.baseRadius
+			radius = ShamanDefendRadius
 		};
 		p.skills.GetSkill(SkillDefOf.Construction).EnsureMinLevelWithMargin(5);
 		p.workSettings.EnableAndInitialize();
@@ -209,6 +238,12 @@ public class LordToil_Beastman : LordToil
 			if (workTypeDef == WorkTypeDefOf.Construction)
 			{
 				p.workSettings.SetPriority(workTypeDef, 1);
+			}
+			else
+			{
+				// Without this they'd happily wander off hauling and cleaning inside the flag
+				// radius instead of raising the stone. Vanilla LordToil_Siege does the same.
+				p.workSettings.Disable(workTypeDef);
 			}
 		}
 		
@@ -238,10 +273,23 @@ public class LordToil_Beastman : LordToil
 		{
 			return;
 		}
-		//Tick here
-		if (false)
+
+		// Once the stone is up, the shamans are the only thing keeping the siege going, and the
+		// herdstone itself sends "NoShaman" when the last of them falls. Here we only cover the
+		// two cases the stone can't report: the stone was destroyed out from under a living
+		// shaman, and the shamans died before the stone was ever finished.
+		if (Data.herdstone != null)
 		{
-			//TODO: If no shamans left, herdstone stop working and everyone attack player
+			if (!Data.herdstone.Spawned)
+			{
+				lord.ReceiveMemo("NoShaman");
+			}
+
+			return;
+		}
+
+		if (ShamanCount == 0)
+		{
 			lord.ReceiveMemo("NoShaman");
 		}
 	}

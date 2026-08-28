@@ -105,6 +105,7 @@
     <Compile Include="Quest\SitePartWorker_DownedNavigator.cs" />
     <Compile Include="Raid\BeastmanSiegeUtility.cs" />
     <Compile Include="Raid\LordJob_Beastman.cs" />
+    <Compile Include="Raid\LordJob_BeastmanHerdstoneWave.cs" />
     <Compile Include="Raid\LordToilData_SiegeBeastman.cs" />
     <Compile Include="Raid\LordToil_Beastman.cs" />
     <Compile Include="Raid\RaidStrategyWorker_Beastman.cs" />
@@ -114,8 +115,10 @@
     <Compile Include="Workers\ConditionalStatAffecter_HerdstonePresent.cs" />
     <Compile Include="Workers\InteractionWorker_FelinidNuzzle.cs" />
     <Compile Include="Workers\JobDriver_FelinidNuzzle.cs" />
+    <Compile Include="Workers\JobDriver_HerdstonePray.cs" />
     <Compile Include="Workers\JobDriver_SummonMinotaur.cs" />
     <Compile Include="Workers\JobGiver_FelinidNuzzle.cs" />
+    <Compile Include="Workers\JobGiver_HerdstonePray.cs" />
     <Compile Include="Workers\Recipe_Boner.cs" />
     <Compile Include="Workers\ThoughtWorker_FelinidCutePresence.cs" />
     <Compile Include="Workers\ThoughtWorker_Gregarious.cs" />

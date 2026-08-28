@@ -37,12 +37,14 @@ public class LordJob_Beastman : LordJob
 		transition.AddTrigger(new Trigger_Memo("TravelArrived"));
 		transition.AddTrigger(new Trigger_TicksPassed(5000));
 		stateGraph.AddTransition(transition);
+		// The herd stays at the stone for as long as a shaman still chants. Only the loss of
+		// every shaman (signalled by Building_HerdstoneEnemy / LordToil_Beastman) breaks the
+		// siege and sends the remaining garrison at the colony. Deliberately no timeout or
+		// pawn-harmed trigger here: the stone is meant to be a persistent threat the player
+		// has to go and put down.
 		var transition2 = new Transition(lordToil_Beastman, startingToil2);
 		transition2.AddTrigger(new Trigger_Memo("NoShaman"));
-		transition2.AddTrigger(new Trigger_PawnHarmed(0.08f));
-		transition2.AddTrigger(new Trigger_FractionPawnsLost(0.3f));
-		transition2.AddTrigger(new Trigger_TicksPassed((int)(60000f * Rand.Range(1.5f, 3f))));
-		transition2.AddPreAction(new TransitionAction_Message("MessageSiegersAssaulting".Translate(faction.def.pawnsPlural, faction), MessageTypeDefOf.ThreatBig)); //TODO: Change message
+		transition2.AddPreAction(new TransitionAction_Message("BEWH.Abhuman.Beastman.HerdstoneShamansBroken".Translate(faction.def.pawnsPlural, faction), MessageTypeDefOf.ThreatBig));
 		transition2.AddPostAction(new TransitionAction_WakeAll());
 		stateGraph.AddTransition(transition2);
 		return stateGraph;

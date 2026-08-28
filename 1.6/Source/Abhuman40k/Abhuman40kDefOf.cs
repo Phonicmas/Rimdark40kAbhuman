@@ -14,6 +14,7 @@ public static class Abhuman40kDefOf
     //JobDef
     public static JobDef BEWH_FelinidNuzzle;
     public static JobDef BEWH_DoMinotaurRitual;
+    public static JobDef BEWH_HerdstonePray;
     
     //WorldObjectDef
     public static WorldObjectDef BEWH_NavigatorWarpTravel;
@@ -64,10 +65,15 @@ public static class Abhuman40kDefOf
     //PawnKindDef
     public static PawnKindDef BEWH_HerdstoneBornMinotaur;
     public static PawnKindDef BEWH_BeastmanFactionBeastmanShaman;
+    public static PawnKindDef BEWH_BeastmanFactionBeastman;
+    public static PawnKindDef BEWH_BeastmanFactionMinotaur;
     public static PawnKindDef BEWH_NavigatorRescue;
     
     //DutyDef
     public static DutyDef BEWH_BestmanShamanChant;
+    
+    //EffecterDef
+    public static EffecterDef BEWH_HerdstoneChant;
 
     static Abhuman40kDefOf()
     {

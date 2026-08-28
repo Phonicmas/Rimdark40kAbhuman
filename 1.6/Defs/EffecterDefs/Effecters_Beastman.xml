@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Dark chant given off by a beastman shaman praying at a raid herdstone. Core assets only. -->
+  <EffecterDef>
+    <defName>BEWH_HerdstoneChant</defName>
+    <children>
+      <!-- Slow dark haze rising off the shaman. -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <fleckDef>Smoke</fleckDef>
+        <spawnLocType>OnSource</spawnLocType>
+        <ticksBetweenMotes>25</ticksBetweenMotes>
+        <positionRadius>0.35</positionRadius>
+        <positionOffset>(0, 0, 0.1)</positionOffset>
+        <scale>0.45~0.8</scale>
+        <speed>0.1~0.3</speed>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+        <color>(0.36, 0.16, 0.18)</color>
+      </li>
+      <!-- Occasional burst of sparks as the chant catches. -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <fleckDef>MicroSparks</fleckDef>
+        <spawnLocType>OnSource</spawnLocType>
+        <chancePerTick>0.012</chancePerTick>
+        <burstCount>2~4</burstCount>
+        <positionRadius>0.45</positionRadius>
+        <scale>0.6~1.1</scale>
+        <speed>0.4~1.2</speed>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+      </li>
+      <!-- Meditation glyph over the head so the praying reads at a glance. -->
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <fleckDef>Meditating</fleckDef>
+        <spawnLocType>OnSource</spawnLocType>
+        <ticksBetweenMotes>220</ticksBetweenMotes>
+        <positionOffset>(0, 0, 0.6)</positionOffset>
+        <scale>0.75~0.95</scale>
+      </li>
+    </children>
+  </EffecterDef>
+
+</Defs>
