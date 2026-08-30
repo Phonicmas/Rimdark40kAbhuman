@@ -32,6 +32,21 @@
         <descriptionHyperlinks>
             <AbilityDef>BEWH_NavigatorExposeWarpEye</AbilityDef>
         </descriptionHyperlinks>
+        <customEffectDescriptions>
+            <li>Reveals psychically concealed creatures within 12.9 tiles, so long as the warp eye is uncovered.</li>
+        </customEffectDescriptions>
+        <modExtensions>
+            <li Class="Abhuman40k.DefModExtension_RevealsInvisible">
+                <radius>12.9</radius>
+                <psychicSensitivityFactor>0.5</psychicSensitivityFactor>
+                <requiresLineOfSight>true</requiresLineOfSight>
+                <hostileOnly>false</hostileOnly>
+                <blockedIfCovered>
+                    <li>UpperHead</li>
+                    <li>FullHead</li>
+                </blockedIfCovered>
+            </li>
+        </modExtensions>
         <renderNodeProperties>
             <li>
                 <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>

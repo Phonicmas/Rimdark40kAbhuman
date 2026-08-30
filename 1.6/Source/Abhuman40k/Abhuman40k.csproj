@@ -73,6 +73,7 @@
     <Compile Include="Abhuman40kMod.cs" />
     <Compile Include="Abhuman40kSecondDefOf.cs" />
     <Compile Include="Abhuman40kUtils.cs" />
+    <Compile Include="WarpEyeRevealUtility.cs" />
     <Compile Include="Abilities\Ability_WarpEyeWarpTravel.cs" />
     <Compile Include="Abilities\WarpTravelWorldObject.cs" />
     <Compile Include="Buildings\Building_Herdstone.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Comps\Comp_TimedExplosion.cs" />
     <Compile Include="Debug\DebugActions.cs" />
     <Compile Include="DefModExtensions\DefModExtension_Gregarious.cs" />
+    <Compile Include="DefModExtensions\DefModExtension_RevealsInvisible.cs" />
     <Compile Include="Gene\Gene_Belisarius.cs" />
     <Compile Include="Gene\Gene_CatlikeMindset.cs" />
     <Compile Include="Graphics\PawnRenderNode_FurSkin.cs" />
@@ -96,6 +98,7 @@
     <Compile Include="Harmony\HarmonyPatch_ScavengerInstinct.cs" />
     <Compile Include="Harmony\HarmonyPatch_ToddlerLogicMentalBreakWorker.cs" />
     <Compile Include="Harmony\HarmonyPatch_ToddlerLogicMentalStateHandler.cs" />
+    <Compile Include="Harmony\HarmonyPatch_WarpEyeReveal.cs" />
     <Compile Include="Hediff\HediffHerdstoneSeverity.cs" />
     <Compile Include="PlaceWorkers\PlaceWorker_BeastmanInColonyLimited.cs" />
     <Compile Include="PlaceWorkers\PlaceWorker_OnlyAvailableWithBeastmanInColony.cs" />
