@@ -9,7 +9,11 @@ public static class Abhuman40kUtils
 {
     private static readonly List<Pawn> tmpPawns = new List<Pawn>();
     
-    public static WarpTravelWorldObject MakeWarpTravelObject(IEnumerable<Pawn> pawns, PlanetTile startingTile, int arrivalTick, bool addToWorldPawnsIfNotAlready, ThingOwner<Pawn> otherThingOwner)
+    /// <summary>
+    /// <paramref name="durationTicks"/> is how long the passage lasts, not when it ends. Passing an
+    /// absolute tick here is the mistake that used to make late-game translations finish instantly.
+    /// </summary>
+    public static WarpTravelWorldObject MakeWarpTravelObject(IEnumerable<Pawn> pawns, PlanetTile startingTile, int durationTicks, bool addToWorldPawnsIfNotAlready, ThingOwner<Pawn> otherThingOwner)
     {
         if (!startingTile.Valid && addToWorldPawnsIfNotAlready)
         {
@@ -23,7 +27,8 @@ public static class Abhuman40kUtils
             warpTravelObject.Tile = startingTile;
         }
         warpTravelObject.SetFaction(Faction.OfPlayer);
-        warpTravelObject.arrivalTick = arrivalTick;
+        warpTravelObject.travelDurationTicks = durationTicks;
+        warpTravelObject.arrivalTick = Find.TickManager.TicksGame + durationTicks;
         if (startingTile.Valid)
         {
             Find.WorldObjects.Add(warpTravelObject);

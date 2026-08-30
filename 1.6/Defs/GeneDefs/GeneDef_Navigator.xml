@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
     <!-- Navigator: Warp Eye -->
@@ -85,8 +85,11 @@
         <displayOrderInCategory>62</displayOrderInCategory>
 
         <statOffsets>
-            <PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">1.33</PilotingAbility>
+            <PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">0.4</PilotingAbility>
             <CaravanBonusSpeedFactor>0.2</CaravanBonusSpeedFactor>
+            <!-- Framework stats. Always defined; inert unless Odyssey / Save Our Ship 2 is loaded. -->
+            <BEWH_GravEngineCooldownFactor>-0.2</BEWH_GravEngineCooldownFactor>
+            <BEWH_ShipEvasionSkillOffset>3</BEWH_ShipEvasionSkillOffset>
         </statOffsets>
         <customEffectDescriptions>
             <li>Gives ability: Warp travel</li>
@@ -186,9 +189,11 @@
         <biostatMet>0</biostatMet>
         <canGenerateInGeneSet>false</canGenerateInGeneSet>
         <displayOrderInCategory>66</displayOrderInCategory>
-        <customEffectDescriptions>
-            <li>Decreases overall time spent when using the "Warp Travel" ability</li>
-        </customEffectDescriptions>
+
+        <statOffsets>
+            <BEWH_WarpTravelDurationFactor>-0.5</BEWH_WarpTravelDurationFactor>
+            <BEWH_GravEngineCooldownFactor>-0.15</BEWH_GravEngineCooldownFactor>
+        </statOffsets>
     </GeneDef>
 
     <!-- Navigator: House Belisarius -->
@@ -202,6 +207,10 @@
         <canGenerateInGeneSet>false</canGenerateInGeneSet>
         <displayOrderInCategory>67</displayOrderInCategory>
         <geneClass>Abhuman40k.Gene_Belisarius</geneClass>
+
+        <statOffsets>
+            <BEWH_WarpTravelCapacity>6</BEWH_WarpTravelCapacity>
+        </statOffsets>
         <abilities>
             <li>BEWH_NavigatorAssignBodyguard</li>
         </abilities>
@@ -221,8 +230,11 @@
         <canGenerateInGeneSet>false</canGenerateInGeneSet>
         <displayOrderInCategory>68</displayOrderInCategory>
         <statOffsets>
-            <PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">0.33</PilotingAbility>
+            <PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">0.2</PilotingAbility>
             <CaravanBonusSpeedFactor>0.5</CaravanBonusSpeedFactor>
+            <BEWH_WarpTravelInstability>-0.65</BEWH_WarpTravelInstability>
+            <BEWH_GravshipRangeOffset>12</BEWH_GravshipRangeOffset>
+            <BEWH_GravshipFuelEfficiency>0.2</BEWH_GravshipFuelEfficiency>
         </statOffsets>
     </GeneDef>
 

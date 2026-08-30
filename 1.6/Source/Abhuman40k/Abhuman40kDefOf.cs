@@ -43,6 +43,11 @@ public static class Abhuman40kDefOf
     public static GeneDef BEWH_RatlingGregarious;
     public static GeneDef BEWH_RatlingScavengerInstinct;
 
+    //StatDef
+    public static StatDef BEWH_WarpTravelDurationFactor;
+    public static StatDef BEWH_WarpTravelInstability;
+    public static StatDef BEWH_WarpTravelCapacity;
+
     //DamageDef
     public static DamageDef BEWH_WarpGaze;
 

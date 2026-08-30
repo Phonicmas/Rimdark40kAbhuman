@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Warp translation stats. These drive the navigator's "course untraveled" ability and are
+       read off the casting navigator only - passengers do not contribute.
+       BEWH_Voidfaring is defined by the RimDark Framework. -->
+
+  <StatDef>
+    <defName>BEWH_WarpTravelDurationFactor</defName>
+    <label>warp translation duration</label>
+    <description>A multiplier on how long this navigator's passage through the warp takes. Lower is faster.</description>
+    <category>BEWH_Voidfaring</category>
+    <toStringStyle>PercentZero</toStringStyle>
+    <defaultBaseValue>1</defaultBaseValue>
+    <hideAtValue>1</hideAtValue>
+    <minValue>0.05</minValue>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnDrones>false</showOnDrones>
+    <displayPriorityInCategory>200</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef>
+    <defName>BEWH_WarpTravelInstability</defName>
+    <label>warp translation instability</label>
+    <description>A multiplier on how far the true length of this navigator's passage can swing either side of the expected time, and on how vague their estimate of the arrival is.\n\nAt 0% the navigator holds a perfect course and can say to the hour when they will arrive.</description>
+    <category>BEWH_Voidfaring</category>
+    <toStringStyle>PercentZero</toStringStyle>
+    <defaultBaseValue>1</defaultBaseValue>
+    <hideAtValue>1</hideAtValue>
+    <minValue>0</minValue>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnDrones>false</showOnDrones>
+    <displayPriorityInCategory>199</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef>
+    <defName>BEWH_WarpTravelCapacity</defName>
+    <label>warp translation capacity</label>
+    <description>The greatest number of people this navigator can hold within their gaze and carry through the warp at once. The navigator themselves is one of them.\n\nAnyone beyond the limit is left behind, nearest first.</description>
+    <category>BEWH_Voidfaring</category>
+    <toStringStyle>Integer</toStringStyle>
+    <roundValue>true</roundValue>
+    <defaultBaseValue>6</defaultBaseValue>
+    <minValue>1</minValue>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnDrones>false</showOnDrones>
+    <displayPriorityInCategory>198</displayPriorityInCategory>
+  </StatDef>
+
+</Defs>

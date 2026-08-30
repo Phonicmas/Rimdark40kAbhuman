@@ -3,6 +3,7 @@ using System.Linq;
 using System.Text;
 using RimWorld;
 using RimWorld.Planet;
+using UnityEngine;
 using Verse;
 
 namespace Abhuman40k;
@@ -12,26 +13,28 @@ public class WarpTravelWorldObject : WorldObject, IThingHolder
 {
     public ThingOwner<Pawn> pawns;
     public int arrivalTick;
-    
-    private readonly IntRange randomDurationAdd = new IntRange(0, 60000);
-    private readonly IntRange randomDurationTake = new IntRange(-60000, 0);
 
-    private int randomDurationAdded;
-    private int randomDurationTaken;
+    // The length of this passage, kept so the arrival letter can report it. Reporting arrivalTick
+    // would report ticks since the game began instead.
+    public int travelDurationTicks;
+
+    // How vague the navigator's own estimate is. The window shown to the player is
+    // (remaining + estimateOffsetTicks) plus or minus estimateSpreadTicks, so the true arrival
+    // sits somewhere inside it rather than at its centre. At 0 spread the estimate is exact.
+    public int estimateSpreadTicks;
+    public int estimateOffsetTicks;
     
     public Pawn Navigator
     {
         get
         {
-            return pawns?.InnerListForReading.FirstOrFallback(p => p.genes.HasActiveGene(Abhuman40kDefOf.BEWH_NavigtorWarpNavigation));
+            return pawns?.InnerListForReading.FirstOrFallback(p => p.genes != null && p.genes.HasActiveGene(Abhuman40kDefOf.BEWH_NavigtorWarpNavigation));
         }
     }
     
     public WarpTravelWorldObject()
     {
         pawns = new ThingOwner<Pawn>(this, oneStackOnly: false, LookMode.Reference);
-        randomDurationAdded = randomDurationAdd.RandomInRange;
-        randomDurationTaken = randomDurationTake.RandomInRange;
     }
     
     public override bool SelectableNow => false;
@@ -59,15 +62,19 @@ public class WarpTravelWorldObject : WorldObject, IThingHolder
         {
             stringBuilder.AppendLine();
         }
-        var currentTick = Find.TickManager.TicksGame;
-        var lowerEstimate = arrivalTick - randomDurationTaken;
-        if (lowerEstimate < currentTick)
+        var remaining = Mathf.Max(0, arrivalTick - Find.TickManager.TicksGame);
+
+        if (estimateSpreadTicks <= 0)
         {
-            lowerEstimate = currentTick;
+            stringBuilder.Append("BEWH.Abhuman.Navigator.TravelTimeRemainingExact".Translate(remaining.ToStringTicksToPeriod()));
+            return stringBuilder.ToString();
         }
-        var higherEstimate = arrivalTick + randomDurationAdded;
-        
-        stringBuilder.Append("BEWH.Abhuman.Navigator.TravelTimeRemaining".Translate(TicksToHour(lowerEstimate), TicksToHour(higherEstimate)));
+
+        var centre = remaining + estimateOffsetTicks;
+        var lowerEstimate = Mathf.Max(0, centre - estimateSpreadTicks);
+        var higherEstimate = Mathf.Max(lowerEstimate, centre + estimateSpreadTicks);
+
+        stringBuilder.Append("BEWH.Abhuman.Navigator.TravelTimeRemaining".Translate(lowerEstimate.ToStringTicksToPeriod(), higherEstimate.ToStringTicksToPeriod()));
         return stringBuilder.ToString();
     }
     
@@ -76,6 +83,9 @@ public class WarpTravelWorldObject : WorldObject, IThingHolder
         base.ExposeData();
         Scribe_Deep.Look(ref pawns, "pawns");
         Scribe_Values.Look(ref arrivalTick, "arrivalTick");
+        Scribe_Values.Look(ref travelDurationTicks, "travelDurationTicks");
+        Scribe_Values.Look(ref estimateSpreadTicks, "estimateSpreadTicks");
+        Scribe_Values.Look(ref estimateOffsetTicks, "estimateOffsetTicks");
     }
     
     protected override void TickInterval(int delta)
@@ -166,34 +176,26 @@ public class WarpTravelWorldObject : WorldObject, IThingHolder
             }
         }
 
-        var timeSpent = TicksToHour(arrivalTick);
+        var navigator = Navigator;
+        if (navigator == null)
+        {
+            // The navigator did not survive the passage. Nothing to address the letter to.
+            return;
+        }
+
+        var timeSpent = travelDurationTicks.ToStringTicksToPeriod();
 
         var letter = new StandardLetter
         {
-            lookTargets = Navigator,
+            lookTargets = navigator,
             def = Abhuman40kDefOf.BEWH_WarpTravel,
-            Text = "BEWH.Abhuman.Navigator.WarpTravelMessage".Translate(Navigator.Named("PAWN"), timeSpent, teleportedPawns),
+            Text = "BEWH.Abhuman.Navigator.WarpTravelMessage".Translate(navigator.Named("PAWN"), timeSpent, teleportedPawns),
             Label = "BEWH.Abhuman.Navigator.WarpTravelLetter".Translate()
         };
 
         Find.LetterStack.ReceiveLetter(letter);
     }
 
-    private string TicksToHour(int tick)
-    {
-        string timeSpent;
-        if (tick / 2500 == 1)
-        {
-            timeSpent = "1 hour";
-        }
-        else
-        {
-            timeSpent = (tick / 2500) + "hours";
-        }
-
-        return timeSpent;
-    }
-    
     public void AddPawn(Pawn p, bool addCarriedPawnToWorldPawnsIfAny)
     {
         if (p == null)
