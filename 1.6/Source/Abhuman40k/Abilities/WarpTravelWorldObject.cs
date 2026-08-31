@@ -185,13 +185,13 @@ public class WarpTravelWorldObject : WorldObject, IThingHolder
 
         var timeSpent = travelDurationTicks.ToStringTicksToPeriod();
 
-        var letter = new StandardLetter
-        {
-            lookTargets = navigator,
-            def = Abhuman40kDefOf.BEWH_WarpTravel,
-            Text = "BEWH.Abhuman.Navigator.WarpTravelMessage".Translate(navigator.Named("PAWN"), timeSpent, teleportedPawns),
-            Label = "BEWH.Abhuman.Navigator.WarpTravelLetter".Translate()
-        };
+        // LetterMaker assigns the unique load ID. Building the letter with an object initializer
+        // leaves Letter.ID at 0, and two such letters in the archive collide on "Letter_0".
+        var letter = LetterMaker.MakeLetter(
+            "BEWH.Abhuman.Navigator.WarpTravelLetter".Translate(),
+            "BEWH.Abhuman.Navigator.WarpTravelMessage".Translate(navigator.Named("PAWN"), timeSpent, teleportedPawns),
+            Abhuman40kDefOf.BEWH_WarpTravel,
+            navigator);
 
         Find.LetterStack.ReceiveLetter(letter);
     }

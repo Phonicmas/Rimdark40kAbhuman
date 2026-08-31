@@ -10,6 +10,7 @@
     <label>warp translation duration</label>
     <description>A multiplier on how long this navigator's passage through the warp takes. Lower is faster.</description>
     <category>BEWH_Voidfaring</category>
+    <workerClass>Core40k.StatWorker_Voidfaring</workerClass>
     <toStringStyle>PercentZero</toStringStyle>
     <defaultBaseValue>1</defaultBaseValue>
     <hideAtValue>1</hideAtValue>
@@ -24,6 +25,7 @@
     <label>warp translation instability</label>
     <description>A multiplier on how far the true length of this navigator's passage can swing either side of the expected time, and on how vague their estimate of the arrival is.\n\nAt 0% the navigator holds a perfect course and can say to the hour when they will arrive.</description>
     <category>BEWH_Voidfaring</category>
+    <workerClass>Core40k.StatWorker_Voidfaring</workerClass>
     <toStringStyle>PercentZero</toStringStyle>
     <defaultBaseValue>1</defaultBaseValue>
     <hideAtValue>1</hideAtValue>
@@ -38,9 +40,11 @@
     <label>warp translation capacity</label>
     <description>The greatest number of people this navigator can hold within their gaze and carry through the warp at once. The navigator themselves is one of them.\n\nAnyone beyond the limit is left behind, nearest first.</description>
     <category>BEWH_Voidfaring</category>
+    <workerClass>Core40k.StatWorker_Voidfaring</workerClass>
     <toStringStyle>Integer</toStringStyle>
     <roundValue>true</roundValue>
     <defaultBaseValue>6</defaultBaseValue>
+    <hideAtValue>6</hideAtValue>
     <minValue>1</minValue>
     <showOnAnimals>false</showOnAnimals>
     <showOnDrones>false</showOnDrones>
