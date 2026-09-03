@@ -1,4 +1,5 @@
-﻿using System.Linq;
+using System.Collections.Generic;
+using System.Linq;
 using RimWorld;
 using RimWorld.Planet;
 using Verse;
@@ -33,30 +34,101 @@ public class GenStep_DownedNavigator : GenStep_Scatterer
         pawn.genes.SetXenotype(Abhuman40kDefOf.BEWH_Navigator);
         HealthUtility.DamageUntilDowned(pawn, allowBleedingWounds: false);
         HealthUtility.DamageLegsUntilIncapableOfMoving(pawn, allowBleedingWounds: false);
-        loc = map.listerBuildings.AllBuildingsNonColonistOfDef(ThingDefOf.DeathrestCasket).First().Position;
+        var casket = map.listerBuildings.AllBuildingsNonColonistOfDef(ThingDefOf.DeathrestCasket).FirstOrDefault();
+        if (casket != null)
+        {
+            loc = casket.Position;
+        }
+        else
+        {
+            Log.Warning("[RimDark Abhumans] No deathrest casket in the downed gravship layout; the navigator was scattered instead.");
+        }
         GenSpawn.Spawn(pawn, loc, map);
         pawn.mindState.WillJoinColonyIfRescued = true;
         MapGenerator.SetVar("RectOfInterest", CellRect.CenteredOn(loc, 1, 1));
 
-        var lightballs = map.listerBuildings.AllBuildingsNonColonistOfDef(ThingDefOf.LightBall);
-        foreach (var lightball in lightballs)
+        var rescueComp = map.GetComponent<MapComponent_NavigatorRescue>();
+        rescueComp?.Register(pawn);
+
+        SpawnReactor(map);
+        SpawnTurrets(map, rescueComp);
+        DisarmTurrets(map, rescueComp);
+        DrainPodLaunchers(map);
+    }
+
+    private static void SpawnReactor(Map map)
+    {
+        var markers = TakeMarkers(map, Abhuman40kDefOf.PollutionPump);
+        if (markers.Count == 0)
         {
-            var spawnLoc = new IntVec3
-            {
-                x = lightball.Position.x,
-                y = lightball.Position.y,
-                z = lightball.Position.z
-            };
-            
-            lightball.Destroy();
-            
-            GenSpawn.Spawn(Abhuman40kDefOf.BEWH_ReactorConduit, spawnLoc, map);
+            Log.Warning("[RimDark Abhumans] No " + Abhuman40kDefOf.PollutionPump.defName + " reactor marker found in the downed gravship layout; no critical reactor was spawned.");
+            return;
         }
-        
-        var turrets = map.listerBuildings.AllBuildingsNonColonistOfDef(ThingDefOf.Turret_MiniTurret);
-        foreach (var turret in turrets)
+
+        GenSpawn.Spawn(Abhuman40kDefOf.BEWH_NavigatorCriticalReactor, markers[0], map);
+    }
+
+    private static void SpawnTurrets(Map map, MapComponent_NavigatorRescue rescueComp)
+    {
+        var markers = TakeMarkers(map, Abhuman40kDefOf.SchoolDesk);
+        if (markers.Count == 0)
         {
-            turret.SetFaction(Faction.OfPirates);
+            Log.Warning("[RimDark Abhumans] No " + Abhuman40kDefOf.SchoolDesk.defName + " turret markers found in the downed gravship layout; no turrets were spawned.");
+            return;
+        }
+
+        foreach (var spawnLoc in markers)
+        {
+            var turret = ThingMaker.MakeThing(ThingDefOf.Turret_MiniTurret, ThingDefOf.Steel);
+            GenSpawn.Spawn(turret, spawnLoc, map);
+            rescueComp?.RegisterTurret(turret);
+        }
+    }
+
+    /// <summary>
+    /// Removes every marker building of the given def and returns the cells they stood on.
+    /// KCSG cannot place modded defs, so the layout marks these positions with vanilla stand-ins.
+    /// </summary>
+    private static List<IntVec3> TakeMarkers(Map map, ThingDef markerDef)
+    {
+        var markers = map.listerBuildings.AllBuildingsNonColonistOfDef(markerDef).ToList();
+        var positions = markers.Select(marker => marker.Position).ToList();
+
+        foreach (var marker in markers)
+        {
+            marker.Destroy();
+        }
+
+        return positions;
+    }
+
+    private static void DisarmTurrets(Map map, MapComponent_NavigatorRescue rescueComp)
+    {
+        foreach (var turret in map.listerBuildings.allBuildingsNonColonist.OfType<Building_TurretGun>().ToList())
+        {
+            if (turret.Faction != null)
+            {
+                turret.SetFaction(null);
+            }
+
+            rescueComp?.RegisterTurret(turret);
+        }
+    }
+
+    private static void DrainPodLaunchers(Map map)
+    {
+        foreach (var building in map.listerBuildings.allBuildingsNonColonist.ToList())
+        {
+            if (building.def != Abhuman40kDefOf.PodLauncher && building.TryGetComp<CompLaunchable>() == null)
+            {
+                continue;
+            }
+
+            var refuelable = building.TryGetComp<CompRefuelable>();
+            if (refuelable != null && refuelable.Fuel > 0f)
+            {
+                refuelable.ConsumeFuel(refuelable.Fuel);
+            }
         }
     }
 }

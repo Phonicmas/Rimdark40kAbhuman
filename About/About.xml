@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
 	<name>RimDark 40k - Abhumans</name>
 	<author>Phonicmas, Team RimDark</author>
@@ -6,6 +6,7 @@
 		<li>1.6</li>
 	</supportedVersions>
 	<packageId>Phonicmas.RimDark.Abhuman</packageId>
+	<modVersion>1.0.4</modVersion>
 	<description>[PLACEHOLDER]RimDark 40k - Abhumans. The mod features new xenotypes, new unique genes, new mechanics for some of the xenotypes.</description>
 	<modDependencies>
 		<li>

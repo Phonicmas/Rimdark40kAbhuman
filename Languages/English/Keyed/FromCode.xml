@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
     <BEWH.Abhuman.ModSettings.ModName>RimDark 40k - Abhumans - {0}</BEWH.Abhuman.ModSettings.ModName>
@@ -52,7 +52,13 @@
     <BEWH.Abhuman.Conditional.StatsReport_FeetCovered>feet covered</BEWH.Abhuman.Conditional.StatsReport_FeetCovered>
     <BEWH.Abhuman.Conditional.StatsReport_FeetUncovered>feet uncovered</BEWH.Abhuman.Conditional.StatsReport_FeetUncovered>
 
-    <!-- Misc -->
-    <BEWH.Abhuman.Misc.ExplosionIn>Critical explosion in {0}</BEWH.Abhuman.Misc.ExplosionIn>
+    <!-- Navigator critical reactor -->
+    <BEWH.Abhuman.Reactor.Destabilized>The grav-engine has become unstable and is about to explode. Evacuate immediately!</BEWH.Abhuman.Reactor.Destabilized>
+    <BEWH.Abhuman.Reactor.InspectDormant>Reactor dormant.</BEWH.Abhuman.Reactor.InspectDormant>
+    <BEWH.Abhuman.Reactor.InspectUnstable>Containment failing.</BEWH.Abhuman.Reactor.InspectUnstable>
+    <BEWH.Abhuman.Reactor.DetonationLetterLabel>Grav-engine detonation</BEWH.Abhuman.Reactor.DetonationLetterLabel>
+    <BEWH.Abhuman.Reactor.DetonationLetterText>The wounded grav-engine has torn itself apart. Everything short of the most resilient construction within the blast has been levelled.</BEWH.Abhuman.Reactor.DetonationLetterText>
+    <BEWH.Abhuman.Reactor.SalvagersLetterLabel>Salvagers inbound</BEWH.Abhuman.Reactor.SalvagersLetterLabel>
+    <BEWH.Abhuman.Reactor.SalvagersLetterText>The gravship's death throes have not gone unnoticed. A band from {0} is closing on the wreck, and they are here for whatever they can strip out of it before it goes up.</BEWH.Abhuman.Reactor.SalvagersLetterText>
 
 </LanguageData>

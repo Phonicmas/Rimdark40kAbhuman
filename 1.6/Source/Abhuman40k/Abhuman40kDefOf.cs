@@ -59,9 +59,13 @@ public static class Abhuman40kDefOf
     public static ThingDef BEWH_HerdstonePlayer;
     public static ThingDef BEWH_HerdstoneConduitPlayer;
 
-    public static ThingDef BEWH_ReactorConduit;
+    public static ThingDef BEWH_NavigatorCriticalReactor;
     
     public static ThingDef DevilstrandCloth;
+
+    public static ThingDef PollutionPump;
+    public static ThingDef SchoolDesk;
+    public static ThingDef PodLauncher;
     
     //XenotypeDef
     public static XenotypeDef BEWH_Navigator;
@@ -79,6 +83,12 @@ public static class Abhuman40kDefOf
     
     //EffecterDef
     public static EffecterDef BEWH_HerdstoneChant;
+
+    //QuestScriptDef
+    public static QuestScriptDef BEWH_NavigatorDowned;
+
+    //RaidStrategyDef
+    public static RaidStrategyDef ImmediateAttackSmart;
 
     static Abhuman40kDefOf()
     {

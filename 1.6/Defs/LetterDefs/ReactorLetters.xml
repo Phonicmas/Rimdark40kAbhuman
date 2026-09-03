@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <LetterDef>
+    <defName>BEWH_ReactorDetonation</defName>
+    <letterClass>StandardLetter</letterClass>
+    <color>(255, 90, 40)</color>
+    <flashColor>(255, 60, 30)</flashColor>
+    <flashInterval>60</flashInterval>
+    <arriveSound>LetterArrive_BadUrgent</arriveSound>
+  </LetterDef>
+
+</Defs>
