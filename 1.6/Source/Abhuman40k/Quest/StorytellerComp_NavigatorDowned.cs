@@ -47,7 +47,6 @@ public class StorytellerComp_NavigatorDowned : StorytellerComp
             yield break;
         }
 
-        component.Notify_QuestOffered();
         yield return new FiringIncident(incident, this, GenerateParms(incident.category, target));
     }
 }

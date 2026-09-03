@@ -31,10 +31,12 @@ public class WorkGiver_HerdstoneRitual : WorkGiver_Scanner
 		if (pawn.genes == null || !pawn.genes.HasActiveGene(Abhuman40kDefOf.BEWH_BeastmanHerdstoneAffinity))
 		{
 			JobFailReason.Is("BEWH.Abhuman.Beastman.HerdstoneNoAffinityGene".Translate());
+			return false;
 		}
 		if (!buildingHerdstone.canBeWorked)
 		{
 			JobFailReason.Is("BEWH.Abhuman.Beastman.HerdstoneNotStarted".Translate());
+			return false;
 		}
 		
 		return true;

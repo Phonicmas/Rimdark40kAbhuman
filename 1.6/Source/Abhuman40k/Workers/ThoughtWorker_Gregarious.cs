@@ -31,8 +31,7 @@ public class ThoughtWorker_Gregarious : ThoughtWorker
             < 3 => ThoughtState.ActiveAtStage(1),
             < 4 => ThoughtState.ActiveAtStage(2),
             < 6 => ThoughtState.ActiveAtStage(3),
-            > 8 => ThoughtState.ActiveAtStage(4),
-            _ => ThoughtState.ActiveAtStage(0)
+            _ => ThoughtState.ActiveAtStage(4)
         };
     }
 }

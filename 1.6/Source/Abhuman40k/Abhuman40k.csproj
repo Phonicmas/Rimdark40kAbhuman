@@ -73,6 +73,7 @@
     <Compile Include="Abhuman40kMod.cs" />
     <Compile Include="Abhuman40kSecondDefOf.cs" />
     <Compile Include="Abhuman40kUtils.cs" />
+    <Compile Include="GameComponent_AbhumanCaches.cs" />
     <Compile Include="WarpEyeRevealUtility.cs" />
     <Compile Include="Abilities\Ability_WarpEyeWarpTravel.cs" />
     <Compile Include="Abilities\WarpTravelWorldObject.cs" />
@@ -97,8 +98,6 @@
     <Compile Include="Harmony\HarmonyPatch_Gregarious.cs" />
     <Compile Include="Abhuman40kDefOf.cs" />
     <Compile Include="Harmony\HarmonyPatch_NavigatorTurretProvoked.cs" />
-    <Compile Include="Harmony\HarmonyPatch_ScavengerInstinct.cs" />
-    <Compile Include="Harmony\HarmonyPatch_ToddlerLogicMentalBreakWorker.cs" />
     <Compile Include="Harmony\HarmonyPatch_ToddlerLogicMentalStateHandler.cs" />
     <Compile Include="Harmony\HarmonyPatch_WarpEyeReveal.cs" />
     <Compile Include="Hediff\HediffHerdstoneSeverity.cs" />

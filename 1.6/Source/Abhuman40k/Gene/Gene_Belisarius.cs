@@ -19,6 +19,6 @@ public class Gene_Belisarius : Gene
     public override void ExposeData()
     {
         base.ExposeData();
-        Scribe_Deep.Look(ref currentBodyguard, "currentBodyguard");
+        Scribe_References.Look(ref currentBodyguard, "bodyguard");
     }
 }

@@ -23,11 +23,23 @@ public class JobGiver_FelinidNuzzle : ThinkNode_JobGiver
             return null;
         }
 
-        if (!(from p in pawn.Map.mapPawns.SpawnedPawnsInFaction(pawn.Faction)
-                where !p.NonHumanlikeOrWildMan() && !p.IsSubhuman && p != pawn &&
-                      p.Position.InHorDistOf(pawn.Position, MaxNuzzleDistance) && pawn.GetRoom() == p.GetRoom() &&
-                      !p.Position.IsForbidden(pawn) && p.CanCasuallyInteractNow()
-                select p).TryRandomElement(out var result))
+        var map = pawn.Map;
+        if (map == null)
+        {
+            return null;
+        }
+
+        var origin = pawn.Position;
+        var room = pawn.GetRoom();
+
+        if (!map.mapPawns.SpawnedPawnsInFaction(pawn.Faction)
+                .Where(p => p != pawn
+                            && p.Position.InHorDistOf(origin, MaxNuzzleDistance)
+                            && !p.NonHumanlikeOrWildMan() && !p.IsSubhuman
+                            && p.GetRoom() == room
+                            && !p.Position.IsForbidden(pawn)
+                            && p.CanCasuallyInteractNow())
+                .TryRandomElement(out var result))
         {
             return null;
         }

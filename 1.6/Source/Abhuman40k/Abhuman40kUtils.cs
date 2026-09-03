@@ -13,7 +13,7 @@ public static class Abhuman40kUtils
     /// <paramref name="durationTicks"/> is how long the passage lasts, not when it ends. Passing an
     /// absolute tick here is the mistake that used to make late-game translations finish instantly.
     /// </summary>
-    public static WarpTravelWorldObject MakeWarpTravelObject(IEnumerable<Pawn> pawns, PlanetTile startingTile, int durationTicks, bool addToWorldPawnsIfNotAlready, ThingOwner<Pawn> otherThingOwner)
+    public static WarpTravelWorldObject MakeWarpTravelObject(IEnumerable<Pawn> pawns, PlanetTile startingTile, int durationTicks, bool addToWorldPawnsIfNotAlready)
     {
         if (!startingTile.Valid && addToWorldPawnsIfNotAlready)
         {

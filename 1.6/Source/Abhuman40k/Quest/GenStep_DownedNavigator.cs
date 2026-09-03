@@ -31,7 +31,7 @@ public class GenStep_DownedNavigator : GenStep_Scatterer
             var component = map.Parent.GetComponent<DownedRefugeeComp>();
             pawn = component == null || !component.pawn.Any ? DownedRefugeeQuestUtility.GenerateRefugee(map.Tile) : component.pawn.Take(component.pawn[0]);
         }
-        pawn.genes.SetXenotype(Abhuman40kDefOf.BEWH_Navigator);
+        pawn.genes?.SetXenotype(Abhuman40kDefOf.BEWH_Navigator);
         HealthUtility.DamageUntilDowned(pawn, allowBleedingWounds: false);
         HealthUtility.DamageLegsUntilIncapableOfMoving(pawn, allowBleedingWounds: false);
         var casket = map.listerBuildings.AllBuildingsNonColonistOfDef(ThingDefOf.DeathrestCasket).FirstOrDefault();

@@ -25,7 +25,8 @@ public class LordToil_Beastman : LordToil
 	/// </summary>
 	private const float ShamanDefendRadius = 24f;
 
-	public Dictionary<Pawn, DutyDef> rememberedDuties = new();
+	/// <summary>Shamans whose work settings have already been locked to construction.</summary>
+	private readonly HashSet<Pawn> shamanWorkConfigured = [];
 
 	public override IntVec3 FlagLoc => Data.siegeCenter;
 
@@ -69,6 +70,12 @@ public class LordToil_Beastman : LordToil
 		Data.baseRadius = Mathf.Clamp(Data.baseRadius, BaseRadiusMin, BaseRadiusMax);
 		var costList = new List<Thing>();
 		var placedBlueprint = BeastmanSiegeUtility.PlaceBlueprint(Data, Map, lord.faction);
+		if (placedBlueprint == null)
+		{
+			Log.Warning("[RimDark Abhumans] Could not place a herdstone blueprint for the beastman siege; the raid will fall through to assaulting.");
+			return;
+		}
+
 		Data.blueprints.Add(placedBlueprint);
 		foreach (var cost in placedBlueprint.TotalMaterialCost())
 		{
@@ -142,7 +149,6 @@ public class LordToil_Beastman : LordToil
 
 			return;
 		}
-		rememberedDuties.Clear();
 
 		// Shamans are identified by pawn kind, and there are only ever WantedShamans of them in
 		// the group, so every shaman-kind pawn chants and everyone else guards the site.
@@ -151,13 +157,11 @@ public class LordToil_Beastman : LordToil
 		{
 			if (shamanAmount < WantedShamans && CanBeShaman(pawn))
 			{
-				rememberedDuties.Add(pawn, Abhuman40kDefOf.BEWH_BestmanShamanChant);
 				SetAsShaman(pawn);
 				shamanAmount++;
 				continue;
 			}
 
-			rememberedDuties.Add(pawn, DutyDefOf.Defend);
 			SetAsDefender(pawn);
 		}
 
@@ -230,6 +234,14 @@ public class LordToil_Beastman : LordToil
 		{
 			radius = ShamanDefendRadius
 		};
+
+		// The duty is refreshed every pass because the focus moves once the stone is up, but the
+		// work settings only ever need doing once per shaman.
+		if (!shamanWorkConfigured.Add(p))
+		{
+			return;
+		}
+
 		p.skills.GetSkill(SkillDefOf.Construction).EnsureMinLevelWithMargin(5);
 		p.workSettings.EnableAndInitialize();
 		var allDefsListForReading = DefDatabase<WorkTypeDef>.AllDefsListForReading;
@@ -288,6 +300,13 @@ public class LordToil_Beastman : LordToil
 			return;
 		}
 
+		// Init never got a blueprint down, so there is nothing here for the shamans to raise.
+		if (Data.blueprints.Count == 0)
+		{
+			lord.ReceiveMemo("NoShaman");
+			return;
+		}
+
 		if (ShamanCount == 0)
 		{
 			lord.ReceiveMemo("NoShaman");
@@ -296,6 +315,7 @@ public class LordToil_Beastman : LordToil
 
 	public override void Cleanup()
 	{
+		shamanWorkConfigured.Clear();
 		var data = Data;
 		data.blueprints.RemoveAll(blue => blue.Destroyed);
 		foreach (var t in data.blueprints)

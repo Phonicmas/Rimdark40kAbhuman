@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using RimWorld;
 using UnityEngine;
@@ -11,18 +10,47 @@ public class Building_Herdstone : Building
 {
     public bool canBeWorked = false;
     
+    private const int AffinityRecacheIntervalTicks = 250;
+
     private int totalTime = 0;
-    private float TotalTimeAdjusted
+
+    [Unsaved(false)]
+    private int cachedAffinityPawns;
+
+    [Unsaved(false)]
+    private int lastAffinityRecacheTick = -1;
+
+    private float TotalTimeAdjusted => (int)(totalTime * (1f + (0.2f * AffinityPawnCount)));
+
+    /// <summary>Free colonists carrying the adrenal surge node, recounted a few times a minute.</summary>
+    private int AffinityPawnCount
     {
         get
         {
-            var multiplier = 1f;
-            var affinityPawns = Map.mapPawns.FreeColonists
-                .Count(pawn => pawn.genes.HasActiveGene(Abhuman40kDefOf.BEWH_MinotaurAdrenalSurgeNode));
+            var ticksGame = Find.TickManager?.TicksGame ?? 0;
+            if (lastAffinityRecacheTick >= 0 && ticksGame - lastAffinityRecacheTick < AffinityRecacheIntervalTicks)
+            {
+                return cachedAffinityPawns;
+            }
 
-            multiplier += 0.2f * affinityPawns;
-            
-            return (int)(totalTime * multiplier);
+            lastAffinityRecacheTick = ticksGame;
+            cachedAffinityPawns = 0;
+
+            var map = Map;
+            if (map == null)
+            {
+                return 0;
+            }
+
+            foreach (var colonist in map.mapPawns.FreeColonists)
+            {
+                if (colonist.genes != null && colonist.genes.HasActiveGene(Abhuman40kDefOf.BEWH_MinotaurAdrenalSurgeNode))
+                {
+                    cachedAffinityPawns++;
+                }
+            }
+
+            return cachedAffinityPawns;
         }
     }
     private float progressInt = 0;
@@ -35,12 +63,12 @@ public class Building_Herdstone : Building
     [Unsaved(false)]
     private Effecter progressBar;
 
-    protected override void Tick()
+    protected override void TickInterval(int delta)
     {
-        base.Tick();
+        base.TickInterval(delta);
         if (cooldownInt > 0)
         {
-            cooldownInt--;
+            cooldownInt = Mathf.Max(0, cooldownInt - delta);
         }
     }
 
@@ -89,7 +117,11 @@ public class Building_Herdstone : Building
     private void Finish()
     {
         var pawn = PawnGenerator.GeneratePawn(Abhuman40kDefOf.BEWH_HerdstoneBornMinotaur, Faction.OfPlayer);
-        var minotaur = (Pawn)GenSpawn.Spawn(pawn, Position.RandomAdjacentCell8Way(), Map);
+        if (!CellFinder.TryFindRandomSpawnCellForPawnNear(this.RandomAdjacentCell8Way(), Map, out var spawnCell))
+        {
+            spawnCell = Position;
+        }
+        var minotaur = (Pawn)GenSpawn.Spawn(pawn, spawnCell, Map);
 
         var letter = LetterMaker.MakeLetter(
             "BEWH.Abhuman.Beastman.SpawnedMinotaurLetter".Translate(), 

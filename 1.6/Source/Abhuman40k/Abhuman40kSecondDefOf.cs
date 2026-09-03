@@ -12,6 +12,6 @@ public static class Abhuman40kSecondDefOf
     
     static Abhuman40kSecondDefOf()
     {
-        DefOfHelper.EnsureInitializedInCtor(typeof(Abhuman40kDefOf));
+        DefOfHelper.EnsureInitializedInCtor(typeof(Abhuman40kSecondDefOf));
     }
 }

@@ -56,16 +56,16 @@ public class Comp_CriticalReactor : ThingComp, IThingGlower
         RefreshGlow();
     }
 
-    public override void CompTick()
+    public override void CompTickInterval(int delta)
     {
-        base.CompTick();
+        base.CompTickInterval(delta);
 
         if (detonated || !Armed || !Unstable)
         {
             return;
         }
 
-        ticksRemaining--;
+        ticksRemaining -= delta;
 
         if (ticksRemaining <= 0)
         {
@@ -73,7 +73,7 @@ public class Comp_CriticalReactor : ThingComp, IThingGlower
             return;
         }
 
-        if (parent.IsHashIntervalTick(Props.glowUpdateInterval))
+        if (parent.IsHashIntervalTick(Props.glowUpdateInterval, delta))
         {
             RefreshGlow();
         }

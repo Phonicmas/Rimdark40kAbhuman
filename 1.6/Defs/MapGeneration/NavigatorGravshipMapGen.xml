@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--
+    Encounter's gen step list, minus everything that constructs and minus natural rock.
+    The crash site is always a big open area.
+    The gravship layout is placed at order 460; ScatterRuinsSimple (750) sets
+    ignoreUsedRects, and the Ideology scatterers (750) and the structure mutators
+    (500/700) all run after it, so any of them can drop buildings on the wreck.
+  -->
+  <MapGeneratorDef>
+    <defName>BEWH_NavigatorGravshipSiteMapGen</defName>
+    <genSteps>
+      <li>ElevationFertility</li>
+      <li>MutatorPostElevationFertility</li>
+      <li>Terrain</li>
+      <li>MutatorPostTerrain</li>
+      <li>Roads</li>
+      <!-- RocksFromGrid is deliberately absent: it is the only thing that turns the
+           elevation grid into natural rock, so without it the crash site is always
+           open ground - no hills, no mountains, no overhead thick roof to bury the
+           wreck in. ElevationFertility stays because Plants reads the fertility grid. -->
+      <li>RockChunks</li>
+      <li>SteamGeysers</li>
+      <li>FindPlayerStartSpot</li>
+      <li>ScenParts</li>
+      <li MayRequire="Ludeon.RimWorld.Biotech">Pollution</li>
+      <li>Plants</li>
+      <li>Snow</li>
+      <li>MutatorFinal</li>
+      <li>Animals</li>
+      <li>Fog</li>
+    </genSteps>
+  </MapGeneratorDef>
+
+</Defs>

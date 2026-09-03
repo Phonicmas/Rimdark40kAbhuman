@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--
+    Vanilla Site, pointed at our own map generator. Site itself is left alone on purpose -
+    patching it would change map generation for every quest site in the game, not just this one.
+    Inheriting rather than copying keeps the comps and world-object plumbing in sync with vanilla.
+  -->
+  <WorldObjectDef ParentName="Site">
+    <defName>BEWH_NavigatorGravshipSite</defName>
+    <mapGenerator>BEWH_NavigatorGravshipSiteMapGen</mapGenerator>
+  </WorldObjectDef>
+
+</Defs>

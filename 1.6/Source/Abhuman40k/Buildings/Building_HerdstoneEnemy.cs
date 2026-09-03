@@ -311,9 +311,9 @@ public class Building_HerdstoneEnemy : Building
 
     // ----- Ticking -----
 
-    protected override void Tick()
+    protected override void TickInterval(int delta)
     {
-        base.Tick();
+        base.TickInterval(delta);
 
         if (!Spawned || Faction == null || Faction.IsPlayer || inert)
         {
@@ -322,7 +322,7 @@ public class Building_HerdstoneEnemy : Building
 
         if (shamanLord == null)
         {
-            if (this.IsHashIntervalTick(FallbackLordSearchInterval))
+            if (this.IsHashIntervalTick(FallbackLordSearchInterval, delta))
             {
                 TryFindShamanLord();
             }
@@ -330,7 +330,7 @@ public class Building_HerdstoneEnemy : Building
             return;
         }
 
-        if (this.IsHashIntervalTick(ShamanCheckInterval) && AliveShamanCount <= 0)
+        if (this.IsHashIntervalTick(ShamanCheckInterval, delta) && AliveShamanCount <= 0)
         {
             GoInert();
             return;

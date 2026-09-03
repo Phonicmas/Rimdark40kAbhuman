@@ -27,6 +27,12 @@ public static class WarpEyeRevealUtility
         }
     }
 
+    public static void ResetCache()
+    {
+        cachedBucket = -1;
+        seersByMap.Clear();
+    }
+
     public static bool IsRevealed(Pawn target)
     {
         if (revealerGenes.Count == 0 || target == null || !target.Spawned)

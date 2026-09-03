@@ -20,6 +20,10 @@ public class Ability_WarpEyeWarpTravel : VEF.Abilities.Ability
 
     private int Capacity => Mathf.Max(1, Mathf.RoundToInt(CasterPawn.GetStatValue(Abhuman40kDefOf.BEWH_WarpTravelCapacity)));
 
+    private int previewFrame = -1;
+    private List<Pawn> previewCandidates;
+    private HashSet<Pawn> previewTravelers;
+
     public override void DoAction()
     {
         var lodger = PawnsToTravel().FirstOrDefault(p => p.IsQuestLodger());
@@ -44,8 +48,14 @@ public class Ability_WarpEyeWarpTravel : VEF.Abilities.Ability
             }
             yield break;
         }
-        var homeMap = CasterPawn.Map.IsPlayerHome;
-        foreach (var thing in GenRadial.RadialDistinctThingsAround(pawn.Position, pawn.Map, GetRadiusForPawn(), useCenter: true))
+        var map = CasterPawn.Map;
+        if (map == null)
+        {
+            yield break;
+        }
+
+        var homeMap = map.IsPlayerHome;
+        foreach (var thing in GenRadial.RadialDistinctThingsAround(CasterPawn.Position, map, GetRadiusForPawn(), useCenter: true))
         {
             if (thing is Pawn mapPawn && !mapPawn.Dead && (mapPawn.IsColonist || mapPawn.IsPrisonerOfColony || (!homeMap && mapPawn.RaceProps.Animal && (mapPawn.Faction?.IsPlayer ?? false))))
             {
@@ -101,12 +111,6 @@ public class Ability_WarpEyeWarpTravel : VEF.Abilities.Ability
         var travelingPawns = LimitToCapacity(candidates);
         var leftBehind = candidates.Where(p => !travelingPawns.Contains(p)).ToList();
 
-        ThingOwner<Pawn> otherThingOwner = null;
-        if (caravan != null)
-        {
-            otherThingOwner = caravan.pawns;
-        }
-
         // Duration is rolled, then scaled - never the absolute game tick, which is what the old
         // House Achelieux halving did and why late-game translations finished instantly.
         var durationFactor = CasterPawn.GetStatValue(Abhuman40kDefOf.BEWH_WarpTravelDurationFactor);
@@ -115,7 +119,7 @@ public class Ability_WarpEyeWarpTravel : VEF.Abilities.Ability
         var spread = BaseInstabilitySpreadTicks * instability;
         var duration = Mathf.RoundToInt(Mathf.Max(MinTravelDurationTicks, travelDurationRange.RandomInRange * durationFactor + Rand.Range(-spread, spread)));
 
-        var warpTravel = Abhuman40kUtils.MakeWarpTravelObject(travelingPawns, targets[0].Tile, duration, false, otherThingOwner);
+        var warpTravel = Abhuman40kUtils.MakeWarpTravelObject(travelingPawns, targets[0].Tile, duration, false);
         warpTravel.estimateSpreadTicks = Mathf.RoundToInt(spread);
         warpTravel.estimateOffsetTicks = Mathf.RoundToInt(Rand.Range(-spread, spread));
 
@@ -148,15 +152,23 @@ public class Ability_WarpEyeWarpTravel : VEF.Abilities.Ability
         }
         GenDraw.DrawRadiusRing(pawn.Position, GetRadiusForPawn(), Color.blue);
 
-        var travelers = PawnsToTravel();
-        foreach (var candidate in PawnsToTeleport())
+        // Both lists come from a radial sweep of the map, so build them once per frame rather
+        // than twice per draw call.
+        if (previewFrame != Time.frameCount || previewCandidates == null)
+        {
+            previewFrame = Time.frameCount;
+            previewCandidates = PawnsToTeleport().ToList();
+            previewTravelers = new HashSet<Pawn>(LimitToCapacity(previewCandidates));
+        }
+
+        foreach (var candidate in previewCandidates)
         {
             if (!candidate.Spawned)
             {
                 continue;
             }
             // Green: coming along. Red: in range, but over the navigator's capacity.
-            GenDraw.DrawRadiusRing(candidate.Position, 0.9f, travelers.Contains(candidate) ? Color.green : Color.red);
+            GenDraw.DrawRadiusRing(candidate.Position, 0.9f, previewTravelers.Contains(candidate) ? Color.green : Color.red);
         }
     }
 }

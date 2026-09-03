@@ -11,12 +11,18 @@ public class Thought_MemoryFelinid : Thought_Memory
     {
         get
         {
-            if (CurStageIndex == 0 || initiator == null)
+            if (CurStageIndex == 0 && initiator != null)
             {
                 return "BEWH.Abhuman.Felinid.Nuzzled".Translate(initiator);
             }
 
             return base.Description;
         }
+    }
+
+    public override void ExposeData()
+    {
+        base.ExposeData();
+        Scribe_References.Look(ref initiator, "initiator");
     }
 }

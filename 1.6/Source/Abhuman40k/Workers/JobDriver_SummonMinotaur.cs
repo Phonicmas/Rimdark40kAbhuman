@@ -11,23 +11,36 @@ public class JobDriver_SummonMinotaur : JobDriver
     
     public override bool TryMakePreToilReservations(bool errorOnFailed)
     {
-	    return pawn.Reserve(Herdstone, job, 1, -1, null, errorOnFailed);
+	    var herdstone = Herdstone;
+	    return herdstone != null && pawn.Reserve(herdstone, job, 1, -1, null, errorOnFailed);
     }
 
     protected override IEnumerable<Toil> MakeNewToils()
 	{
+		this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
+		this.FailOn(() => Herdstone == null);
+
 		var ritual = ToilMaker.MakeToil("MakeNewToils");
 		yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.ClosestTouch)
 		.FailOnDestroyedNullOrForbidden(TargetIndex.A);
 
 		ritual.defaultCompleteMode = ToilCompleteMode.Delay;
-		ritual.defaultDuration = (int)Herdstone.TimeLeft+50;
+		ritual.defaultDuration = Herdstone != null ? (int)Herdstone.TimeLeft + 50 : 50;
 
 		ritual.AddPreTickAction(delegate
 		{
-			Herdstone.WorkTick();
+			Herdstone?.WorkTick();
 		});
-		ritual.AddEndCondition(() => Herdstone.TimeLeft < 0 || !Herdstone.canBeWorked ? JobCondition.Succeeded : JobCondition.Ongoing);
+		ritual.AddEndCondition(delegate
+		{
+			var herdstone = Herdstone;
+			if (herdstone == null)
+			{
+				return JobCondition.Incompletable;
+			}
+
+			return herdstone.TimeLeft < 0 || !herdstone.canBeWorked ? JobCondition.Succeeded : JobCondition.Ongoing;
+		});
 		yield return ritual;
 	}
 }

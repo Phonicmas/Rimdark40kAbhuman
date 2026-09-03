@@ -23,7 +23,7 @@ public class JobDriver_FelinidNuzzle : JobDriver
         {
             var recipient = (Pawn)pawn.CurJob.targetA.Thing;
             pawn.interactions.TryInteractWith(recipient, Abhuman40kDefOf.BEWH_Nuzzle);
-            pawn.genes.GetFirstGeneOfType<Gene_CatlikeMindset>().Nuzzled();
+            pawn.genes?.GetFirstGeneOfType<Gene_CatlikeMindset>()?.Nuzzled();
         });
     }
 }

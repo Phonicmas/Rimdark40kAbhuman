@@ -13,34 +13,40 @@ public class CompAbilityEffect_WarpEyeGaze : CompAbilityEffect
     public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
     {
         var targetPawn = target.Pawn;
+        if (targetPawn == null || targetPawn.Dead)
+        {
+            return;
+        }
+
         if (StunNotKill(targetPawn))
         {
             var stunDuration = (int)Math.Max(300, targetPawn.GetStatValue(StatDefOf.PsychicSensitivity) * 300);
-            targetPawn.stances.stunner.StunFor(stunDuration, parent.pawn);
+            targetPawn.stances?.stunner.StunFor(stunDuration, parent.pawn);
         }
         else
         {
-            var dinfo = new DamageInfo
-            {
-                Def = Abhuman40kDefOf.BEWH_WarpGaze
-            };
-            targetPawn.Kill(dinfo);
+            targetPawn.Kill(new DamageInfo(Abhuman40kDefOf.BEWH_WarpGaze, 9999f, instigator: parent.pawn));
         }
     }
 
     private bool StunNotKill(Pawn pawn)
     {
+        if (pawn == null)
+        {
+            return true;
+        }
+
         if (Props.stunnedNotKilledPawnKindDef.Contains(pawn.kindDef))
         {
             return true;
         }
 
-        if (Enumerable.Any(pawn.genes.GenesListForReading, gene => Props.stunnedNotKilledGeneDef.Contains(gene.def)))
+        if (pawn.genes == null)
         {
-            return true;
+            return false;
         }
 
-        return false;
+        return Enumerable.Any(pawn.genes.GenesListForReading, gene => Props.stunnedNotKilledGeneDef.Contains(gene.def));
     }
     
     public override string ExtraLabelMouseAttachment(LocalTargetInfo target)

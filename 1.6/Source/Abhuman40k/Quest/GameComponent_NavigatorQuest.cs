@@ -64,7 +64,12 @@ public class GameComponent_NavigatorQuest : GameComponent
 
         if (quest != null)
         {
-            trackedQuestId = quest.id;
+            if (trackedQuestId != quest.id)
+            {
+                trackedQuestId = quest.id;
+                Notify_QuestOffered();
+            }
+
             return;
         }
 

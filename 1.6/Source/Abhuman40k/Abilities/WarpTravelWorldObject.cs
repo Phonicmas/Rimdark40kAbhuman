@@ -44,6 +44,11 @@ public class WarpTravelWorldObject : WorldObject, IThingHolder
     
     public override IEnumerable<Gizmo> GetGizmos()
     {
+        if (!DebugSettings.ShowDevGizmos)
+        {
+            yield break;
+        }
+
         yield return new Command_Action
         {
             defaultLabel = "DEV: Conclude travel",
@@ -81,7 +86,7 @@ public class WarpTravelWorldObject : WorldObject, IThingHolder
     public override void ExposeData()
     {
         base.ExposeData();
-        Scribe_Deep.Look(ref pawns, "pawns");
+        Scribe_Deep.Look(ref pawns, "pawns", this);
         Scribe_Values.Look(ref arrivalTick, "arrivalTick");
         Scribe_Values.Look(ref travelDurationTicks, "travelDurationTicks");
         Scribe_Values.Look(ref estimateSpreadTicks, "estimateSpreadTicks");
@@ -117,11 +122,7 @@ public class WarpTravelWorldObject : WorldObject, IThingHolder
             var alliedPawnOnMap = AlliedPawnOnMap(targetMap, pawns.InnerListForReading);
             if (alliedPawnOnMap != null)
             {
-                var position = alliedPawnOnMap.Position;
-                if (true)
-                {
-                    targetCell = position;
-                }
+                targetCell = alliedPawnOnMap.Position;
             }
         }
         //Another allied pawn is on map which is being teleported too
@@ -130,7 +131,12 @@ public class WarpTravelWorldObject : WorldObject, IThingHolder
             for (var i = pawns.InnerListForReading.Count-1; i >= 0; i--)
             {
                 var pawnToSpawn = pawns.InnerListForReading[i];
-                CellFinder.TryFindRandomSpawnCellForPawnNear(targetCell, targetMap, out var result, 4, cell => cell != targetCell && cell.GetRoom(targetMap) == targetCell.GetRoom(targetMap));
+                if (!CellFinder.TryFindRandomSpawnCellForPawnNear(targetCell, targetMap, out var result, 4, cell => cell != targetCell && cell.GetRoom(targetMap) == targetCell.GetRoom(targetMap))
+                    && !CellFinder.TryFindRandomSpawnCellForPawnNear(targetCell, targetMap, out result))
+                {
+                    result = targetCell;
+                }
+
                 GenSpawn.Spawn(pawnToSpawn, result, targetMap);
                 if (pawnToSpawn.drafter != null && pawnToSpawn.IsColonistPlayerControlled)
                 {
@@ -162,19 +168,7 @@ public class WarpTravelWorldObject : WorldObject, IThingHolder
     private void ExitMessage()
     {
         var travelers = pawns.InnerListForReading;
-        var teleportedPawns = "";
-        for (var i = 0; i < travelers.Count; i++)
-        {
-            teleportedPawns += travelers[i].NameShortColored;
-            if (i == travelers.Count - 2)
-            {
-                teleportedPawns += " and ";
-            }
-            else if (i != travelers.Count - 1)
-            {
-                teleportedPawns += ", ";
-            }
-        }
+        var teleportedPawns = travelers.Select(traveler => traveler.NameShortColored.Resolve()).ToCommaList(useAnd: true);
 
         var navigator = Navigator;
         if (navigator == null)

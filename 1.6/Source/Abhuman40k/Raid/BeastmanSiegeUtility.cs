@@ -17,6 +17,11 @@ public class BeastmanSiegeUtility
 		var beastmanHerdstoneDef = Abhuman40kDefOf.BEWH_HerdstoneRaid;
 		var rot = Rot4.South;
 		var artySpot = NonPublicMethods.SiegeBlueprintPlacer_FindArtySpot(beastmanHerdstoneDef, rot, map);
+		if (!artySpot.IsValid || !artySpot.InBounds(map))
+		{
+			return null;
+		}
+
 		return GenConstruct.PlaceBlueprintForBuild(beastmanHerdstoneDef, artySpot, map, rot, NonPublicFields.SiegeBlueprintPlacer_faction(), GenStuff.DefaultStuffFor(beastmanHerdstoneDef));
 	}
 }

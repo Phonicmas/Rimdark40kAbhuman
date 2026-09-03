@@ -6,7 +6,7 @@
 		<li>1.6</li>
 	</supportedVersions>
 	<packageId>Phonicmas.RimDark.Abhuman</packageId>
-	<modVersion>1.0.4</modVersion>
+	<modVersion>1.0.9</modVersion>
 	<description>[PLACEHOLDER]RimDark 40k - Abhumans. The mod features new xenotypes, new unique genes, new mechanics for some of the xenotypes.</description>
 	<modDependencies>
 		<li>
@@ -18,6 +18,11 @@
 			<displayName>RimDark 40k - Framework</displayName>
 			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3267464767</steamWorkshopUrl>
 		</li>
+		<li>
+			<packageId>OskarPotocki.VanillaFactionsExpanded.Core</packageId>
+			<displayName>Vanilla Expanded Framework</displayName>
+			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2023507013</steamWorkshopUrl>
+		</li>
 	</modDependencies>
 	<loadAfter>
 		<li>Ludeon.RimWorld</li>
@@ -25,7 +30,7 @@
 		<li>brrainz.harmony</li>
 		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
 		<li>RedMattis.BetterPrerequisites</li>
-		<li>Phonicmas.RimDark.Framework</li>
+		<li>Phonicmas.RimDark.FrameworkCore</li>
 		<li>Phonicmas.RimDark.MankindsFinest</li>
 	</loadAfter>
 </ModMetaData>

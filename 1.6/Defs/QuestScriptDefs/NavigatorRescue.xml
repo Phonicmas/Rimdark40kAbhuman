@@ -69,11 +69,15 @@
                     <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
                 </li>
 
-                <li Class="QuestNode_SubScript">
-                    <def>Util_GenerateSite</def>
-                    <parms>
-                        <hiddenSitePartsPossible>true</hiddenSitePartsPossible>
-                    </parms>
+                <!-- Inlined instead of the Util_GenerateSite sub-script, which never wires
+                     worldObjectDef through even though QuestNode_GenerateSite exposes it. -->
+                <li Class="QuestNode_GenerateSite">
+                    <sitePartsParams>$sitePartsParams</sitePartsParams>
+                    <hiddenSitePartsPossible>true</hiddenSitePartsPossible>
+                    <storeAs>site</storeAs>
+                    <faction>$siteFaction</faction>
+                    <tile>$siteTile</tile>
+                    <worldObjectDef>BEWH_NavigatorGravshipSite</worldObjectDef>
                 </li>
 
                 <li Class="QuestNode_SpawnWorldObjects">
@@ -180,7 +184,7 @@
                 <li>BEWH_NavigatorGravshipNoOdyssey</li>
             </structureLayoutDefs>
             <!-- Additional options -->
-            <fullClear>false</fullClear> <!-- Clear any impassable in the way -->
+            <fullClear>true</fullClear> <!-- Clear any impassable in the way -->
             <clearFogInRect>false</clearFogInRect> <!-- Clear fog on the structure -->
             <preventBridgeable>true</preventBridgeable> <!-- Prevent lake/river/marsh (bridgeable) -->
         </genStep>

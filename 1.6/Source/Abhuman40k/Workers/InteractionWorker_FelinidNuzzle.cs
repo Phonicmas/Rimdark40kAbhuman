@@ -20,10 +20,10 @@ public class InteractionWorker_FelinidNuzzle : InteractionWorker
         var thoughtMemoryRecipient = (Thought_MemoryFelinid)ThoughtMaker.MakeThought(Abhuman40kSecondDefOf.BEWH_FelinidNuzzle);
         thoughtMemoryRecipient.SetForcedStage(0);
         thoughtMemoryRecipient.initiator = initiator;
-        recipient.needs.mood?.thoughts.memories.TryGainMemory(thoughtMemoryRecipient);
+        recipient.needs?.mood?.thoughts.memories.TryGainMemory(thoughtMemoryRecipient);
         
         var thoughtMemoryInitiator = (Thought_Memory)ThoughtMaker.MakeThought(Abhuman40kSecondDefOf.BEWH_FelinidNuzzle);
         thoughtMemoryInitiator.SetForcedStage(1);
-        initiator.needs.mood?.thoughts.memories.TryGainMemory(thoughtMemoryInitiator);
+        initiator.needs?.mood?.thoughts.memories.TryGainMemory(thoughtMemoryInitiator);
     }
 }

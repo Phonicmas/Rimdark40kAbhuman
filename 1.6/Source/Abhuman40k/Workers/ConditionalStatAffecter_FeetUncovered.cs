@@ -12,7 +12,7 @@ public class ConditionalStatAffecter_FeetUncovered : ConditionalStatAffecter
     {
         if (req is { HasThing: true, Thing: Pawn pawn } && pawn.apparel != null)
         {
-            return !pawn.apparel.WornApparel.All(apparel => apparel.def.apparel.CoversBodyPartGroup(Abhuman40kDefOf.Feet));
+            return !pawn.apparel.WornApparel.Any(apparel => apparel.def.apparel.CoversBodyPartGroup(Abhuman40kDefOf.Feet));
         }
         
         return false;
